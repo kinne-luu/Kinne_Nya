@@ -1551,12 +1551,12 @@ function renderLyrics() {
                 card.classList.toggle('active-track', parseInt(card.dataset.index) === index);
             });
 
-            if (typeof ytMusicReady !== 'undefined' && ytMusicReady && track.youtubeId) {
+            if (typeof ytMusicReady !== 'undefined' && ytMusicReady && track.youtube_id) {
                 if (autoplay) {
-                    ytMusicPlayer.loadVideoById(track.youtubeId);
+                    ytMusicPlayer.loadVideoById(track.youtube_id);
                     if (ytReady && ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) ytPlayer.pauseVideo();
                 } else {
-                    ytMusicPlayer.cueVideoById(track.youtubeId);
+                    ytMusicPlayer.cueVideoById(track.youtube_id);
                 }
             }
 
@@ -1577,8 +1577,8 @@ function renderLyrics() {
                 title.innerText = track.name;
                 artist.innerText = track.artist || "Unknown Artist";
 
-                const isYt = !!track.youtubeId;
-                const coverImg = isYt ? `https://img.youtube.com/vi/${track.youtubeId}/hqdefault.jpg` : (track.coverUrl || '');
+                const isYt = !!track.youtube_id;
+                const coverImg = isYt ? `https://img.youtube.com/vi/${track.youtube_id}/hqdefault.jpg` : (track.coverUrl || '');
                 if (coverImg) {
                     thumb.style.backgroundImage = `url('${escapeHtmlLocal(coverImg)}')`;
                     thumb.style.backgroundSize = isYt ? '135% auto' : 'cover';
@@ -1621,8 +1621,8 @@ function renderLyrics() {
             }
 
             container.innerHTML = demoTracks.map((track, index) => {
-                const isYt = !!track.youtubeId;
-                const coverImg = isYt ? `https://img.youtube.com/vi/${track.youtubeId}/hqdefault.jpg` : (track.coverUrl || '');
+                const isYt = !!track.youtube_id;
+                const coverImg = isYt ? `https://img.youtube.com/vi/${track.youtube_id}/hqdefault.jpg` : (track.coverUrl || '');
                 const bgStyle = coverImg ? ` style="background-image:url('${escapeHtmlLocal(coverImg)}');${isYt ? ' background-size: 135% auto;' : ''}"` : '';
                 return `
                 <div class="track-card" data-index="${index}">
