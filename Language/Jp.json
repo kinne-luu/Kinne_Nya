@@ -1,0 +1,53 @@
+{
+  "nav_home": "ホーム",
+  "nav_gallery": "作品",
+  "nav_music": "音楽",
+  "nav_film": "映画",
+  "nav_more": "その他",
+
+  "home_intro": "ここを見つけてくれてありがとう <3 \n\n僕はKinne、いろんなことに夢中な男の子だよXD\n\nアニメ、漫画、ライトノベル、ビジュアルノベル、ガチャゲー、AAAゲーム、それに数えきれないほどの趣味に夢中なんだ:\n3D、バイブコーディング、デザイン、絵を描くこと、などなど…でもどれも極めてはいないんだ 🥀",
+  "home_sub": "フェスに行くのも好きで、かわいいコスプレイヤーさんを見るのが楽しいんだけど、フェスがあまりない場所に住んでるから、なかなか機会がないんだ <(\")",
+  "home_welcome": "「ここは僕の家で、僕について知れることが全部詰まってるよ。ちょっとした思い出とか、これまで作ったプロジェクト、そしていつ終わるかわからない計画中のプロジェクトも=))<br><br>\n                                ゆっくり楽しんでね、進む方向は右側にあるよ」",
+  "home_artist_placeholder": "アーティスト",
+  "home_egg": "Doroのひみつ",
+  "home_settings": "設定",
+
+  "loading_short": "読み込み中...",
+  "loading_wait": "少し待ってね...",
+
+  "status_online": "オンライン",
+  "status_offline": "オフライン",
+
+  "gallery_hint": "ここは僕の作品を共有する場所だよ、あまり上手じゃないけどとても大切な作品たちなんだ",
+  "gallery_album_name": "アルバム名 1",
+  "gallery_album_desc": "このアルバムの簡単な説明",
+  "gallery_no_image": "画像なし",
+  "gallery_wip": "このエリアは現在リニューアル中...",
+  "gallery_note": "今はまだあまり多くないんだ(正直、残りの写真がどこにあるかもわからない &lt;(&quot;) )。だからこれだけしかないけど、また後で追加するね",
+
+  "music_hint": "ここは僕が大好きな曲を集めた場所だよ、好みに合うか聴いてみてね",
+  "music_shuffle": "シャッフル",
+  "music_play": "再生",
+  "music_volume": "音量",
+
+  "film_hint": "ここは僕が見たアニメの全リストだよ。漫画やライトノベル、ビジュアルノベルを読むのも大好きなんだけど、アニメほど多くないから、ここには映像作品だけ載せてるよ :P",
+  "film_timeline_label": "シーズン別タイムライン",
+  "film_genre_label": "ジャンルで絞り込む",
+  "film_list_label": "リスト",
+  "film_error_load": "AniListからデータを読み込めませんでした、後でもう一度試してね。",
+  "film_no_match": "この条件に合う作品がありません。",
+  "film_error_detail": "この作品の詳細を読み込めませんでした、後でもう一度試してね。",
+  "film_hot_trend": "話題沸騰",
+  "film_studio": "スタジオ",
+  "film_format": "形式",
+  "film_episodes": "話数",
+  "film_duration": "時間",
+  "film_minutes": "分",
+  "film_season": "放送シーズン",
+
+  "filter_all": "すべて",
+  "season_winter": "冬",
+  "season_spring": "春",
+  "season_summer": "夏",
+  "season_fall": "秋"
+}

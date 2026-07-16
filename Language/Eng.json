@@ -1,0 +1,53 @@
+{
+  "nav_home": "Home",
+  "nav_gallery": "Writing",
+  "nav_music": "Music",
+  "nav_film": "Film",
+  "nav_more": "More",
+
+  "home_intro": "Congrats on finding this place <3 \n\nI'm Kinne, a guy who's into way too many things XD\n\nI have a huge passion for Anime, Manga, Light Novels, Visual Novels, gacha games, AAA games, and a dozen more hobbies on top of that:\n3D, vibe coding, design, drawing too, and so on, but I've never mastered any of them 🥀",
+  "home_sub": "I also love going to fests and looking at the cute cosplayers, but I live somewhere with very few fests, so I don't get many chances to see them <(\")",
+  "home_welcome": "\"this place is my home, holding pretty much everything you could know about me — maybe a few memories?, the projects I've worked on, and even the ones I've planned but have no idea when they'll be finished =))<br><br>\n                                take your time and enjoy, the way forward is on your right\"",
+  "home_artist_placeholder": "Artist",
+  "home_egg": "Doro's Secret",
+  "home_settings": "Settings",
+
+  "loading_short": "Loading...",
+  "loading_wait": "Just a sec...",
+
+  "status_online": "online",
+  "status_offline": "offline",
+
+  "gallery_hint": "This is where I share my own works, they're not that pretty but I really love them",
+  "gallery_album_name": "Album Name 1",
+  "gallery_album_desc": "Short description for this album",
+  "gallery_no_image": "No Image",
+  "gallery_wip": "this area is being redesigned...",
+  "gallery_note": "I don't have much here right now (honestly I don't even know where the rest of my photos went &lt;(&quot;) ), so it's just a few things for now, I'll add more later hehe",
+
+  "music_hint": "This is where I keep the songs I love the most, feel free to check if they match your taste",
+  "music_shuffle": "Shuffle",
+  "music_play": "Play song",
+  "music_volume": "Volume",
+
+  "film_hint": "This is every Anime I've watched. I also love reading Manga, Light Novels, and Visual Novels, but since I haven't read as many of those as Anime, this list only covers films :P",
+  "film_timeline_label": "Timeline by season",
+  "film_genre_label": "Filter by genre",
+  "film_list_label": "List",
+  "film_error_load": "Couldn't load data from AniList, please try again later.",
+  "film_no_match": "No shows match this filter.",
+  "film_error_detail": "Couldn't load this show's details, please try again later.",
+  "film_hot_trend": "Hot trend",
+  "film_studio": "Studio",
+  "film_format": "Format",
+  "film_episodes": "Episodes",
+  "film_duration": "Duration",
+  "film_minutes": "min",
+  "film_season": "Season",
+
+  "filter_all": "All",
+  "season_winter": "Winter",
+  "season_spring": "Spring",
+  "season_summer": "Summer",
+  "season_fall": "Fall"
+}

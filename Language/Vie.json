@@ -1,0 +1,53 @@
+{
+  "nav_home": "Trang chủ",
+  "nav_gallery": "Viết",
+  "nav_music": "Nhạc",
+  "nav_film": "Phim",
+  "nav_more": "Khác",
+
+  "home_intro": "Chúc mừng cậu đã tìm được nơi này <3 \n\nTớ là Kinne, một thằng con trai đam mê rất nhìu thứ XD\n\nTớ có niềm đam mê rất lớn với Anime, Manga, Light Novel, Visual Novel và mấy con game gacha, game 3A và hàng chục thứ kèm theo đó là một tá sở thích:\nnào là 3D, nào là vibe code, nào là design, cả vẽ nữa, vân vân và mây mây, nhưng không cái nào master cả 🥀",
+  "home_sub": "tớ thích đi fes nữa, ngắm các bạn coser xinh lắm nhưng tớ ở nơi rất ít fes nên cũng ít cơ hội được ngắm <(\")",
+  "home_welcome": "\"nơi này là ngôi nhà của tớ, chứa tất tần tật những gì cậu có thể biết về tớ, có thể có vài kỉ niệm?, những project tớ đã từng làm, và cả những dự án lên kế hoạch nhưng chưa biết bao giờ xong nữa =))<br><br>\n                                cậu cứ từ từ tận hưởng nhé, hướng đi nằm ở bên phải cậu đó\"",
+  "home_artist_placeholder": "Nghệ sĩ trình bày",
+  "home_egg": "Doro's Secret",
+  "home_settings": "Cài đặt",
+
+  "loading_short": "Đang tải...",
+  "loading_wait": "Cậu chờ chút nhé...",
+
+  "status_online": "online",
+  "status_offline": "offline",
+
+  "gallery_hint": "Đây là nơi tớ chia sẽ những tác phẩm của chính tớ, nó không đẹp nhưng tớ rất yêu những tác phẩm này",
+  "gallery_album_name": "Tên Album 1",
+  "gallery_album_desc": "Mô tả ngắn cho album này",
+  "gallery_no_image": "No Image",
+  "gallery_wip": "khu vực này đang được thiết kế lại...",
+  "gallery_note": "Vì hiện tại tớ chưa có gì nhiều ( thực ra là không biết đống ảnh còn lại ở đâu &lt;(&quot;) ) nên chỉ có vài thứ như này, tớ sẽ update thêm sau hihi",
+
+  "music_hint": "Đây là nơi chứa những bản nhạc mà tớ cực kì yêu thích, cậu có thể nghe thử xem có hợp gu hay không",
+  "music_shuffle": "Trộn bài",
+  "music_play": "Phát bài hát",
+  "music_volume": "Âm lượng",
+
+  "film_hint": "Đây là tất cả những bộ Anime tớ đã xem, tớ còn rất thích đọc Manga, Light Novel và cả Visual Novel nữa, tuy nhiên vì không nhiều bằng Anime nên list ở đây chỉ là phim thôi :P",
+  "film_timeline_label": "Dòng thời gian theo mùa",
+  "film_genre_label": "Lọc theo thể loại",
+  "film_list_label": "Danh sách",
+  "film_error_load": "Không tải được dữ liệu từ AniList, thử lại sau nhé.",
+  "film_no_match": "Không có phim nào khớp bộ lọc này.",
+  "film_error_detail": "Không tải được chi tiết phim này, thử lại sau nhé.",
+  "film_hot_trend": "Hot trend",
+  "film_studio": "Studio",
+  "film_format": "Định dạng",
+  "film_episodes": "Số tập",
+  "film_duration": "Độ dài",
+  "film_minutes": "phút",
+  "film_season": "Mùa chiếu",
+
+  "filter_all": "Tất cả",
+  "season_winter": "Đông",
+  "season_spring": "Xuân",
+  "season_summer": "Hạ",
+  "season_fall": "Thu"
+}
