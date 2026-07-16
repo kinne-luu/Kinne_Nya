@@ -269,7 +269,8 @@
         .settings-title { font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: rgba(0, 0, 0, 0.8); margin: 0 0 4px; padding-right: 40px; }
         .settings-sub { font-size: 13px; font-style: italic; color: rgba(0, 0, 0, 0.45); margin-bottom: 18px; }
         .settings-tab-panel { display: none; }
-        .settings-tab-panel.active { display: block; }
+        .settings-tab-panel.active { display: block; animation: settingsTabIn 0.35s cubic-bezier(0.25, 1, 0.5, 1); }
+        @keyframes settingsTabIn { 0% { opacity: 0; transform: translateY(10px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 
         .settings-box { background: rgba(255, 255, 255, 0.45); border: var(--pink-border); border-radius: var(--ios-radius-md); padding: 16px 18px; margin-bottom: 16px; box-sizing: border-box; }
         .settings-box-title { font-family: 'Baloo 2', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; color: rgba(255, 90, 135, 0.85); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
@@ -280,6 +281,7 @@
         .field-input, .field-textarea {
             width: 100%; background: rgba(255, 255, 255, 0.7); border: var(--pink-border); border-radius: var(--ios-radius-sm);
             padding: 9px 12px; font-family: system-ui, sans-serif; font-size: 13px; color: rgba(0, 0, 0, 0.75); outline: none;
+            box-sizing: border-box; max-width: 100%;
             transition: border-color 0.2s, background 0.2s;
         }
         .field-input:focus, .field-textarea:focus { border-color: rgba(255, 90, 135, 0.7); background: rgba(255, 255, 255, 0.95); }
@@ -913,8 +915,34 @@
         }
 
         function openSocialLink(key) {
-            const url = publicBackendData?.social?.[key];
-            if (url) window.open(url, '_blank', 'noopener,noreferrer');
+            const value = publicBackendData?.social?.[key];
+            if (!value) return;
+
+            if (key === 'discord') {
+                copyDiscordUsername(value);
+                return;
+            }
+
+            window.open(value, '_blank', 'noopener,noreferrer');
+        }
+
+        function copyDiscordUsername(value) {
+            const doCopy = async () => {
+                try {
+                    await navigator.clipboard.writeText(value);
+                } catch (e) {
+                    const tempInput = document.createElement('textarea');
+                    tempInput.value = value;
+                    tempInput.style.position = 'fixed';
+                    tempInput.style.opacity = '0';
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                }
+                showToast('Đã copy Username Discord!');
+            };
+            doCopy();
         }
 
         function applySocialData(social = {}) {
@@ -1551,12 +1579,12 @@ function renderLyrics() {
                 card.classList.toggle('active-track', parseInt(card.dataset.index) === index);
             });
 
-            if (typeof ytMusicReady !== 'undefined' && ytMusicReady && track.youtube_id) {
+            if (typeof ytMusicReady !== 'undefined' && ytMusicReady && track.youtubeId) {
                 if (autoplay) {
-                    ytMusicPlayer.loadVideoById(track.youtube_id);
+                    ytMusicPlayer.loadVideoById(track.youtubeId);
                     if (ytReady && ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) ytPlayer.pauseVideo();
                 } else {
-                    ytMusicPlayer.cueVideoById(track.youtube_id);
+                    ytMusicPlayer.cueVideoById(track.youtubeId);
                 }
             }
 
@@ -1577,8 +1605,8 @@ function renderLyrics() {
                 title.innerText = track.name;
                 artist.innerText = track.artist || "Unknown Artist";
 
-                const isYt = !!track.youtube_id;
-                const coverImg = isYt ? `https://img.youtube.com/vi/${track.youtube_id}/hqdefault.jpg` : (track.coverUrl || '');
+                const isYt = !!track.youtubeId;
+                const coverImg = isYt ? `https://img.youtube.com/vi/${track.youtubeId}/hqdefault.jpg` : (track.coverUrl || '');
                 if (coverImg) {
                     thumb.style.backgroundImage = `url('${escapeHtmlLocal(coverImg)}')`;
                     thumb.style.backgroundSize = isYt ? '135% auto' : 'cover';
@@ -1621,8 +1649,8 @@ function renderLyrics() {
             }
 
             container.innerHTML = demoTracks.map((track, index) => {
-                const isYt = !!track.youtube_id;
-                const coverImg = isYt ? `https://img.youtube.com/vi/${track.youtube_id}/hqdefault.jpg` : (track.coverUrl || '');
+                const isYt = !!track.youtubeId;
+                const coverImg = isYt ? `https://img.youtube.com/vi/${track.youtubeId}/hqdefault.jpg` : (track.coverUrl || '');
                 const bgStyle = coverImg ? ` style="background-image:url('${escapeHtmlLocal(coverImg)}');${isYt ? ' background-size: 135% auto;' : ''}"` : '';
                 return `
                 <div class="track-card" data-index="${index}">
