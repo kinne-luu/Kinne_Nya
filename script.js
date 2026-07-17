@@ -302,6 +302,8 @@ async function setLanguage(langCode) {
             element.classList.add('active');
             document.getElementById('indicator').style.transform = `translateY(${index * 32}px)`;
 
+            persistLangChoice(langCode);
+
             setLanguage(langCode)
                 .then(() => loadPublicBootstrap(langCode))
                 .then(() => {
@@ -310,6 +312,58 @@ async function setLanguage(langCode) {
                     }
                 })
                 .catch(error => console.error('Đổi ngôn ngữ thất bại:', error));
+        }
+
+        const LANG_ORDER = ['vie', 'eng', 'jp'];
+
+        function updateLangSwitchUI(langCode) {
+            const index = LANG_ORDER.indexOf(langCode);
+            if (index === -1) return;
+            const options = document.querySelectorAll('.lang-option');
+            options.forEach(opt => opt.classList.remove('active'));
+            if (options[index]) options[index].classList.add('active');
+            const indicator = document.getElementById('indicator');
+            if (indicator) indicator.style.transform = `translateY(${index * 32}px)`;
+        }
+
+        function persistLangChoice(langCode) {
+            try { localStorage.setItem('preferredLang', langCode); } catch (e) {}
+            try { history.replaceState(null, '', '#' + langCode); } catch (e) {}
+        }
+
+        async function detectLangFromGeo() {
+            try {
+                const res = await fetch(`${API_BASE_URL}/api/geo`);
+                const data = await res.json();
+                const country = (data.country || '').toUpperCase();
+                if (country === 'VN') return 'vie';
+                if (country === 'JP') return 'jp';
+                return 'eng';
+            } catch (e) {
+                return 'vie';
+            }
+        }
+
+        async function initLanguage() {
+            const hashLang = window.location.hash.replace('#', '').toLowerCase();
+            let langCode;
+
+            if (LANG_ORDER.includes(hashLang)) {
+                langCode = hashLang;
+            } else {
+                let stored = null;
+                try { stored = localStorage.getItem('preferredLang'); } catch (e) {}
+                if (stored && LANG_ORDER.includes(stored)) {
+                    langCode = stored;
+                } else {
+                    langCode = await detectLangFromGeo();
+                }
+            }
+
+            persistLangChoice(langCode);
+            updateLangSwitchUI(langCode);
+            await setLanguage(langCode);
+            await loadPublicBootstrap(langCode);
         }
 
         let YT_VIDEO_ID = '';
@@ -1626,8 +1680,7 @@ function renderLyrics() {
             syncAvatarVisibility();
             showMobileDrawerHintOnLoad();
 
-            await setLanguage('vie');
-            await loadPublicBootstrap('vie');
+            await initLanguage();
 
             const preloader = document.getElementById('pagePreloader');
             if (preloader) {
