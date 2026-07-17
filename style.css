@@ -234,13 +234,13 @@
         .anime-modal-extra span strong { color: rgba(0, 0, 0, 0.75); font-weight: 700; }
         .anime-modal-loading { width: 100%; text-align: center; font-size: 15px; font-style: italic; color: rgba(0, 0, 0, 0.5); padding: 50px 0; }
 
-.side-nav { position: absolute; top: 20px; left: 100%; margin-left: 12px; width: 44px; display: flex; flex-direction: column; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(16px); border-radius: 22px; border: var(--pink-border); padding: 8px 5px; z-index: 10; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .nav-indicator { position: absolute; top: 8px; left: 5px; right: 5px; height: 34px; border-radius: 16px; background: rgba(255, 182, 193, 0.9); z-index: 1; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-        .nav-item { width: 34px; height: 34px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: rgba(0, 0, 0, 0.45); cursor: pointer; transition: all 0.3s; z-index: 2; }
+        .side-nav { position: absolute; top: 0; left: 100%; margin-left: 12px; width: 44px; display: flex; flex-direction: column; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(16px); border-radius: var(--ios-radius-sm); border: var(--pink-border); padding: 8px 5px; z-index: 10; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .nav-indicator { position: absolute; top: 8px; left: 5px; right: 5px; height: 34px; border-radius: 10px; background: rgba(255, 182, 193, 0.9); z-index: 1; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+        .nav-item { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: rgba(0, 0, 0, 0.45); cursor: pointer; transition: all 0.3s; z-index: 2; }
         .nav-item:hover { color: rgba(0, 0, 0, 0.8); transform: scale(1.1); }
         .nav-item.active { color: #fff; }
-        .lang-switch { position: absolute; bottom: var(--lang-gap); left: 100%; margin-left: var(--lang-gap); width: 40px; display: flex; flex-direction: column; gap: 4px; background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(16px); border-radius: var(--ios-radius-lg); border: var(--pink-border); padding: 4px; box-sizing: border-box; }
-        .lang-indicator { position: absolute; top: 4px; left: 4px; right: 4px; height: 28px; border-radius: var(--ios-radius-sm); background: rgba(255, 182, 193, 0.9); z-index: 1; transition: transform 0.4s; }
+        .lang-switch { position: absolute; bottom: 0; left: 100%; margin-left: var(--lang-gap); width: 40px; display: flex; flex-direction: column; gap: 4px; background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(16px); border-radius: var(--ios-radius-sm); border: var(--pink-border); padding: 4px; box-sizing: border-box; }
+        .lang-indicator { position: absolute; top: 4px; left: 4px; right: 4px; height: 28px; border-radius: 10px; background: rgba(255, 182, 193, 0.9); z-index: 1; transition: transform 0.4s; }
         .lang-option { height: 28px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: rgba(0, 0, 0, 0.3); z-index: 2; cursor: pointer; transition: color 0.4s, letter-spacing 0.4s; }
         .lang-option.active { color: #fff; letter-spacing: 1px; }
 
