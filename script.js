@@ -188,6 +188,38 @@ async function setLanguage(langCode) {
             return maxDelay;
         }
 
+        function toggleMobileDrawer(forceState) {
+            const controls = document.getElementById('mobileBottomControls');
+            const toggle = document.getElementById('mobileDrawerToggle');
+            if (!controls || !toggle) return;
+
+            const shouldExpand = typeof forceState === 'boolean' ? forceState : !controls.classList.contains('expanded');
+            controls.classList.toggle('expanded', shouldExpand);
+            toggle.classList.toggle('expanded', shouldExpand);
+
+            hideMobileDrawerHint();
+        }
+
+        function collapseMobileDrawer() {
+            toggleMobileDrawer(false);
+        }
+
+        let mobileDrawerHintTimer = null;
+        function hideMobileDrawerHint() {
+            const hint = document.getElementById('mobileDrawerHint');
+            if (!hint) return;
+            hint.classList.remove('show');
+            if (mobileDrawerHintTimer) { clearTimeout(mobileDrawerHintTimer); mobileDrawerHintTimer = null; }
+        }
+
+        function showMobileDrawerHintOnLoad() {
+            if (window.innerWidth > 768) return;
+            const hint = document.getElementById('mobileDrawerHint');
+            if (!hint) return;
+            requestAnimationFrame(() => hint.classList.add('show'));
+            mobileDrawerHintTimer = setTimeout(hideMobileDrawerHint, 4500);
+        }
+
         function activateNav(element, index) {
             const tabs = ['section-home', 'section-gallery', 'section-music', 'section-film', 'section-more'];
             const targetTabId = tabs[index];
@@ -1077,6 +1109,7 @@ function renderLyrics() {
             setTextById('homeIntroText', data.content?.homeIntro);
             setTextById('homeSubText', data.content?.homeSub);
             setTextById('homeWelcomeText', data.content?.homeWelcome, true);
+            setTextById('homeWelcomeTextMobile', data.content?.homeWelcome, true);
             setTextById('galleryHintText', data.content?.galleryHint);
             setTextById('filmHintText', data.content?.filmHint);
             setTextById('musicHintText', data.content?.musicHint);
@@ -1113,6 +1146,7 @@ function renderLyrics() {
         }
 
         function handleNavClick(element, index) {
+            collapseMobileDrawer();
             if (settingsMode) activateSettingsTab(element, index);
             else activateNav(element, index);
         }
@@ -1571,8 +1605,26 @@ function renderLyrics() {
             }
         }
 
+        function syncAvatarVisibility() {
+            const isMobile = window.innerWidth <= 768;
+            document.querySelectorAll('.pc-avatar').forEach(el => {
+                el.style.display = isMobile ? 'none' : '';
+            });
+            document.querySelectorAll('.mobile-avatar').forEach(el => {
+                el.style.display = isMobile ? 'block' : '';
+            });
+        }
+
+        let avatarResizeTimer = null;
+        window.addEventListener('resize', () => {
+            clearTimeout(avatarResizeTimer);
+            avatarResizeTimer = setTimeout(syncAvatarVisibility, 120);
+        });
+
         window.addEventListener('load', async () => {
             initSettingsUi();
+            syncAvatarVisibility();
+            showMobileDrawerHintOnLoad();
 
             await setLanguage('vie');
             await loadPublicBootstrap('vie');
@@ -1608,7 +1660,7 @@ function renderLyrics() {
             clusters.forEach(el => el.style.transition = '');
 
             document.body.addEventListener('mousemove', (e) => {
-                const target = e.target.closest('.anime-card, .track-card, .photo-slot');
+                const target = e.target.closest('.photo-slot');
 
                 if (window.lastTiltTarget && window.lastTiltTarget !== target) {
                     window.lastTiltTarget.style.transform = '';

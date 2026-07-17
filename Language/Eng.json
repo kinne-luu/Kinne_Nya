@@ -45,6 +45,8 @@
   "film_minutes": "min",
   "film_season": "Season",
 
+  "mobile_drawer_hint": "Tap here to see more",
+
   "filter_all": "All",
   "season_winter": "Winter",
   "season_spring": "Spring",
