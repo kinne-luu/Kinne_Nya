@@ -853,7 +853,7 @@ function renderLyrics() {
                 const coverImg = isYt ? `https://img.youtube.com/vi/${track.youtubeId}/hqdefault.jpg` : (track.coverUrl || '');
                 if (coverImg) {
                     thumb.style.backgroundImage = `url('${escapeHtmlLocal(coverImg)}')`;
-                    thumb.style.backgroundSize = isYt ? '135% auto' : 'cover';
+                    thumb.style.backgroundSize = isYt ? 'auto 135%' : 'cover';
                     thumb.classList.add('has-image');
                 } else {
                     thumb.style.backgroundImage = '';
@@ -892,10 +892,10 @@ function renderLyrics() {
                 return;
             }
 
-            container.innerHTML = demoTracks.map((track, index) => {
+                container.innerHTML = demoTracks.map((track, index) => {
                 const isYt = !!track.youtubeId;
                 const coverImg = isYt ? `https://img.youtube.com/vi/${track.youtubeId}/hqdefault.jpg` : (track.coverUrl || '');
-                const bgStyle = coverImg ? ` style="background-image:url('${escapeHtmlLocal(coverImg)}');${isYt ? ' background-size: 135% auto;' : ''}"` : '';
+                const bgStyle = coverImg ? ` style="background-image:url('${escapeHtmlLocal(coverImg)}');${isYt ? ' background-size: auto 135%;' : ''}"` : '';
                 return `
                 <div class="track-card" data-index="${index}">
                     <div class="track-thumb ${coverImg ? 'has-image' : ''}"${bgStyle}></div>
@@ -1312,7 +1312,7 @@ function renderLyrics() {
 
                 return `
                     <div class="track-mini-card">
-                        <div class="track-mini-thumb" ${coverImgUrl ? `style="background-image:url('${escapeHtmlLocal(coverImgUrl)}'); background-size: cover;"` : ''}>
+                        <div class="track-mini-thumb" ${coverImgUrl ? `style="background-image:url('${escapeHtmlLocal(coverImgUrl)}'); background-size: auto 135%;"` : ''}>
                             <i class="fa-solid fa-music" style="${coverImgUrl ? 'display:none;' : ''}"></i>
                         </div>
                         <div class="track-mini-info">

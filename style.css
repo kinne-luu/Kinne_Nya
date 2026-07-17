@@ -61,6 +61,7 @@
         .music-row { display: flex; align-items: stretch; gap: 14px; width: 100%; height: 122px; flex: none; }
         .music-card { background: rgba(255, 255, 255, 0.4); border: var(--pink-border); border-radius: var(--ios-radius-lg); box-sizing: border-box; flex: 1; min-width: 0; height: 100%; padding: 14px 18px 14px 10px; display: flex; align-items: center; gap: 16px; }
         .music-thumb { width: 96px; height: 96px; flex-shrink: 0; border-radius: var(--ios-radius-sm); background: linear-gradient(135deg, #f3c9ee, #ffc9d6); background-size: cover; background-position: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12); display: flex; align-items: center; justify-content: center; }
+        .music-thumb.has-image { background-size: auto 135%; }
         .music-thumb.has-image::before { content: none; }
         .music-thumb::before { content: "♪"; font-size: 30px; color: rgba(255, 255, 255, 0.85); font-family: system-ui, sans-serif; }
         .music-info { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 7px; font-family: system-ui, sans-serif; }
@@ -130,11 +131,11 @@
         .music-side-panel { width: 280px; flex-shrink: 0; display: flex; flex-direction: column; gap: 15px; }
         .playlist-hint-box { width: 100%; background: rgba(255, 255, 255, 0.35); border: var(--pink-border); border-radius: var(--ios-radius-lg); padding: 14px 18px; box-sizing: border-box; flex-shrink: 0; }
         .playlist-hint-text { font-size: 13px; line-height: 1.6; color: rgba(0, 0, 0, 0.6); font-style: italic; font-weight: 600; display: block; }
-        .playlist-main-box { width: 100%; flex: 1; background: rgba(255, 255, 255, 0.35); border: var(--pink-border); border-radius: var(--ios-radius-lg); box-sizing: border-box; padding: 14px 0; position: relative; overflow: hidden; }
-        .playlist-scroll-container { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; gap: 10px; padding-left: 12px; padding-right: 12px; box-sizing: border-box; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+        .playlist-main-box { width: 100%; flex: 1; background: rgba(255, 255, 255, 0.35); border: var(--pink-border); border-radius: var(--ios-radius-lg); box-sizing: border-box; padding: 24px 0; position: relative; overflow: hidden; }
+        .playlist-scroll-container { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; gap: 14px; padding: 10px 26px; box-sizing: border-box; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
         .playlist-scroll-container::-webkit-scrollbar { display: none; }
-        .track-card { width: 100%; background: rgba(255, 255, 255, 0.52); border: 1px solid rgba(255, 182, 193, 0.35); border-radius: var(--ios-radius-md); padding: 8px 12px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; transition: transform 0.15s ease-out, opacity 0.15s, background 0.2s ease; transform-origin: center center; will-change: transform; }
-        .track-card:hover { background: rgba(255, 255, 255, 0.85); opacity: 1 !important; }
+        .track-card { width: 100%; background: rgba(255, 255, 255, 0.52); border: 1px solid rgba(255, 182, 193, 0.35); border-radius: var(--ios-radius-md); padding: 8px 12px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.15s, background 0.2s ease; transform-origin: center center; will-change: transform; }
+        .track-card:hover { background: rgba(255, 255, 255, 0.85); opacity: 1 !important; transform: scale(1.04); box-shadow: 0 4px 12px rgba(255, 143, 171, 0.15); }
         .track-card.active-track { background: rgba(255, 255, 255, 0.92); border-color: rgba(255, 143, 171, 0.65); box-shadow: 0 4px 15px rgba(255, 143, 171, 0.25); }
         .track-card.active-track .track-name { color: #ff5a87; }
         .track-thumb { width: 44px; height: 44px; border-radius: var(--ios-radius-sm); background: linear-gradient(135deg, #fcdcf6, #ffe0e6); background-size: cover; background-position: center; background-repeat: no-repeat; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.5); }
@@ -574,7 +575,8 @@
             .music-side-panel { width: 100%; flex-shrink: 0; gap: 8px; }
             .playlist-hint-box { padding: 10px 14px; }
             .playlist-hint-text { font-size: 13.5px; }
-            .playlist-main-box { flex: none; height: 130px; padding: 8px 0; }
+            .playlist-main-box { flex: none; height: 140px; padding: 14px 0; }
+            .playlist-scroll-container { padding-left: 16px; padding-right: 16px; gap: 12px; }
             .track-card { padding: 6px 10px; }
             .track-thumb { width: 36px; height: 36px; }
             .track-name { font-size: 14px; }
@@ -676,6 +678,7 @@
         .music-row { display: flex; align-items: stretch; gap: 14px; width: 100%; height: 122px; flex: none; }
         .music-card { background: rgba(255, 255, 255, 0.4); border: var(--pink-border); border-radius: var(--ios-radius-lg); box-sizing: border-box; flex: 1; min-width: 0; height: 100%; padding: 14px 18px 14px 10px; display: flex; align-items: center; gap: 16px; }
         .music-thumb { width: 96px; height: 96px; flex-shrink: 0; border-radius: var(--ios-radius-sm); background: linear-gradient(135deg, #f3c9ee, #ffc9d6); background-size: cover; background-position: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12); display: flex; align-items: center; justify-content: center; }
+        .music-thumb.has-image { background-size: auto 135%; }
         .music-thumb.has-image::before { content: none; }
         .music-thumb::before { content: "♪"; font-size: 30px; color: rgba(255, 255, 255, 0.85); font-family: system-ui, sans-serif; }
         .music-info { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 7px; font-family: system-ui, sans-serif; }
@@ -748,9 +751,10 @@
         .playlist-main-box { width: 100%; flex: 1; background: rgba(255, 255, 255, 0.35); border: var(--pink-border); border-radius: var(--ios-radius-lg); box-sizing: border-box; padding: 14px 0; position: relative; overflow: hidden; }
         .playlist-scroll-container { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; gap: 10px; padding-left: 12px; padding-right: 12px; box-sizing: border-box; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
         .playlist-scroll-container::-webkit-scrollbar { display: none; }
-        .track-card { width: 100%; background: rgba(255, 255, 255, 0.52); border: 1px solid rgba(255, 182, 193, 0.35); border-radius: var(--ios-radius-md); padding: 8px 12px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; transition: transform 0.15s ease-out, opacity 0.15s, background 0.2s ease; transform-origin: center center; will-change: transform; }
-        .track-card:hover { background: rgba(255, 255, 255, 0.85); opacity: 1 !important; }
-        .track-card.active-track { background: rgba(255, 255, 255, 0.92); border-color: rgba(255, 143, 171, 0.65); box-shadow: 0 4px 15px rgba(255, 143, 171, 0.25); }
+        .track-card { width: 100%; background: rgba(255, 255, 255, 0.52); border: 1px solid rgba(255, 182, 193, 0.35); border-radius: var(--ios-radius-md); padding: 8px 12px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s, background 0.2s ease, box-shadow 0.2s ease; transform-origin: center center; will-change: transform; }
+        .track-card:hover { background: rgba(255, 255, 255, 0.85); opacity: 1 !important; transform: translateY(-3px) scale(1.02) !important; box-shadow: 0 6px 16px rgba(255, 143, 171, 0.15); }
+        .track-card.active-track { background: rgba(255, 255, 255, 0.95); border-color: rgba(255, 143, 171, 0.8); box-shadow: 0 4px 15px rgba(255, 143, 171, 0.35); transform: scale(1.05) !important; z-index: 2; position: relative; }
+        .track-card.active-track:hover { transform: translateY(-3px) scale(1.06) !important; }
         .track-card.active-track .track-name { color: #ff5a87; }
         .track-thumb { width: 44px; height: 44px; border-radius: var(--ios-radius-sm); background: linear-gradient(135deg, #fcdcf6, #ffe0e6); background-size: cover; background-position: center; background-repeat: no-repeat; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.5); }
         .track-thumb::before { content: "♫"; font-size: 16px; color: rgba(255, 143, 171, 0.6); }
