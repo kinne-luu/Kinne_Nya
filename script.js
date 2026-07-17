@@ -47,16 +47,19 @@ const I18N_CACHE = {};
                     </div>
                     <div class="album-image">
                         <div class="album-image-scroll">
-                            ${(album.images || []).map(image => `
-                                <div class="photo-slot" onclick="openLightbox('${escapeHtmlLocal(image.url)}')">
+                            ${(album.images || []).map(image => {
+                                const gridSrc = image.url && image.url.startsWith('http') ? image.url : API_BASE_URL + (image.url || '');
+                                const lightboxSrc = image.fullUrl ? (API_BASE_URL + image.fullUrl) : gridSrc;
+                                return `
+                                <div class="photo-slot" onclick="openLightbox('${escapeHtmlLocal(lightboxSrc)}')">
                                     <img
-                                        src="${escapeHtmlLocal(image.url)}"
+                                        src="${escapeHtmlLocal(gridSrc)}"
                                         alt="${escapeHtmlLocal(image.name || album.name)}"
                                         loading="lazy"
                                         style="width:100%;height:100%;object-fit:cover;border-radius:4px;display:block;"
                                     >
                                 </div>
-                            `).join('')}
+                            `;}).join('')}
                         </div>
                     </div>
                 </div>
