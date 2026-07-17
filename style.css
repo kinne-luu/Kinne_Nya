@@ -234,7 +234,7 @@
         .anime-modal-extra span strong { color: rgba(0, 0, 0, 0.75); font-weight: 700; }
         .anime-modal-loading { width: 100%; text-align: center; font-size: 15px; font-style: italic; color: rgba(0, 0, 0, 0.5); padding: 50px 0; }
 
-        .side-nav { position: absolute; top: 0; left: 100%; margin-left: 12px; width: 44px; display: flex; flex-direction: column; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(16px); border-radius: var(--ios-radius-sm); border: var(--pink-border); padding: 8px 5px; z-index: 10; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.side-nav { position: absolute; top: 0; left: 100%; margin-left: 12px; width: 44px; display: flex; flex-direction: column; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(16px); border-radius: var(--ios-radius-sm); border: var(--pink-border); padding: 8px 5px; z-index: 10; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .nav-indicator { position: absolute; top: 8px; left: 5px; right: 5px; height: 34px; border-radius: 10px; background: rgba(255, 182, 193, 0.9); z-index: 1; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
         .nav-item { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: rgba(0, 0, 0, 0.45); cursor: pointer; transition: all 0.3s; z-index: 2; }
         .nav-item:hover { color: rgba(0, 0, 0, 0.8); transform: scale(1.1); }
@@ -528,28 +528,14 @@
             .pc-avatar { display: none !important; visibility: hidden !important; width: 0 !important; height: 0 !important; opacity: 0 !important; pointer-events: none !important; }
             .main-content, .left-column, .right-column { display: contents; }
             
-            .name-card { padding: 0; margin: 0; flex: 1; order: unset; background: transparent; border: none; align-self: center; min-width: 0; display: flex; }
-            .name-top-row { display: flex; flex-direction: row; gap: 8px; width: 100%; align-items: center; justify-content: flex-start; }
+            .name-card { padding: 10px 14px; margin: 0; flex: 1; order: unset; align-self: center; min-width: 0; width: auto; display: flex; }
+            .name-top-row { display: flex; flex-direction: row; gap: 10px; width: 100%; align-items: center; justify-content: space-between; }
             
-            .name-aka-group { 
-                background: rgba(255, 255, 255, 0.7); 
-                border: 1px solid rgba(255, 182, 193, 0.5); 
-                border-radius: 30px; padding: 0 16px; box-sizing: border-box; 
-                display: flex; align-items: center; justify-content: center; 
-                flex: 0 1 auto; min-width: 0; height: 38px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            }
-            .name-card .main-name { font-size: 14px; letter-spacing: 0.3px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0; }
+            .name-aka-group { min-width: 0; }
+            .name-card .main-name { font-size: 14px; letter-spacing: 0.3px; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0; }
             .name-card .aka-container { display: none; }
             
-            .online-badge { 
-                background: rgba(255, 255, 255, 0.7); 
-                border: 1px solid rgba(255, 182, 193, 0.5); 
-                border-radius: 30px; padding: 0 14px; box-sizing: border-box; 
-                display: flex; align-items: center; justify-content: center; 
-                flex-shrink: 0; height: 38px; gap: 6px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            }
+            .online-badge { padding: 8px 12px; flex-shrink: 0; }
             .online-badge .online-text { font-size: 12.5px; margin: 0; }
 
             .music-row { order: 3; height: 100px; gap: 10px; }
