@@ -111,67 +111,18 @@
                         <div id="ytMusicPlayer" style="width:0;height:0;overflow:hidden;position:absolute;"></div>
 
                         <div class="social-card fly-cluster fly-hidden-bottom">
-                            <div class="line-qr-wrap" style="flex-shrink:0;">
-                                <div class="social-btn" title="Line"><i class="fa-brands fa-line"></i></div>
-                                <div class="line-qr-popup" aria-hidden="true"><img id="lineQrImage" src="" alt="Line QR" style="display:none;"></div>
-                            </div>
                             <div style="display: flex; gap: 14px; flex: 1; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;">
                                 <div class="social-btn" id="socialFacebook" title="Facebook" onclick="openSocialLink('facebook')"><i class="fa-brands fa-facebook-f"></i></div>
                                 <div class="social-btn" id="socialTwitter" title="X (Twitter)" onclick="openSocialLink('twitter')"><i class="fa-brands fa-x-twitter"></i></div>
                                 <div class="social-btn" id="socialInstagram" title="Instagram" onclick="openSocialLink('instagram')"><i class="fa-brands fa-instagram"></i></div>
                                 <div class="social-btn" id="socialDiscord" title="Discord" onclick="openSocialLink('discord')"><i class="fa-brands fa-discord"></i></div>
+                                <div class="line-qr-wrap">
+                                    <div class="social-btn" title="Line"><i class="fa-brands fa-line"></i></div>
+                                    <div class="line-qr-popup" aria-hidden="true"><img id="lineQrImage" src="" alt="Line QR" style="display:none;"></div>
+                                </div>
                             </div>
                             <div class="social-btn settings-btn" id="settingsToggleBtn" title="Cài đặt" data-i18n-title="home_settings" onclick="requestSettingsAccess()" style="flex-shrink: 0;"><i class="fa-solid fa-gear"></i></div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-<div id="section-game" class="tab-section">
-                <div class="game-content">
-                    <div class="game-hint-box fly-cluster fly-hidden-bottom">
-                        <div class="game-hint-text" id="gameHintText"></div>
-                    </div>
-
-                    <div class="game-swipe-hint" id="gameSwipeHint">
-                        <span class="game-swipe-arrow game-swipe-arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
-                        <span class="game-swipe-text" data-i18n="game_swipe_hint">Vuốt trái/phải để xem thêm nhé</span>
-                        <span class="game-swipe-arrow game-swipe-arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
-                    </div>
-
-                    <div class="game-columns" id="gameColumns">
-                        <div class="game-col game-col-left" data-game-col="0">
-                            <div class="game-desc-box fly-cluster fly-hidden-bottom" id="gameDescLeft"></div>
-                            <div class="game-play-box fly-cluster fly-hidden-bottom">
-                                <div class="game-play-scroll" id="gamePlayList">
-                                    <div class="empty-hint" id="gamePlayEmptyHint" data-i18n="game_empty_playing">Chưa có game nào được thêm</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="game-col game-col-center" data-game-col="1">
-                            <div class="game-desc-box fly-cluster fly-hidden-bottom" id="gameDescCenter"></div>
-                            <div class="game-catalog-box game-other-box fly-cluster fly-hidden-bottom">
-                                <div class="game-catalog-grid game-other-grid" id="gameOtherGrid">
-                                    <div class="empty-hint" id="gameOtherEmptyHint" data-i18n="game_empty_other">Chưa có game nào được thêm</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="game-col game-col-right" data-game-col="2">
-                            <div class="game-desc-box fly-cluster fly-reverse fly-hidden-bottom" id="gameDescRight"></div>
-                            <div class="game-catalog-box fly-cluster fly-reverse fly-hidden-bottom">
-                                <div class="game-catalog-grid" id="gameVnGrid">
-                                    <div class="empty-hint" id="gameVnEmptyHint" data-i18n="game_empty_vn">Chưa có game nào được thêm</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="game-dots" id="gameDots">
-                        <span class="game-dot active" data-dot="0"></span>
-                        <span class="game-dot" data-dot="1"></span>
-                        <span class="game-dot" data-dot="2"></span>
                     </div>
                 </div>
             </div>
@@ -183,6 +134,8 @@
                     </div>
 
                     <div class="album-grid" id="albumGrid"></div>
+
+                    <div class="gallery-wip-text fly-cluster fly-hidden-bottom" data-i18n="gallery_wip">khu vực này đang được thiết kế lại...</div>
 
                     <div class="gallery-note-box fly-cluster fly-hidden-bottom">
                         <div class="gallery-note-text" data-i18n-html="gallery_note">Vì hiện tại tớ chưa có gì nhiều ( thực ra là không biết đống ảnh còn lại ở đâu &lt;(&quot;) ) nên chỉ có vài thứ như này, tớ sẽ update thêm sau hihi</div>
@@ -294,8 +247,8 @@
             </div>
 
             <div class="settings-overlay" id="settingsOverlay">
-<div class="settings-close" onclick="closeSettings()">✕</div>
 <div class="settings-panel" id="settingsPanel">
+<div class="settings-close" onclick="closeSettings()">✕</div>
 <div class="settings-lang-switch" id="settingsLangSwitch">
 <div class="settings-lang-btn active" data-lang="vi" onclick="switchSettingsLang('vi', this)">VIE</div>
 <div class="settings-lang-btn" data-lang="en" onclick="switchSettingsLang('en', this)">ENG</div>
@@ -461,152 +414,15 @@
 </div>
 </div>
 <div class="settings-tab-panel" data-settings-tab="4">
-<div class="settings-title">Cài đặt Game</div>
-<div class="settings-sub">Dòng giới thiệu và danh sách game hiển thị ở từng khu. Ảnh icon kéo thả trực tiếp để tải lên R2.</div>
-
-<div class="settings-box">
-<div class="settings-box-title"><i class="fa-solid fa-font"></i> Dòng giới thiệu chung (trên cùng)</div>
-<div class="field-row">
-<textarea class="field-textarea lang-field lang-active" data-lang="vi" id="textGameHint_vi" rows="2"></textarea>
-<textarea class="field-textarea lang-field" data-lang="en" id="textGameHint_en" placeholder="English game intro..." rows="2"></textarea>
-<textarea class="field-textarea lang-field" data-lang="jp" id="textGameHint_jp" placeholder="日本語のゲーム紹介..." rows="2"></textarea>
-</div>
-</div>
-
-<div class="game-settings-tabs" id="gameSettingsTabs">
-<div class="game-settings-tab-btn active" data-game-settings-col="0" onclick="switchGameSettingsCol(0, this)">Chơi nhiều nhất</div>
-<div class="game-settings-tab-btn" data-game-settings-col="1" onclick="switchGameSettingsCol(1, this)">Game khác</div>
-<div class="game-settings-tab-btn" data-game-settings-col="2" onclick="switchGameSettingsCol(2, this)">Visual Novel</div>
-</div>
-
-<div class="game-settings-col-panel active" data-game-col-panel="0">
-<div class="settings-box">
-<div class="settings-box-title"><i class="fa-solid fa-font"></i> Giới thiệu khu "Đang chơi"</div>
-<div class="field-row">
-<textarea class="field-textarea lang-field lang-active" data-lang="vi" id="textGameDescLeft_vi" rows="2"></textarea>
-<textarea class="field-textarea lang-field" data-lang="en" id="textGameDescLeft_en" rows="2"></textarea>
-<textarea class="field-textarea lang-field" data-lang="jp" id="textGameDescLeft_jp" rows="2"></textarea>
-</div>
-</div>
-<div class="settings-box">
-<div class="settings-box-title">Danh sách game chơi nhiều nhất</div>
-<button class="btn-secondary" onclick="toggleGameForm(0)"><i class="fa-solid fa-plus"></i> Thêm game</button>
-<div id="gameForm0" class="game-form game-form-card" style="display:none; margin-top: 14px;">
-<div class="dropzone game-icon-dropzone game-icon-dropzone-square" id="gameIconDrop0" data-game-col="0">
-<div class="game-icon-preview" id="gameIconPreview0"></div>
-<i class="fa-solid fa-cloud-arrow-up"></i>
-<div class="dz-text">Kéo thả icon game vào đây, hoặc bấm để chọn ảnh</div>
-</div>
-<div class="dz-filename" id="gameIconFileName0" style="display:none;"></div>
-<input accept="image/*" id="gameIconInput0" style="display:none;" type="file"/>
-<div class="field-row"><div class="field-label">Tên game</div><input class="field-input" id="gameNameInput0" placeholder="Tên game" type="text" value=""/></div>
-<div class="field-row"><div class="field-label">Tên nhân vật / Username</div><input class="field-input" id="gameUsernameInput0" placeholder="Tên nhân vật" type="text" value=""/></div>
-<div class="field-row"><div class="field-label">UID</div><input class="field-input" id="gameUidInput0" placeholder="UID" type="text" value=""/></div>
-<button class="btn-primary" id="saveGameBtn0" onclick="saveGameItem(0)"><i class="fa-solid fa-check"></i> Lưu game</button>
-<button class="btn-secondary" id="cancelGameBtn0" onclick="cancelEditGameItem(0)" style="display:none; margin-left: 8px;"><i class="fa-solid fa-xmark"></i> Hủy</button>
-</div>
-<div class="album-list" id="gameList0"><div class="empty-hint">Chưa có game nào được thêm</div></div>
-</div>
-</div>
-
-<div class="game-settings-col-panel" data-game-col-panel="1">
-<div class="settings-box">
-<div class="settings-box-title"><i class="fa-solid fa-font"></i> Giới thiệu khu "Game khác"</div>
-<div class="field-row">
-<textarea class="field-textarea lang-field lang-active" data-lang="vi" id="textGameDescCenter_vi" rows="2"></textarea>
-<textarea class="field-textarea lang-field" data-lang="en" id="textGameDescCenter_en" rows="2"></textarea>
-<textarea class="field-textarea lang-field" data-lang="jp" id="textGameDescCenter_jp" rows="2"></textarea>
-</div>
-</div>
-<div class="settings-box">
-<div class="settings-box-title">Danh sách game khác</div>
-<button class="btn-secondary" onclick="toggleGameForm(1)"><i class="fa-solid fa-plus"></i> Thêm game</button>
-<div id="gameForm1" class="game-form" style="display:none; margin-top: 14px;">
-<div class="field-row game-upload-row game-upload-row-stacked">
-<div class="game-upload-col-left">
-<div class="dropzone game-icon-dropzone game-icon-dropzone-square" id="gameIconDrop1" data-game-col="1">
-<div class="game-icon-preview" id="gameIconPreview1"></div>
-<i class="fa-solid fa-cloud-arrow-up"></i>
-<div class="dz-text">Icon vuông</div>
-</div>
-<div class="dz-filename" id="gameIconFileName1" style="display:none;"></div>
-<input accept="image/*" id="gameIconInput1" style="display:none;" type="file"/>
-<div class="dropzone game-cover-dropzone" id="gameCoverDrop1" data-game-col="1">
-<div class="game-cover-preview" id="gameCoverPreview1"></div>
-<i class="fa-solid fa-image"></i>
-<div class="dz-text">Ảnh bìa</div>
-</div>
-<div class="dz-filename" id="gameCoverFileName1" style="display:none;"></div>
-<input accept="image/*" id="gameCoverInput1" style="display:none;" type="file"/>
-</div>
-<div class="game-upload-col-right">
-<div class="field-row"><div class="field-label">Tên game</div><input class="field-input" id="gameNameInput1" placeholder="Tên game" type="text" value=""/></div>
-<div class="field-row"><div class="field-label">Mô tả game</div><textarea class="field-textarea" id="gameDescInput1" placeholder="Giới thiệu ngắn về game..." rows="4"></textarea></div>
-<div class="field-row"><div class="field-label">Link ngoài (không bắt buộc)</div><input class="field-input" id="gameLinkInput1" placeholder="https://..." type="text" value=""/></div>
-</div>
-</div>
-<button class="btn-primary" id="saveGameBtn1" onclick="saveGameItem(1)"><i class="fa-solid fa-check"></i> Lưu game</button>
-<button class="btn-secondary" id="cancelGameBtn1" onclick="cancelEditGameItem(1)" style="display:none; margin-left: 8px;"><i class="fa-solid fa-xmark"></i> Hủy</button>
-</div>
-<div class="album-list" id="gameList1"><div class="empty-hint">Chưa có game nào được thêm</div></div>
-</div>
-</div>
-
-<div class="game-settings-col-panel" data-game-col-panel="2">
-<div class="settings-box">
-<div class="settings-box-title"><i class="fa-solid fa-font"></i> Giới thiệu khu "Visual Novel"</div>
-<div class="field-row">
-<textarea class="field-textarea lang-field lang-active" data-lang="vi" id="textGameDescRight_vi" rows="2"></textarea>
-<textarea class="field-textarea lang-field" data-lang="en" id="textGameDescRight_en" rows="2"></textarea>
-<textarea class="field-textarea lang-field" data-lang="jp" id="textGameDescRight_jp" rows="2"></textarea>
-</div>
-</div>
-<div class="settings-box">
-<div class="settings-box-title">Danh sách Visual Novel</div>
-<button class="btn-secondary" onclick="toggleGameForm(2)"><i class="fa-solid fa-plus"></i> Thêm VN</button>
-<div id="gameForm2" class="game-form" style="display:none; margin-top: 14px;">
-<div class="field-row game-upload-row game-upload-row-stacked">
-<div class="game-upload-col-left">
-<div class="dropzone game-icon-dropzone game-icon-dropzone-square" id="gameIconDrop2" data-game-col="2">
-<div class="game-icon-preview" id="gameIconPreview2"></div>
-<i class="fa-solid fa-cloud-arrow-up"></i>
-<div class="dz-text">Icon vuông</div>
-</div>
-<div class="dz-filename" id="gameIconFileName2" style="display:none;"></div>
-<input accept="image/*" id="gameIconInput2" style="display:none;" type="file"/>
-<div class="dropzone game-cover-dropzone" id="gameCoverDrop2" data-game-col="2">
-<div class="game-cover-preview" id="gameCoverPreview2"></div>
-<i class="fa-solid fa-image"></i>
-<div class="dz-text">Ảnh bìa</div>
-</div>
-<div class="dz-filename" id="gameCoverFileName2" style="display:none;"></div>
-<input accept="image/*" id="gameCoverInput2" style="display:none;" type="file"/>
-</div>
-<div class="game-upload-col-right">
-<div class="field-row"><div class="field-label">Tên Visual Novel</div><input class="field-input" id="gameNameInput2" placeholder="Tên Visual Novel" type="text" value=""/></div>
-<div class="field-row"><div class="field-label">Mô tả Visual Novel</div><textarea class="field-textarea" id="gameDescInput2" placeholder="Giới thiệu ngắn về visual novel..." rows="4"></textarea></div>
-<div class="field-row"><div class="field-label">Link ngoài (không bắt buộc)</div><input class="field-input" id="gameLinkInput2" placeholder="https://..." type="text" value=""/></div>
-</div>
-</div>
-<button class="btn-primary" id="saveGameBtn2" onclick="saveGameItem(2)"><i class="fa-solid fa-check"></i> Lưu VN</button>
-<button class="btn-secondary" id="cancelGameBtn2" onclick="cancelEditGameItem(2)" style="display:none; margin-left: 8px;"><i class="fa-solid fa-xmark"></i> Hủy</button>
-</div>
-<div class="album-list" id="gameList2"><div class="empty-hint">Chưa có game nào được thêm</div></div>
-</div>
-</div>
-
-</div>
-
-<div class="settings-tab-panel" data-settings-tab="5">
 <div class="settings-title">Khác</div>
 <div class="settings-sub">Chưa có nội dung cho mục này.</div>
 <div class="settings-more-note">Trang "Khác" trên web chưa được dựng nên chưa có gì để chỉnh ở đây cả 🙂</div>
 </div>
 
-
+<div class="save-bar" style="position: sticky; bottom: -10px; background: rgba(255,255,255,0.85); padding: 12px; border-radius: 12px; backdrop-filter: blur(10px); border: var(--pink-border); margin-top: 20px; z-index: 10;">
+    <button class="btn-primary" style="width: 100%; font-size: 15px; padding: 12px;" onclick="saveSettings()"><i class="fa-solid fa-check"></i> LƯU TẤT CẢ THAY ĐỔI</button>
 </div>
-<div class="save-bar" id="settingsSaveBar">
-    <button class="btn-primary" onclick="saveSettings()"><i class="fa-solid fa-check"></i> LƯU</button>
+
 </div>
 </div>
 
@@ -626,8 +442,7 @@
                     <div class="nav-item" onclick="handleNavClick(this, 1)" title="Viết" data-i18n-title="nav_gallery">✒</div>
                     <div class="nav-item" onclick="handleNavClick(this, 2)" title="Nhạc" data-i18n-title="nav_music">♫</div>
                     <div class="nav-item" onclick="handleNavClick(this, 3)" title="Phim" data-i18n-title="nav_film">🎞</div>
-                    <div class="nav-item" onclick="handleNavClick(this, 4)" title="Game" data-i18n-title="nav_game"><i class="fa-solid fa-gamepad"></i></div>
-                    <div class="nav-item" onclick="handleNavClick(this, 5)" title="Khác" data-i18n-title="nav_more">⋯</div>
+                    <div class="nav-item" onclick="handleNavClick(this, 4)" title="Khác" data-i18n-title="nav_more">⋯</div>
                 </div>
             </div>
 
@@ -643,23 +458,6 @@
         <img id="lightboxImage" class="lightbox-img" src="" alt="">
     </div>
 
-    <div class="game-modal-overlay" id="gameModalOverlay" onclick="handleGameModalOverlayClick(event)">
-        <div class="game-modal-card" id="gameModalCard">
-            <div class="game-modal-close" onclick="closeGameModal()">✕</div>
-            <div class="game-modal-top">
-                <div class="game-modal-cover" id="gameModalCover"></div>
-                <div class="game-modal-right">
-                    <div class="game-modal-name-row">
-                        <div class="game-modal-name" id="gameModalName"></div>
-                        <i class="fa-brands fa-steam game-modal-steam-icon" id="gameModalSteamIcon" style="display:none;"></i>
-                    </div>
-                    <div class="game-modal-divider"></div>
-                    <div class="game-modal-desc" id="gameModalDesc"></div>
-                    <a class="btn-primary game-modal-link" id="gameModalLink" href="#" target="_blank" rel="noopener noreferrer" style="display:none;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Mở link</a>
-                </div>
-            </div>
-        </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
