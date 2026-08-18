@@ -66,6 +66,163 @@ const I18N_CACHE = {};
             `).join('');
         }
 
+        function gameImageUrl(iconKey) {
+            if (!iconKey) return '';
+            if (iconKey.startsWith('http')) return iconKey;
+            return `${API_BASE_URL}/api/game-image/${iconKey}`;
+        }
+
+        function renderPublicGame(items = []) {
+            const byCol = { 0: [], 1: [], 2: [] };
+            items.forEach(item => { if (byCol[item.column] !== undefined) byCol[item.column].push(item); });
+
+            const playList = document.getElementById('gamePlayList');
+            if (playList) {
+                if (!byCol[0].length) {
+                    playList.innerHTML = `<div class="empty-hint" data-i18n="game_empty_playing">Chưa có game nào được thêm</div>`;
+                } else {
+                    playList.innerHTML = byCol[0].map(item => `
+                        <div class="game-play-card">
+                            <div class="game-play-icon" style="${item.icon_key ? `background-image:url('${escapeHtmlLocal(gameImageUrl(item.icon_key))}');` : ''}"></div>
+                            <div class="game-play-info">
+                                <div class="game-play-name-pill">${escapeHtmlLocal(item.name)}</div>
+                                <div class="game-play-username">${escapeHtmlLocal(item.username || '')}</div>
+                                <div class="game-play-uid-row">
+                                    <span class="game-play-uid-text">UID: ${escapeHtmlLocal(item.uid || '—')}</span>
+                                    ${item.uid ? `<i class="fa-solid fa-copy game-copy-icon" title="Copy UID" onclick="copyGameUID(this)"></i>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            const renderCatalog = (containerId, list, emptyKey) => {
+                const el = document.getElementById(containerId);
+                if (!el) return;
+                if (!list.length) {
+                    el.innerHTML = `<div class="empty-hint" data-i18n="${emptyKey}">Chưa có game nào được thêm</div>`;
+                    return;
+                }
+                el.innerHTML = list.map(item => `
+                    <div class="game-catalog-card">
+                        <div class="game-catalog-icon" style="${item.icon_key ? `background-image:url('${escapeHtmlLocal(gameImageUrl(item.icon_key))}');` : ''}"></div>
+                        <div class="game-catalog-name">${escapeHtmlLocal(item.name)}</div>
+                        <div class="game-readmore-pill" onclick="openGameModal('${escapeHtmlLocal(item.id)}')">Đọc thêm</div>
+                    </div>
+                `).join('');
+            };
+
+            renderCatalog('gameOtherGrid', byCol[1], 'game_empty_other');
+            renderCatalog('gameVnGrid', byCol[2], 'game_empty_vn');
+        }
+
+        function openGameModal(itemId) {
+            const item = (publicBackendData?.gameItems || []).find(g => g.id === itemId);
+            if (!item) return;
+
+            const cover = document.getElementById('gameModalCover');
+            cover.style.backgroundImage = item.cover_key ? `url('${gameImageUrl(item.cover_key)}')` : (item.icon_key ? `url('${gameImageUrl(item.icon_key)}')` : '');
+
+            document.getElementById('gameModalName').textContent = item.name || '';
+            document.getElementById('gameModalDesc').textContent = item.description || '';
+
+            const linkBtn = document.getElementById('gameModalLink');
+            if (item.link) {
+                linkBtn.href = item.link;
+                linkBtn.style.display = 'inline-flex';
+                if (item.link.includes('steampowered.com')) {
+                    linkBtn.innerHTML = '<i class="fa-brands fa-steam"></i> Mở trên Steam';
+                } else {
+                    linkBtn.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i> Mở link';
+                }
+            } else {
+                linkBtn.removeAttribute('href');
+                linkBtn.style.display = 'none';
+            }
+
+            const steamIcon = document.getElementById('gameModalSteamIcon');
+            if (steamIcon) {
+                if (item.link && item.link.includes('steampowered.com')) {
+                    steamIcon.style.display = 'inline-block';
+                    steamIcon.onclick = () => window.open(item.link, '_blank', 'noopener');
+                } else {
+                    steamIcon.style.display = 'none';
+                    steamIcon.onclick = null;
+                }
+            }
+
+            document.getElementById('gameModalOverlay').classList.add('open');
+        }
+        function closeGameModal() {
+            document.getElementById('gameModalOverlay').classList.remove('open');
+        }
+        function handleGameModalOverlayClick(event) {
+            if (event.target.id === 'gameModalOverlay') closeGameModal();
+        }
+
+        function copyGameUID(iconEl) {
+            const row = iconEl.closest('.game-play-uid-row');
+            const uidTextEl = row ? row.querySelector('.game-play-uid-text') : null;
+            if (!uidTextEl) return;
+            const rawText = uidTextEl.textContent.replace(/^UID:\s*/i, '').trim();
+
+            const doCopy = async () => {
+                try {
+                    await navigator.clipboard.writeText(rawText);
+                } catch (e) {
+                    const tempInput = document.createElement('textarea');
+                    tempInput.value = rawText;
+                    tempInput.style.position = 'fixed';
+                    tempInput.style.opacity = '0';
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                }
+                showToast('Đã copy UID!');
+            };
+            doCopy();
+        }
+
+        /* ---- Mobile swipe carousel for game columns ---- */
+        function initGameSwipeCarousel() {
+            const wrap = document.getElementById('gameColumns');
+            const dots = document.querySelectorAll('#gameDots .game-dot');
+            const swipeHint = document.getElementById('gameSwipeHint');
+            if (!wrap || !dots.length) return;
+
+            const setActiveDot = index => {
+                dots.forEach((d, i) => d.classList.toggle('active', i === index));
+            };
+
+            let scrollTimer = null;
+            wrap.addEventListener('scroll', () => {
+                if (window.innerWidth > 768) return;
+                if (swipeHint && !swipeHint.classList.contains('faded')) {
+                    swipeHint.classList.add('faded');
+                    swipeHint.style.transition = 'opacity 0.4s ease';
+                    swipeHint.style.opacity = '0';
+                    try { localStorage.setItem('gameSwipeHintSeen', '1'); } catch (e) {}
+                }
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(() => {
+                    const index = Math.round(wrap.scrollLeft / wrap.clientWidth);
+                    setActiveDot(Math.max(0, Math.min(2, index)));
+                }, 80);
+            }, { passive: true });
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    wrap.scrollTo({ left: wrap.clientWidth * i, behavior: 'smooth' });
+                });
+            });
+
+            let seen = false;
+            try { seen = !!localStorage.getItem('gameSwipeHintSeen'); } catch (e) {}
+            if (seen && swipeHint) { swipeHint.style.opacity = '0'; swipeHint.classList.add('faded'); }
+        }
+
         function openLightbox(url) {
             document.getElementById('lightboxImage').src = url;
             document.getElementById('lightboxOverlay').classList.add('open');
@@ -224,7 +381,7 @@ async function setLanguage(langCode) {
         }
 
         function activateNav(element, index) {
-            const tabs = ['section-home', 'section-gallery', 'section-music', 'section-film', 'section-more'];
+            const tabs = ['section-home', 'section-gallery', 'section-music', 'section-film', 'section-game', 'section-more'];
             const targetTabId = tabs[index];
             if (!targetTabId || !document.getElementById(targetTabId)) return;
             if (currentTabId === targetTabId) return;
@@ -235,6 +392,13 @@ async function setLanguage(langCode) {
 
             switchTab(currentTabId, targetTabId);
             currentTabId = targetTabId;
+
+            const hashName = targetTabId.replace('section-', '');
+            if (history.replaceState) {
+                history.replaceState(null, '', '#' + hashName);
+            } else {
+                window.location.hash = hashName;
+            }
         }
 
         const FLY_CLIP_SELECTOR = '.phim-scroll-wrap, .phim-scroll-inner';
@@ -1171,6 +1335,12 @@ function renderLyrics() {
             setTextById('filmHintText', data.content?.filmHint);
             setTextById('musicHintText', data.content?.musicHint);
 
+            setTextById('gameHintText', data.content?.gameHint);
+            setTextById('gameDescLeft', data.content?.gameDescLeft);
+            setTextById('gameDescCenter', data.content?.gameDescCenter);
+            setTextById('gameDescRight', data.content?.gameDescRight);
+            renderPublicGame(data.gameItems || []);
+
             applySocialData(data.social);
             renderPublicAlbums(data.albums || []);
 
@@ -1197,7 +1367,7 @@ function renderLyrics() {
         let activeSettingsTab = 0;
 
         function getCurrentSiteTabIndex() {
-            const tabs = ['section-home', 'section-gallery', 'section-music', 'section-film', 'section-more'];
+            const tabs = ['section-home', 'section-gallery', 'section-music', 'section-film', 'section-game', 'section-more'];
             const index = tabs.indexOf(currentTabId);
             return index < 0 ? 0 : index;
         }
@@ -1274,7 +1444,11 @@ function renderLyrics() {
                 homeWelcome: 'textWelcome',
                 galleryHint: 'textGalleryHint',
                 musicHint: 'textMusicHint',
-                filmHint: 'textFilmHint'
+                filmHint: 'textFilmHint',
+                gameHint: 'textGameHint',
+                gameDescLeft: 'textGameDescLeft',
+                gameDescCenter: 'textGameDescCenter',
+                gameDescRight: 'textGameDescRight'
             };
 
             for (const lang of ['vie', 'eng', 'jp']) {
@@ -1297,6 +1471,11 @@ function renderLyrics() {
 
             settingsTracks = adminBackendData.tracks || [];
             renderSettingsTrackList(settingsTracks);
+
+            settingsGameItems = adminBackendData.gameItems || [];
+            renderSettingsGameList(0);
+            renderSettingsGameList(1);
+            renderSettingsGameList(2);
         }
 
         let settingsTracks = [];
@@ -1349,7 +1528,11 @@ function renderLyrics() {
                         homeWelcome: get('textWelcome_vi'),
                         galleryHint: get('textGalleryHint_vi'),
                         musicHint: get('textMusicHint_vi'),
-                        filmHint: get('textFilmHint_vi')
+                        filmHint: get('textFilmHint_vi'),
+                        gameHint: get('textGameHint_vi'),
+                        gameDescLeft: get('textGameDescLeft_vi'),
+                        gameDescCenter: get('textGameDescCenter_vi'),
+                        gameDescRight: get('textGameDescRight_vi')
                     },
                     eng: {
                         homeIntro: get('textIntro_en'),
@@ -1357,7 +1540,11 @@ function renderLyrics() {
                         homeWelcome: get('textWelcome_en'),
                         galleryHint: get('textGalleryHint_en'),
                         musicHint: get('textMusicHint_en'),
-                        filmHint: get('textFilmHint_en')
+                        filmHint: get('textFilmHint_en'),
+                        gameHint: get('textGameHint_en'),
+                        gameDescLeft: get('textGameDescLeft_en'),
+                        gameDescCenter: get('textGameDescCenter_en'),
+                        gameDescRight: get('textGameDescRight_en')
                     },
                     jp: {
                         homeIntro: get('textIntro_jp'),
@@ -1365,7 +1552,11 @@ function renderLyrics() {
                         homeWelcome: get('textWelcome_jp'),
                         galleryHint: get('textGalleryHint_jp'),
                         musicHint: get('textMusicHint_jp'),
-                        filmHint: get('textFilmHint_jp')
+                        filmHint: get('textFilmHint_jp'),
+                        gameHint: get('textGameHint_jp'),
+                        gameDescLeft: get('textGameDescLeft_jp'),
+                        gameDescCenter: get('textGameDescCenter_jp'),
+                        gameDescRight: get('textGameDescRight_jp')
                     }
                 },
                 social: {
@@ -1629,6 +1820,305 @@ function renderLyrics() {
             await loadPublicBootstrap(globalLang);
         }
 
+        /* ================= GAME SETTINGS (admin) ================= */
+        let settingsGameItems = [];
+        let editingGameItemId = { 0: null, 1: null, 2: null };
+        let pendingGameIconKey = { 0: null, 1: null, 2: null };
+        let pendingGameCoverKey = { 1: null, 2: null };
+
+        function switchGameSettingsCol(colIndex, btnEl) {
+            document.querySelectorAll('.game-settings-tab-btn').forEach(b => b.classList.remove('active'));
+            btnEl.classList.add('active');
+            document.querySelectorAll('.game-settings-col-panel').forEach(p => p.classList.remove('active'));
+            document.querySelector(`.game-settings-col-panel[data-game-col-panel="${colIndex}"]`).classList.add('active');
+        }
+
+        function toggleGameForm(col) {
+            const form = document.getElementById(`gameForm${col}`);
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+            if (form.style.display === 'none') cancelEditGameItem(col);
+        }
+
+        function setGameIconPreview(col, url) {
+            const preview = document.getElementById(`gameIconPreview${col}`);
+            if (!preview) return;
+            if (url) { preview.style.backgroundImage = `url('${url}')`; preview.classList.add('show'); }
+            else { preview.style.backgroundImage = ''; preview.classList.remove('show'); }
+        }
+
+        function setGameCoverPreview(col, url) {
+            const preview = document.getElementById(`gameCoverPreview${col}`);
+            if (!preview) return;
+            if (url) { preview.style.backgroundImage = `url('${url}')`; preview.classList.add('show'); }
+            else { preview.style.backgroundImage = ''; preview.classList.remove('show'); }
+        }
+
+        function setGameIconFileLabel(col, text) {
+            const el = document.getElementById(`gameIconFileName${col}`);
+            if (!el) return;
+            if (text) { el.textContent = text; el.style.display = 'block'; }
+            else { el.textContent = ''; el.style.display = 'none'; }
+        }
+
+        function setGameCoverFileLabel(col, text) {
+            const el = document.getElementById(`gameCoverFileName${col}`);
+            if (!el) return;
+            if (text) { el.textContent = text; el.style.display = 'block'; }
+            else { el.textContent = ''; el.style.display = 'none'; }
+        }
+
+        const WEBP_MAX_DIMENSION = 1600;
+        const WEBP_QUALITY = 0.85;
+
+        function convertImageToWebp(file, maxDimension = WEBP_MAX_DIMENSION, quality = WEBP_QUALITY) {
+            return new Promise((resolve) => {
+                // GIF động thì giữ nguyên, chuyển sang webp sẽ mất hiệu ứng động.
+                if (!file || !file.type || !file.type.startsWith('image/') || file.type === 'image/gif') {
+                    resolve(file);
+                    return;
+                }
+
+                const objectUrl = URL.createObjectURL(file);
+                const img = new Image();
+
+                img.onload = () => {
+                    try {
+                        let { width, height } = img;
+                        if (width > maxDimension || height > maxDimension) {
+                            const scale = Math.min(maxDimension / width, maxDimension / height);
+                            width = Math.round(width * scale);
+                            height = Math.round(height * scale);
+                        }
+
+                        const canvas = document.createElement('canvas');
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        canvas.toBlob((blob) => {
+                            URL.revokeObjectURL(objectUrl);
+                            if (!blob) { resolve(file); return; }
+
+                            const baseName = (file.name || 'image').replace(/\.[^.]+$/, '');
+                            const webpFile = new File([blob], `${baseName}.webp`, { type: 'image/webp' });
+                            resolve(webpFile);
+                        }, 'image/webp', quality);
+                    } catch (e) {
+                        URL.revokeObjectURL(objectUrl);
+                        resolve(file);
+                    }
+                };
+
+                img.onerror = () => {
+                    URL.revokeObjectURL(objectUrl);
+                    resolve(file);
+                };
+
+                img.src = objectUrl;
+            });
+        }
+
+        async function uploadGameIcon(col, file) {
+            if (!file || !file.type.startsWith('image/')) { alert('Chỉ nhận file ảnh.'); return; }
+            setGameIconFileLabel(col, `⏳ Đang xử lý ${file.name}...`);
+            try {
+                const webpFile = await convertImageToWebp(file);
+                setGameIconFileLabel(col, `⏳ Đang tải lên ${webpFile.name}...`);
+
+                const formData = new FormData();
+                formData.append('file', webpFile);
+                if (pendingGameIconKey[col]) formData.append('old_key', pendingGameIconKey[col]);
+                const response = await fetch(`${API_BASE_URL}/api/admin/game/upload`, {
+                    method: 'POST', credentials: 'include', body: formData
+                });
+                const payload = await response.json().catch(() => ({}));
+                if (!response.ok || payload.ok === false) throw new Error(payload.error || `HTTP_${response.status}`);
+
+                pendingGameIconKey[col] = payload.key;
+                setGameIconPreview(col, gameImageUrl(payload.key));
+                setGameIconFileLabel(col, `✓ ${webpFile.name}`);
+            } catch (e) {
+                setGameIconFileLabel(col, '');
+                alert('Tải icon thất bại: ' + e.message);
+            }
+        }
+
+        async function uploadGameCover(col, file) {
+            if (!file || !file.type.startsWith('image/')) { alert('Chỉ nhận file ảnh.'); return; }
+            setGameCoverFileLabel(col, `⏳ Đang xử lý ${file.name}...`);
+            try {
+                const webpFile = await convertImageToWebp(file);
+                setGameCoverFileLabel(col, `⏳ Đang tải lên ${webpFile.name}...`);
+
+                const formData = new FormData();
+                formData.append('file', webpFile);
+                if (pendingGameCoverKey[col]) formData.append('old_key', pendingGameCoverKey[col]);
+                const response = await fetch(`${API_BASE_URL}/api/admin/game/upload`, {
+                    method: 'POST', credentials: 'include', body: formData
+                });
+                const payload = await response.json().catch(() => ({}));
+                if (!response.ok || payload.ok === false) throw new Error(payload.error || `HTTP_${response.status}`);
+
+                pendingGameCoverKey[col] = payload.key;
+                setGameCoverPreview(col, gameImageUrl(payload.key));
+                setGameCoverFileLabel(col, `✓ ${webpFile.name}`);
+            } catch (e) {
+                setGameCoverFileLabel(col, '');
+                alert('Tải ảnh bìa thất bại: ' + e.message);
+            }
+        }
+
+        function initGameDropzone(col) {
+            const dropzone = document.getElementById(`gameIconDrop${col}`);
+            const fileInput = document.getElementById(`gameIconInput${col}`);
+            if (dropzone && fileInput) {
+                dropzone.addEventListener('click', () => fileInput.click());
+                fileInput.addEventListener('change', () => {
+                    if (fileInput.files[0]) uploadGameIcon(col, fileInput.files[0]);
+                });
+                ['dragover', 'dragleave', 'drop'].forEach(type => {
+                    dropzone.addEventListener(type, event => { event.preventDefault(); event.stopPropagation(); });
+                });
+                dropzone.addEventListener('dragover', () => dropzone.classList.add('drag-over'));
+                dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag-over'));
+                dropzone.addEventListener('drop', event => {
+                    dropzone.classList.remove('drag-over');
+                    const file = event.dataTransfer.files[0];
+                    if (file) uploadGameIcon(col, file);
+                });
+            }
+
+            const coverDropzone = document.getElementById(`gameCoverDrop${col}`);
+            const coverInput = document.getElementById(`gameCoverInput${col}`);
+            if (coverDropzone && coverInput) {
+                coverDropzone.addEventListener('click', () => coverInput.click());
+                coverInput.addEventListener('change', () => {
+                    if (coverInput.files[0]) uploadGameCover(col, coverInput.files[0]);
+                });
+                ['dragover', 'dragleave', 'drop'].forEach(type => {
+                    coverDropzone.addEventListener(type, event => { event.preventDefault(); event.stopPropagation(); });
+                });
+                coverDropzone.addEventListener('dragover', () => coverDropzone.classList.add('drag-over'));
+                coverDropzone.addEventListener('dragleave', () => coverDropzone.classList.remove('drag-over'));
+                coverDropzone.addEventListener('drop', event => {
+                    coverDropzone.classList.remove('drag-over');
+                    const file = event.dataTransfer.files[0];
+                    if (file) uploadGameCover(col, file);
+                });
+            }
+        }
+
+        function editGameItem(itemId) {
+            const item = settingsGameItems.find(g => g.id === itemId);
+            if (!item) return;
+            const col = item.column;
+            editingGameItemId[col] = item.id;
+            pendingGameIconKey[col] = item.icon_key || null;
+            if (col !== 0) pendingGameCoverKey[col] = item.cover_key || null;
+
+            document.getElementById(`gameNameInput${col}`).value = item.name || '';
+            if (col === 0) {
+                document.getElementById('gameUsernameInput0').value = item.username || '';
+                document.getElementById('gameUidInput0').value = item.uid || '';
+            } else {
+                document.getElementById(`gameLinkInput${col}`).value = item.link || '';
+                document.getElementById(`gameDescInput${col}`).value = item.description || '';
+                setGameCoverPreview(col, item.cover_key ? gameImageUrl(item.cover_key) : '');
+                setGameCoverFileLabel(col, item.cover_key ? '✓ Đang giữ ảnh bìa cũ (kéo thả ảnh mới nếu muốn đổi)' : '');
+            }
+            setGameIconPreview(col, item.icon_key ? gameImageUrl(item.icon_key) : '');
+            setGameIconFileLabel(col, item.icon_key ? '✓ Đang giữ icon cũ (kéo thả ảnh mới nếu muốn đổi)' : '');
+
+            document.getElementById(`gameForm${col}`).style.display = 'block';
+            document.getElementById(`saveGameBtn${col}`).innerHTML = '<i class="fa-solid fa-check"></i> Cập nhật game';
+            document.getElementById(`cancelGameBtn${col}`).style.display = 'inline-flex';
+        }
+
+        function cancelEditGameItem(col) {
+            editingGameItemId[col] = null;
+            pendingGameIconKey[col] = null;
+            document.getElementById(`gameNameInput${col}`).value = '';
+            if (col === 0) {
+                document.getElementById('gameUsernameInput0').value = '';
+                document.getElementById('gameUidInput0').value = '';
+            } else {
+                pendingGameCoverKey[col] = null;
+                document.getElementById(`gameLinkInput${col}`).value = '';
+                document.getElementById(`gameDescInput${col}`).value = '';
+                setGameCoverPreview(col, '');
+                setGameCoverFileLabel(col, '');
+            }
+            setGameIconPreview(col, '');
+            setGameIconFileLabel(col, '');
+            document.getElementById(`saveGameBtn${col}`).innerHTML = '<i class="fa-solid fa-check"></i> Lưu game';
+            document.getElementById(`cancelGameBtn${col}`).style.display = 'none';
+        }
+
+        async function saveGameItem(col) {
+            const name = document.getElementById(`gameNameInput${col}`).value.trim();
+            if (!name) { alert('Cần nhập tên game.'); return; }
+
+            const payload = {
+                column: col,
+                name,
+                icon_key: pendingGameIconKey[col] || ''
+            };
+            if (col === 0) {
+                payload.username = document.getElementById('gameUsernameInput0').value.trim();
+                payload.uid = document.getElementById('gameUidInput0').value.trim();
+            } else {
+                payload.link = document.getElementById(`gameLinkInput${col}`).value.trim();
+                payload.description = document.getElementById(`gameDescInput${col}`).value.trim();
+                payload.cover_key = pendingGameCoverKey[col] || '';
+            }
+            if (editingGameItemId[col]) payload.id = editingGameItemId[col];
+
+            const btn = document.getElementById(`saveGameBtn${col}`);
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...';
+            btn.disabled = true;
+
+            try {
+                await apiFetch('/api/admin/game/items', { method: 'POST', body: JSON.stringify(payload) });
+                cancelEditGameItem(col);
+                document.getElementById(`gameForm${col}`).style.display = 'none';
+                await loadAdminBootstrap();
+                await loadPublicBootstrap(globalLang);
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        async function removeGameItem(itemId) {
+            if (!confirm('Cậu có chắc muốn xóa game này?')) return;
+            await apiFetch(`/api/admin/game/items/${encodeURIComponent(itemId)}`, { method: 'DELETE' });
+            await loadAdminBootstrap();
+            await loadPublicBootstrap(globalLang);
+        }
+
+        function renderSettingsGameList(col) {
+            const list = document.getElementById(`gameList${col}`);
+            if (!list) return;
+            const items = settingsGameItems.filter(g => g.column === col || g.column === String(col));
+            if (!items.length) {
+                list.innerHTML = '<div class="empty-hint">Chưa có game nào được thêm</div>';
+                return;
+            }
+            list.innerHTML = items.map(item => `
+                <div class="album-list-item">
+                    <div class="game-list-item-icon" style="${item.icon_key ? `background-image:url('${escapeHtmlLocal(gameImageUrl(item.icon_key))}'); background-size:cover; background-position:center;` : ''}"></div>
+                    <div class="album-info">
+                        <b>${escapeHtmlLocal(item.name)}</b>
+                        <span>${col == 0 ? escapeHtmlLocal(`${item.username ? item.username + ' · ' : ''}${item.uid ? `UID: ${item.uid}` : 'Chưa có UID'}`) : escapeHtmlLocal(item.description ? item.description.slice(0, 60) : 'Chưa có mô tả')}</span>
+                    </div>
+                    <div class="album-actions">
+                        <div class="icon-btn" title="Sửa" onclick="editGameItem('${item.id}')"><i class="fa-solid fa-pen"></i></div>
+                        <div class="icon-btn" title="Xoá" onclick="removeGameItem('${item.id}')"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
         function initSettingsUi() {
             const passwordInput = document.getElementById('settingsPasswordInput');
             passwordInput.addEventListener('keydown', event => {
@@ -1660,6 +2150,8 @@ function renderLyrics() {
                     }
                 });
             }
+
+            [0, 1, 2].forEach(initGameDropzone);
         }
 
         function syncAvatarVisibility() {
@@ -1682,6 +2174,7 @@ function renderLyrics() {
             initSettingsUi();
             syncAvatarVisibility();
             showMobileDrawerHintOnLoad();
+            initGameSwipeCarousel();
 
             await initLanguage();
 
