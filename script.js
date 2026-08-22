@@ -51,7 +51,7 @@ const I18N_CACHE = {};
                                 const gridSrc = image.url && image.url.startsWith('http') ? image.url : API_BASE_URL + (image.url || '');
                                 const lightboxSrc = image.fullUrl ? (API_BASE_URL + image.fullUrl) : gridSrc;
                                 return `
-                                <div class="photo-slot" onclick="openLightbox('${escapeHtmlLocal(lightboxSrc)}')">
+                                <div class="photo-slot" onclick="openLightbox('${escapeHtmlLocal(lightboxSrc)}', '${escapeHtmlLocal(gridSrc)}')">
                                     <img
                                         src="${escapeHtmlLocal(gridSrc)}"
                                         alt="${escapeHtmlLocal(image.name || album.name)}"
@@ -128,27 +128,25 @@ const I18N_CACHE = {};
             document.getElementById('gameModalDesc').textContent = item.description || '';
 
             const linkBtn = document.getElementById('gameModalLink');
-            if (item.link) {
+            const steamCorner = document.getElementById('gameModalSteamCorner');
+            const isSteam = !!(item.link && item.link.includes('steampowered.com'));
+
+            if (item.link && !isSteam) {
                 linkBtn.href = item.link;
                 linkBtn.style.display = 'inline-flex';
-                if (item.link.includes('steampowered.com')) {
-                    linkBtn.innerHTML = '<i class="fa-brands fa-steam"></i> Mở trên Steam';
-                } else {
-                    linkBtn.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i> Mở link';
-                }
+                linkBtn.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i> Mở link';
             } else {
                 linkBtn.removeAttribute('href');
                 linkBtn.style.display = 'none';
             }
 
-            const steamIcon = document.getElementById('gameModalSteamIcon');
-            if (steamIcon) {
-                if (item.link && item.link.includes('steampowered.com')) {
-                    steamIcon.style.display = 'inline-block';
-                    steamIcon.onclick = () => window.open(item.link, '_blank', 'noopener');
+            if (steamCorner) {
+                if (isSteam) {
+                    steamCorner.style.display = 'flex';
+                    steamCorner.onclick = () => window.open(item.link, '_blank', 'noopener');
                 } else {
-                    steamIcon.style.display = 'none';
-                    steamIcon.onclick = null;
+                    steamCorner.style.display = 'none';
+                    steamCorner.onclick = null;
                 }
             }
 
@@ -223,13 +221,37 @@ const I18N_CACHE = {};
             if (seen && swipeHint) { swipeHint.style.opacity = '0'; swipeHint.classList.add('faded'); }
         }
 
-        function openLightbox(url) {
-            document.getElementById('lightboxImage').src = url;
+        function openLightbox(url, thumbUrl) {
+            const img = document.getElementById('lightboxImage');
+
+            if (thumbUrl && thumbUrl !== url) {
+                img.src = thumbUrl;
+                img.classList.add('is-loading');
+
+                const preload = new Image();
+                preload.onload = () => {
+                    if (img.dataset.lbFull !== url) return;
+                    img.src = url;
+                    img.classList.remove('is-loading');
+                };
+                preload.onerror = () => { img.classList.remove('is-loading'); };
+                preload.src = url;
+            } else {
+                img.src = url;
+                img.classList.remove('is-loading');
+            }
+
+            img.dataset.lbFull = url;
             document.getElementById('lightboxOverlay').classList.add('open');
         }
         function closeLightbox() {
             document.getElementById('lightboxOverlay').classList.remove('open');
-            setTimeout(() => { document.getElementById('lightboxImage').src = ''; }, 300);
+            setTimeout(() => {
+                const img = document.getElementById('lightboxImage');
+                img.src = '';
+                img.classList.remove('is-loading');
+                delete img.dataset.lbFull;
+            }, 300);
         }
 
         function openSocialLink(key) {
@@ -270,6 +292,33 @@ const I18N_CACHE = {};
                 qr.style.display = social.lineQrUrl ? 'block' : 'none';
             }
         }
+
+        function initLineQrPopup() {
+            const trigger = document.getElementById('lineQrTrigger');
+            const popup = document.getElementById('lineQrPopupFixed');
+            if (!trigger || !popup) return;
+
+            const positionPopup = () => {
+                const rect = trigger.getBoundingClientRect();
+                popup.style.left = `${rect.left + rect.width / 2}px`;
+                popup.style.bottom = `${window.innerHeight - rect.top + 12}px`;
+            };
+
+            const showPopup = () => { positionPopup(); popup.classList.add('show'); };
+            const hidePopup = () => { popup.classList.remove('show'); };
+
+            trigger.addEventListener('mouseenter', showPopup);
+            trigger.addEventListener('mouseleave', hidePopup);
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (popup.classList.contains('show')) hidePopup();
+                else showPopup();
+            });
+            document.addEventListener('click', hidePopup);
+            window.addEventListener('resize', () => { if (popup.classList.contains('show')) positionPopup(); });
+            window.addEventListener('scroll', () => { if (popup.classList.contains('show')) positionPopup(); }, true);
+        }
+        initLineQrPopup();
 
         const LANGUAGE_FILES = { vie: 'Vie.json', eng: 'Eng.json', jp: 'Jp.json' };
 
@@ -1494,7 +1543,7 @@ function renderLyrics() {
 
                 return `
                     <div class="track-mini-card">
-                        <div class="track-mini-thumb" ${coverImgUrl ? `style="background-image:url('${escapeHtmlLocal(coverImgUrl)}'); background-size: auto 135%;"` : ''}>
+                        <div class="track-mini-thumb" ${coverImgUrl ? `style="background-image:url('${escapeHtmlLocal(coverImgUrl)}'); background-size: auto 135%; background-position: center;"` : ''}>
                             <i class="fa-solid fa-music" style="${coverImgUrl ? 'display:none;' : ''}"></i>
                         </div>
                         <div class="track-mini-info">
@@ -1872,7 +1921,6 @@ function renderLyrics() {
 
         function convertImageToWebp(file, maxDimension = WEBP_MAX_DIMENSION, quality = WEBP_QUALITY) {
             return new Promise((resolve) => {
-                // GIF động thì giữ nguyên, chuyển sang webp sẽ mất hiệu ứng động.
                 if (!file || !file.type || !file.type.startsWith('image/') || file.type === 'image/gif') {
                     resolve(file);
                     return;
@@ -2025,10 +2073,8 @@ function renderLyrics() {
                 document.getElementById(`gameLinkInput${col}`).value = item.link || '';
                 document.getElementById(`gameDescInput${col}`).value = item.description || '';
                 setGameCoverPreview(col, item.cover_key ? gameImageUrl(item.cover_key) : '');
-                setGameCoverFileLabel(col, item.cover_key ? '✓ Đang giữ ảnh bìa cũ (kéo thả ảnh mới nếu muốn đổi)' : '');
             }
             setGameIconPreview(col, item.icon_key ? gameImageUrl(item.icon_key) : '');
-            setGameIconFileLabel(col, item.icon_key ? '✓ Đang giữ icon cũ (kéo thả ảnh mới nếu muốn đổi)' : '');
 
             document.getElementById(`gameForm${col}`).style.display = 'block';
             document.getElementById(`saveGameBtn${col}`).innerHTML = '<i class="fa-solid fa-check"></i> Cập nhật game';

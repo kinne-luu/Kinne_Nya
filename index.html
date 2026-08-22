@@ -111,17 +111,16 @@
                         <div id="ytMusicPlayer" style="width:0;height:0;overflow:hidden;position:absolute;"></div>
 
                         <div class="social-card fly-cluster fly-hidden-bottom">
-                            <div class="line-qr-wrap" style="flex-shrink:0;">
-                                <div class="social-btn" title="Line"><i class="fa-brands fa-line"></i></div>
-                                <div class="line-qr-popup" aria-hidden="true"><img id="lineQrImage" src="" alt="Line QR" style="display:none;"></div>
-                            </div>
-                            <div style="display: flex; gap: 14px; flex: 1; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;">
+                            <div style="display: flex; gap: 14px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;">
                                 <div class="social-btn" id="socialFacebook" title="Facebook" onclick="openSocialLink('facebook')"><i class="fa-brands fa-facebook-f"></i></div>
                                 <div class="social-btn" id="socialTwitter" title="X (Twitter)" onclick="openSocialLink('twitter')"><i class="fa-brands fa-x-twitter"></i></div>
                                 <div class="social-btn" id="socialInstagram" title="Instagram" onclick="openSocialLink('instagram')"><i class="fa-brands fa-instagram"></i></div>
                                 <div class="social-btn" id="socialDiscord" title="Discord" onclick="openSocialLink('discord')"><i class="fa-brands fa-discord"></i></div>
                             </div>
-                            <div class="social-btn settings-btn" id="settingsToggleBtn" title="Cài đặt" data-i18n-title="home_settings" onclick="requestSettingsAccess()" style="flex-shrink: 0;"><i class="fa-solid fa-gear"></i></div>
+                            <div class="line-qr-wrap" id="lineQrTrigger" style="flex-shrink:0;">
+                                <div class="social-btn" title="Line"><i class="fa-brands fa-line"></i></div>
+                            </div>
+                            <div class="social-btn settings-btn" id="settingsToggleBtn" title="Cài đặt" data-i18n-title="home_settings" onclick="requestSettingsAccess()" style="flex-shrink: 0; margin-left: auto;"><i class="fa-solid fa-gear"></i></div>
                         </div>
                     </div>
                 </div>
@@ -159,8 +158,8 @@
                         </div>
 
                         <div class="game-col game-col-right" data-game-col="2">
-                            <div class="game-desc-box fly-cluster fly-reverse fly-hidden-bottom" id="gameDescRight"></div>
-                            <div class="game-catalog-box fly-cluster fly-reverse fly-hidden-bottom">
+                            <div class="game-desc-box fly-cluster fly-hidden-bottom" id="gameDescRight"></div>
+                            <div class="game-catalog-box fly-cluster fly-hidden-bottom">
                                 <div class="game-catalog-grid" id="gameVnGrid">
                                     <div class="empty-hint" id="gameVnEmptyHint" data-i18n="game_empty_vn">Chưa có game nào được thêm</div>
                                 </div>
@@ -651,15 +650,19 @@
                 <div class="game-modal-right">
                     <div class="game-modal-name-row">
                         <div class="game-modal-name" id="gameModalName"></div>
-                        <i class="fa-brands fa-steam game-modal-steam-icon" id="gameModalSteamIcon" style="display:none;"></i>
                     </div>
                     <div class="game-modal-divider"></div>
                     <div class="game-modal-desc" id="gameModalDesc"></div>
                     <a class="btn-primary game-modal-link" id="gameModalLink" href="#" target="_blank" rel="noopener noreferrer" style="display:none;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Mở link</a>
                 </div>
             </div>
+            <div class="game-modal-steam-corner" id="gameModalSteamCorner" style="display:none;" title="Mở trên Steam">
+                <i class="fa-brands fa-steam"></i>
+            </div>
         </div>
     </div>
+    <div class="line-qr-popup-fixed" id="lineQrPopupFixed" aria-hidden="true"><img id="lineQrImage" src="" alt="Line QR" style="display:none;"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
