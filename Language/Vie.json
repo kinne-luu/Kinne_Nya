@@ -52,5 +52,11 @@
   "game_empty_playing": "Chưa có game nào được thêm",
   "game_empty_other": "Chưa có game nào được thêm",
   "game_empty_vn": "Chưa có visual novel nào được thêm",
-  "game_swipe_hint": "Vuốt để xem thêm"
+  "game_swipe_hint": "Vuốt để xem thêm",
+  "game_readmore": "Đọc thêm",
+  "toast_copy_uid": "Đã copy UID!",
+  "toast_copy_discord": "Đã copy Username Discord!",
+  "music_unknown_title": "Không rõ tên bài",
+  "music_now_playing_fallback": "(Đang phát nhạc...)",
+  "music_no_lyric": "Bài hát này chưa có lyric"
 }

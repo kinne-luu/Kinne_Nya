@@ -52,5 +52,11 @@
   "game_empty_playing": "まだゲームが追加されていません",
   "game_empty_other": "まだゲームが追加されていません",
   "game_empty_vn": "まだビジュアルノベルが追加されていません",
-  "game_swipe_hint": "スワイプしてもっと見る"
+  "game_swipe_hint": "スワイプしてもっと見る",
+  "game_readmore": "もっと見る",
+  "toast_copy_uid": "UIDをコピーしました!",
+  "toast_copy_discord": "Discordのユーザー名をコピーしました!",
+  "music_unknown_title": "曲名不明",
+  "music_now_playing_fallback": "(再生中...)",
+  "music_no_lyric": "この曲にはまだ歌詞がありません"
 }

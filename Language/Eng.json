@@ -52,5 +52,11 @@
   "game_empty_playing": "No game added yet",
   "game_empty_other": "No game added yet",
   "game_empty_vn": "No visual novel added yet",
-  "game_swipe_hint": "Swipe to see more"
+  "game_swipe_hint": "Swipe to see more",
+  "game_readmore": "Read more",
+  "toast_copy_uid": "UID copied!",
+  "toast_copy_discord": "Discord username copied!",
+  "music_unknown_title": "Unknown title",
+  "music_now_playing_fallback": "(Now playing...)",
+  "music_no_lyric": "This song has no lyrics yet"
 }

@@ -79,7 +79,7 @@ const I18N_CACHE = {};
             const playList = document.getElementById('gamePlayList');
             if (playList) {
                 if (!byCol[0].length) {
-                    playList.innerHTML = `<div class="empty-hint" data-i18n="game_empty_playing">Chưa có game nào được thêm</div>`;
+                    playList.innerHTML = `<div class="empty-hint" data-i18n="game_empty_playing">${t('game_empty_playing')}</div>`;
                 } else {
                     playList.innerHTML = byCol[0].map(item => `
                         <div class="game-play-card">
@@ -101,14 +101,14 @@ const I18N_CACHE = {};
                 const el = document.getElementById(containerId);
                 if (!el) return;
                 if (!list.length) {
-                    el.innerHTML = `<div class="empty-hint" data-i18n="${emptyKey}">Chưa có game nào được thêm</div>`;
+                    el.innerHTML = `<div class="empty-hint" data-i18n="${emptyKey}">${t(emptyKey)}</div>`;
                     return;
                 }
                 el.innerHTML = list.map(item => `
                     <div class="game-catalog-card">
                         <div class="game-catalog-icon" style="${item.icon_key ? `background-image:url('${escapeHtmlLocal(gameImageUrl(item.icon_key))}');` : ''}"></div>
                         <div class="game-catalog-name">${escapeHtmlLocal(item.name)}</div>
-                        <div class="game-readmore-pill" onclick="openGameModal('${escapeHtmlLocal(item.id)}')">Đọc thêm</div>
+                        <div class="game-readmore-pill" data-i18n="game_readmore" onclick="openGameModal('${escapeHtmlLocal(item.id)}')">${t('game_readmore')}</div>
                     </div>
                 `).join('');
             };
@@ -125,7 +125,8 @@ const I18N_CACHE = {};
             cover.style.backgroundImage = item.cover_key ? `url('${gameImageUrl(item.cover_key)}')` : (item.icon_key ? `url('${gameImageUrl(item.icon_key)}')` : '');
 
             document.getElementById('gameModalName').textContent = item.name || '';
-            document.getElementById('gameModalDesc').textContent = item.description || '';
+            const descByLang = globalLang === 'eng' ? item.description_en : (globalLang === 'jp' ? item.description_jp : item.description_vi);
+            document.getElementById('gameModalDesc').textContent = descByLang || item.description_vi || item.description || '';
 
             const linkBtn = document.getElementById('gameModalLink');
             const steamCorner = document.getElementById('gameModalSteamCorner');
@@ -178,7 +179,7 @@ const I18N_CACHE = {};
                     document.execCommand('copy');
                     document.body.removeChild(tempInput);
                 }
-                showToast('Đã copy UID!');
+                showToast(t('toast_copy_uid'));
             };
             doCopy();
         }
@@ -280,7 +281,7 @@ const I18N_CACHE = {};
                     document.execCommand('copy');
                     document.body.removeChild(tempInput);
                 }
-                showToast('Đã copy Username Discord!');
+                showToast(t('toast_copy_discord'));
             };
             doCopy();
         }
@@ -364,7 +365,7 @@ async function setLanguage(langCode) {
 
             if (musicCurrentTrackIndex !== -1 && demoTracks[musicCurrentTrackIndex]) {
                 const track = demoTracks[musicCurrentTrackIndex];
-                let rawLrc = track.lrc || genericLrc;
+                let rawLrc = track.lrc || genericLrc();
                 try {
                     if (rawLrc.trim().startsWith('{')) {
                         const parsedLrc = JSON.parse(rawLrc);
@@ -642,7 +643,7 @@ async function setLanguage(langCode) {
             ytReady = true;
             const data = event.target.getVideoData();
 
-            document.getElementById('musicTitle').textContent = publicBackendData?.homeMusic?.name || data.title || 'Không rõ tên bài';
+            document.getElementById('musicTitle').textContent = publicBackendData?.homeMusic?.name || data.title || t('music_unknown_title');
             document.getElementById('musicArtist').textContent = publicBackendData?.homeMusic?.artist || data.author || 'YouTube';
             const thumb = document.getElementById('musicThumb');
             thumb.classList.add('has-image');
@@ -834,8 +835,10 @@ async function setLanguage(langCode) {
 
         let demoTracks = [];
 
-        const genericLrc = `[00:00.50] (Đang phát nhạc...)
-[00:05.00] Bài hát này chưa có lyric`;
+        function genericLrc() {
+            return `[00:00.50] (${t('music_now_playing_fallback').replace(/^\(|\)$/g, '')})
+[00:05.00] ${t('music_no_lyric')}`;
+        }
 
         let musicCurrentTrackIndex = -1;
         let musicLyricsData = [];
@@ -1079,7 +1082,7 @@ function renderLyrics() {
 
                 thumb.style.opacity = 1; thumb.style.transform = 'scale(1)';
                 title.style.opacity = 1; artist.style.opacity = 1;
-                let rawLrc = track.lrc || genericLrc;
+                let rawLrc = track.lrc || genericLrc();
                 try {
                     if (rawLrc.trim().startsWith('{')) {
                         const parsedLrc = JSON.parse(rawLrc);
@@ -2071,7 +2074,9 @@ function renderLyrics() {
                 document.getElementById('gameUidInput0').value = item.uid || '';
             } else {
                 document.getElementById(`gameLinkInput${col}`).value = item.link || '';
-                document.getElementById(`gameDescInput${col}`).value = item.description || '';
+                document.getElementById(`gameDescInput${col}_vi`).value = item.description_vi || item.description || '';
+                document.getElementById(`gameDescInput${col}_en`).value = item.description_en || '';
+                document.getElementById(`gameDescInput${col}_jp`).value = item.description_jp || '';
                 setGameCoverPreview(col, item.cover_key ? gameImageUrl(item.cover_key) : '');
             }
             setGameIconPreview(col, item.icon_key ? gameImageUrl(item.icon_key) : '');
@@ -2091,7 +2096,9 @@ function renderLyrics() {
             } else {
                 pendingGameCoverKey[col] = null;
                 document.getElementById(`gameLinkInput${col}`).value = '';
-                document.getElementById(`gameDescInput${col}`).value = '';
+                document.getElementById(`gameDescInput${col}_vi`).value = '';
+                document.getElementById(`gameDescInput${col}_en`).value = '';
+                document.getElementById(`gameDescInput${col}_jp`).value = '';
                 setGameCoverPreview(col, '');
                 setGameCoverFileLabel(col, '');
             }
@@ -2115,7 +2122,9 @@ function renderLyrics() {
                 payload.uid = document.getElementById('gameUidInput0').value.trim();
             } else {
                 payload.link = document.getElementById(`gameLinkInput${col}`).value.trim();
-                payload.description = document.getElementById(`gameDescInput${col}`).value.trim();
+                payload.description_vi = document.getElementById(`gameDescInput${col}_vi`).value.trim();
+                payload.description_en = document.getElementById(`gameDescInput${col}_en`).value.trim();
+                payload.description_jp = document.getElementById(`gameDescInput${col}_jp`).value.trim();
                 payload.cover_key = pendingGameCoverKey[col] || '';
             }
             if (editingGameItemId[col]) payload.id = editingGameItemId[col];
@@ -2155,7 +2164,7 @@ function renderLyrics() {
                     <div class="game-list-item-icon" style="${item.icon_key ? `background-image:url('${escapeHtmlLocal(gameImageUrl(item.icon_key))}'); background-size:cover; background-position:center;` : ''}"></div>
                     <div class="album-info">
                         <b>${escapeHtmlLocal(item.name)}</b>
-                        <span>${col == 0 ? escapeHtmlLocal(`${item.username ? item.username + ' · ' : ''}${item.uid ? `UID: ${item.uid}` : 'Chưa có UID'}`) : escapeHtmlLocal(item.description ? item.description.slice(0, 60) : 'Chưa có mô tả')}</span>
+                        <span>${col == 0 ? escapeHtmlLocal(`${item.username ? item.username + ' · ' : ''}${item.uid ? `UID: ${item.uid}` : 'Chưa có UID'}`) : escapeHtmlLocal((item.description_vi || item.description) ? (item.description_vi || item.description).slice(0, 60) : 'Chưa có mô tả')}</span>
                     </div>
                     <div class="album-actions">
                         <div class="icon-btn" title="Sửa" onclick="editGameItem('${item.id}')"><i class="fa-solid fa-pen"></i></div>
