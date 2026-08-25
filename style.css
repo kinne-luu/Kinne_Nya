@@ -120,8 +120,8 @@ html, body {
 @keyframes statusRingPulse { 0% { transform: scale(1); opacity: 0.55; } 100% { transform: scale(2.6); opacity: 0; } }
 
 .gallery-content { position: absolute; top: var(--padding-card); left: var(--padding-card); right: var(--padding-card); bottom: var(--padding-card); display: flex; flex-direction: column; align-items: center; gap: 12px; box-sizing: border-box; }
-.gallery-hint-box { margin-top: 0px; max-width: 460px; background: rgba(255, 255, 255, 0.4); border: var(--pink-border); border-radius: var(--ios-radius-md); padding: 12px 24px; text-align: center; flex: none; }
-.gallery-hint-text { font-size: 14px; line-height: 1.6; color: rgba(0, 0, 0, 0.62); font-style: italic; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.gallery-hint-box { margin-top: 0px; width: 100%; max-width: 100%; background: rgba(255, 255, 255, 0.4); border: var(--pink-border); border-radius: var(--ios-radius-md); padding: 12px 24px; text-align: center; flex: none; box-sizing: border-box; }
+.gallery-hint-text { font-size: 14px; line-height: 1.6; color: rgba(0, 0, 0, 0.62); font-style: italic; white-space: normal; overflow-wrap: break-word; }
 .album-grid { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: minmax(200px, 1fr); gap: 35px; width: 100%; flex: 1; min-height: 0; overflow-y: auto; scrollbar-width: none; box-sizing: border-box; }
 .album-card { display: flex; flex-direction: column; gap: 10px; width: 100%; height: 100%; box-sizing: border-box; }
 .album-meta-row { display: flex; flex-direction: column; gap: 6px; width: 100%; box-sizing: border-box; }
