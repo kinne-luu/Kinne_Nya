@@ -1,0 +1,12 @@
+{
+  "title": "Test",
+  "updatedAt": "2026-08-26T07:56:40.724Z",
+  "chapters": [
+    {
+      "id": "chap_mt9rw6ojuwq9l",
+      "title": "Chương 1",
+      "order": 1,
+      "file": "chapters/chuong-1.json"
+    }
+  ]
+}
