@@ -2,7 +2,7 @@
   "id": "chap_mt9rw6ojuwq9l",
   "title": "Cuộc gặp gỡ (Test)",
   "order": 1,
-  "updatedAt": "2026-08-26T08:48:20.443Z",
+  "updatedAt": "2026-08-26T08:50:16.818Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -426,51 +426,35 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Cảm giác vui sướng\nlâng lâng khi nhận được lời khen,tôi bất giác mỉm cười.Thì ra đây là cảm giác\nđược ai đó khen ngợi sao?</span>"
+      "html": "<span>Cảm giác vui sướng\nlâng lâng khi nhận được lời khen,tôi bất giác mỉm cười.Thì ra đây là cảm giác\nđược ai đó khen ngợi sao?.&nbsp;</span>Lâu lắm rồi tôi mới\ncảm nhận được sự vui sướng này,càng cảm thấy thật may mắn khi mình đã chọn công\nviệc này để làm thêm."
     },
     {
       "type": "paragraph",
-      "html": "<span>Lâu lắm rồi tôi mới\ncảm nhận được sự vui sướng này,càng cảm thấy thật may mắn khi mình đã chọn công\nviệc này để làm thêm.</span>"
+      "html": "<span>Sau khi tặng cho\ncô gái mới quen một chút trà đào hảo hạng tự pha, chuông báo hết giờ nghỉ trưa\nvang lên.&nbsp;</span>Cảm giác tiếc nuối\ndần xuất hiện,biết rằng tiếp theo tôi lại phải quay về cái không gian ngột ngạt\nấy,tôi ước gì bản thân biến mất luôn để có thể tận hưởng tiếp khoảng thời gian\nnhẹ nhõm,thư thái này"
     },
     {
       "type": "paragraph",
-      "html": "<span>Sau khi tặng cho\ncô gái mới quen một chút trà đào hảo hạng tự pha, chuông báo hết giờ nghỉ trưa\nvang lên. </span>"
+      "html": "<span>Tôi bắt đầu thu dọn\nhộp bento, nhưng trong bụng tự dưng tò mò vô cùng.&nbsp;</span>Rốt cuộc thì cô\ngái này định trèo xuống kiểu gì?"
     },
     {
       "type": "paragraph",
-      "html": "<span>Cảm giác tiếc nuối\ndần xuất hiện,biết rằng tiếp theo tôi lại phải quay về cái không gian ngột ngạt\nấy,tôi ước gì bản thân biến mất luôn để có thể tận hưởng tiếp khoảng thời gian\nnhẹ nhõm,thư thái này</span>"
+      "html": "“Hết giờ nghỉ\ntrưa rồi đó, cậu không xuống là muộn giờ đấy”"
     },
     {
       "type": "paragraph",
-      "html": "<span>Tôi bắt đầu thu dọn\nhộp bento, nhưng trong bụng tự dưng tò mò vô cùng.</span>"
+      "html": "“Tớ tò mò cậu định\nxuống bằng cách nào”"
     },
     {
       "type": "paragraph",
-      "html": "<span>Rốt cuộc thì cô\ngái này định trèo xuống kiểu gì?</span>"
+      "html": "<span>“Tò mò là không tốt,\ntớ sẽ xuống sau khi cậu đi hẳn khỏi đây”</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>“Hết giờ nghỉ\ntrưa rồi đó, cậu không xuống là muộn giờ đấy” </span>"
+      "html": "<span>Đóng chốt giấu\nnghề luôn à. Mà cũng đúng, nơi này làm gì có học sinh nào được phép lên, giấu\ngiếm lối đi là đương nhiên.&nbsp;</span>Cơ mà tôi thì\nphơi bày cách đu thang ngay từ đầu rồi, giờ có muốn làm màu giấu giếm thì cũng\nmuộn.&nbsp;"
     },
     {
       "type": "paragraph",
-      "html": "<span>“Tớ tò mò cậu định\nxuống bằng cách nào”</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>“tò mò là không tốt,\ntớ sẽ xuống sau khi cậu đi hẳn khỏi đây”</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Đóng chốt giấu\nnghề luôn à. Mà cũng đúng, nơi này làm gì có học sinh nào được phép lên, giấu\ngiếm lối đi là đương nhiên. </span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Cơ mà tôi thì\nphơi bày cách đu thang ngay từ đầu rồi, giờ có muốn làm màu giấu giếm thì cũng\nmuộn. </span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Thôi thì đành\nxách mông về vậy.</span>"
+      "html": "Thôi thì đành\nxách mông về vậy."
     },
     {
       "type": "paragraph",
