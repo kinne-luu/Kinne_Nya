@@ -1,12 +1,18 @@
 {
   "title": "Test",
-  "updatedAt": "2026-08-26T08:50:19.524Z",
+  "updatedAt": "2026-08-27T03:41:45.211Z",
   "chapters": [
     {
       "id": "chap_mt9rw6ojuwq9l",
-      "title": "Cuộc gặp gỡ (Test)",
+      "title": "Chương 1",
       "order": 1,
       "file": "chapters/chuong-1.json"
+    },
+    {
+      "id": "chap_mtaz77ktq75w3",
+      "title": "Chương 2",
+      "order": 2,
+      "file": "chapters/chuong-2.json"
     }
   ]
 }
