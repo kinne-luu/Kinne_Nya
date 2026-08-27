@@ -626,7 +626,7 @@
                     <div class="nav-item" onclick="handleNavClick(this, 2)" title="Nhạc" data-i18n-title="nav_music">♫</div>
                     <div class="nav-item" onclick="handleNavClick(this, 3)" title="Phim" data-i18n-title="nav_film">🎞</div>
                     <div class="nav-item" onclick="handleNavClick(this, 4)" title="Game" data-i18n-title="nav_game"><i class="fa-solid fa-gamepad"></i></div>
-                    <div class="nav-item" onclick="handleNavClick(this, 5)" title="Khác" data-i18n-title="nav_more">⋯</div>
+                    <div class="nav-item" id="navMoreItem" onclick="handleNavClick(this, 5)" title="Khác" data-i18n-title="nav_more">⋯</div>
                 </div>
             </div>
 
@@ -662,6 +662,11 @@
         </div>
     </div>
     <div class="line-qr-popup-fixed" id="lineQrPopupFixed" aria-hidden="true"><img id="lineQrImage" src="" alt="Line QR" style="display:none;"></div>
+
+    <div class="reading-overlay" id="readingOverlay" aria-hidden="true">
+        <button class="reading-overlay-close" id="readingOverlayClose" title="Đóng" aria-label="Đóng">✕</button>
+        <iframe id="readingFrame" class="reading-overlay-frame" title="Đọc truyện" loading="lazy"></iframe>
+    </div>
 
     <script src="script.js"></script>
 </body>

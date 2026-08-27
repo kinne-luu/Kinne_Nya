@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Viết truyện — Kinne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Be+Vietnam+Pro:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+
+<div class="app mode-read" id="app">
+
+  <!-- backdrop cho mobile khi mở sidebar -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- Sidebar: danh sách chương (dùng chung cho đọc & viết) -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="brand"><i class="fa-solid fa-book-open"></i> <span id="brandTitle">Chưa đặt tên</span></div>
+      <button class="icon-btn only-edit" id="newChapterBtn" title="Thêm chương"><i class="fa-solid fa-plus"></i></button>
+    </div>
+
+    <div class="chapter-head">
+      <span>Danh sách chương</span>
+    </div>
+    <div class="chapter-list" id="chapterList"></div>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-divider"></div>
+      <button class="mode-toggle-btn" id="modeToggleBtn">
+        <span class="mode-toggle-icon"><i class="fa-solid fa-pen"></i></span>
+        <span class="mode-toggle-label">Chỉnh sửa truyện</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= GIAO DIỆN ĐỌC ================= -->
+  <main class="read-wrap" id="readWrap">
+    <div class="read-topbar">
+      <button class="icon-btn hamburger" id="hamburgerRead" title="Danh sách chương"><i class="fa-solid fa-bars"></i></button>
+      <div class="read-topbar-title">
+        <span class="read-story-title" id="readStoryTitle">Chưa đặt tên</span>
+        <span class="read-chapter-title" id="readChapterTitleTop"></span>
+      </div>
+    </div>
+
+    <div class="read-area" id="readArea">
+      <div class="read-empty" id="readEmpty"></div>
+      <article class="read-content" id="readContent" hidden>
+        <h1 class="read-content-title" id="readChapterTitle"></h1>
+        <div class="read-content-body" id="readChapterBody"></div>
+      </article>
+    </div>
+  </main>
+
+  <!-- ================= GIAO DIỆN CHỈNH SỬA ================= -->
+  <main class="editor-wrap" id="editorWrap">
+    <div class="editor-topbar">
+      <button class="icon-btn hamburger" id="hamburgerEdit" title="Danh sách chương"><i class="fa-solid fa-bars"></i></button>
+      <input type="text" id="storyTitleInput" class="story-title-input" placeholder="Tên truyện...">
+      <div class="topbar-right">
+        <span class="save-status" id="saveStatus">Chưa có thay đổi</span>
+        <button class="btn-outline" id="saveNowBtn"><i class="fa-solid fa-cloud-arrow-up"></i> <span class="btn-label">Lưu ngay</span></button>
+      </div>
+    </div>
+
+    <div class="toolbar" id="toolbar">
+      <button data-cmd="bold" title="Đậm (Ctrl+B)"><i class="fa-solid fa-bold"></i></button>
+      <button data-cmd="italic" title="Nghiêng (Ctrl+I)"><i class="fa-solid fa-italic"></i></button>
+      <button data-cmd="underline" title="Gạch chân (Ctrl+U)"><i class="fa-solid fa-underline"></i></button>
+      <span class="tb-sep"></span>
+      <button data-block="p" title="Đoạn văn"><i class="fa-solid fa-paragraph"></i></button>
+      <button data-block="h2" title="Tiêu đề"><i class="fa-solid fa-heading"></i></button>
+      <button data-block="blockquote" title="Trích dẫn / lời thoại"><i class="fa-solid fa-quote-left"></i></button>
+      <span class="tb-sep"></span>
+      <input type="text" id="chapterTitleInput" class="chapter-title-input" placeholder="Tên chương...">
+    </div>
+
+    <div class="editor-area" id="editorArea" contenteditable="true" spellcheck="false"></div>
+  </main>
+</div>
+
+<script src="script.js?v=6"></script>
+</body>
+</html>
