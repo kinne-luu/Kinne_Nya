@@ -6,9 +6,6 @@
 
 const API_BASE_URL = 'https://kinnebackend.luumanhkien08092006.workers.dev';
 const AUTOSAVE_INTERVAL_MS = 5 * 60 * 1000; // 5 phút
-const LOCAL_KEY = 'kinne_writer_local_v2';
-// Lưu tách file: mỗi chương 1 file riêng (chuong-1.json, chuong-2.json...)
-// + 1 file mục lục (manifest) chứa tên truyện và danh sách chương.
 const GITHUB_DIR = 'Reading/Data';
 const GITHUB_CHAPTERS_DIR = 'Reading/Data/chapters';
 const GITHUB_MANIFEST_PATH = 'Reading/Data/manifest.json';
@@ -44,21 +41,29 @@ function getChapter(id) {
   return chap;
 }
 
-function saveLocal() {
-  try {
-    localStorage.setItem(LOCAL_KEY, JSON.stringify(story));
-  } catch (e) {
-    console.error('Không lưu được vào localStorage:', e);
-  }
-}
+function saveLocal() {}
 
-function loadLocal() {
+async function loadStoryFromGithub() {
   try {
-    const raw = localStorage.getItem(LOCAL_KEY);
-    if (raw) story = JSON.parse(raw);
+    const payload = await apiFetch('/api/story/load', { method: 'GET' });
+    const remote = payload.data || { title: '', updatedAt: null, chapters: [] };
+    story = {
+      title: remote.title || '',
+      updatedAt: remote.updatedAt || null,
+      chapters: (remote.chapters || []).map(c => ({ id: c.id, title: c.title || '', blocks: c.blocks || [] }))
+    };
+    currentChapterId = story.chapters[0]?.id || null;
+    isDirty = false;
+    dirtyChapterIds.clear();
+    manifestDirty = false;
+
+    renderTitles();
+    renderChapterList();
+    if (mode === 'edit') renderEditor(); else renderReadView();
+    return true;
   } catch (e) {
-    console.error('Không đọc được localStorage, dùng truyện trống:', e);
-    story = { title: '', updatedAt: null, chapters: [] };
+    console.error('[Tải truyện] Không tải được từ GitHub:', e);
+    return false;
   }
 }
 
@@ -479,21 +484,28 @@ function startAutosave() {
 }
 
 /* ================== KHỞI ĐỘNG ================== */
-function boot() {
-  loadLocal();
-  currentChapterId = story.chapters[0]?.id || null;
+function showBootError() {
+  const empty = document.getElementById('readEmpty');
+  if (empty) {
+    empty.innerHTML = '<i class="fa-solid fa-cloud-arrow-up" style="opacity:.6"></i><p>Không tải được dữ liệu từ GitHub. Kiểm tra kết nối hoặc cấu hình Worker rồi tải lại trang.</p>';
+    empty.hidden = false;
+  }
+  const content = document.getElementById('readContent');
+  if (content) content.hidden = true;
+}
 
+async function boot() {
+  currentChapterId = null;
   renderTitles();
   renderChapterList();
-  try {
-    renderReadView(); // mặc định mở thẳng vào chế độ đọc, chương 1 + tên chương
-  } catch (e) {
-    console.error('[Khởi động] Lỗi khi hiển thị chương đọc:', e);
-    // vẫn cố hiển thị lại 1 lần nữa để không bị kẹt ở trạng thái rỗng mặc định
-    try { renderReadView(); } catch (e2) { /* bỏ cuộc, đã log ở trên */ }
+
+  const empty = document.getElementById('readEmpty');
+  if (empty) {
+    empty.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="opacity:.6"></i><p>Đang tải truyện...</p>';
+    empty.hidden = false;
   }
+
   initToolbar();
-  startAutosave();
 
   document.getElementById('newChapterBtn').addEventListener('click', createChapter);
 
@@ -547,6 +559,13 @@ function boot() {
       e.returnValue = '';
     }
   });
+
+  const ok = await loadStoryFromGithub();
+  if (!ok) {
+    showBootError();
+    return;
+  }
+  startAutosave();
 }
 
 document.addEventListener('DOMContentLoaded', boot);
