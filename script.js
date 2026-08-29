@@ -1425,6 +1425,13 @@ function renderLyrics() {
         }
 
         function handleNavClick(element, index) {
+            // Nút "⋯" (mục cuối, index 5): phần này chưa hoàn thiện, không cho
+            // chuyển section / không thu gọn drawer như các nút khác — chỉ báo toast,
+            // để tránh bấm lạc vào và cũng tránh va chạm với cơ chế bí mật mở reading mode.
+            if (element && element.id === 'navMoreItem') {
+                showToast('Phần này đang hoàn thiện');
+                return;
+            }
             collapseMobileDrawer();
             if (settingsMode) activateSettingsTab(element, index);
             else activateNav(element, index);
@@ -2362,11 +2369,13 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeReadingOverlay();
 });
 
+window.addEventListener('message', (e) => {
+    if (e.data && e.data.type === 'kinne-reading-close') closeReadingOverlay();
+});
+
 window.addEventListener('load', () => {
     const dotsBtn = document.getElementById('navMoreItem');
     if (dotsBtn) dotsBtn.addEventListener('click', handleSecretDotsClick);
 
-    const closeBtn = document.getElementById('readingOverlayClose');
-    if (closeBtn) closeBtn.addEventListener('click', () => closeReadingOverlay());
     if (window.location.hash === '#reading') openReadingOverlay();
 });

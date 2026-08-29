@@ -506,6 +506,18 @@ function boot() {
   document.getElementById('hamburgerEdit').addEventListener('click', toggleMobileSidebar);
   document.getElementById('sidebarBackdrop').addEventListener('click', closeMobileSidebar);
 
+  const closeBtn = document.getElementById('closeReadingBtn');
+  if (closeBtn) {
+    if (window.self !== window.top) {
+      closeBtn.classList.add('show');
+      closeBtn.addEventListener('click', () => {
+        window.parent.postMessage({ type: 'kinne-reading-close' }, '*');
+      });
+    } else {
+      closeBtn.remove();
+    }
+  }
+
   document.getElementById('saveNowBtn').addEventListener('click', () => {
     console.log('[Lưu truyện] Bấm nút Lưu ngay');
     saveNow({ silent: false });
