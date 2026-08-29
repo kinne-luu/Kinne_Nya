@@ -2,7 +2,7 @@
   "id": "chap_mtaz77ktq75w3",
   "title": "Chương 2",
   "order": 2,
-  "updatedAt": "2026-08-29T07:34:56.109Z",
+  "updatedAt": "2026-08-29T07:55:30.125Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -26,7 +26,7 @@
     },
     {
       "type": "paragraph",
-      "html": "Thằng não thịt"
+      "html": "<i>Thằng não thịt</i>"
     },
     {
       "type": "paragraph",
@@ -66,7 +66,15 @@
     },
     {
       "type": "paragraph",
-      "html": "Đám súc vật."
+      "html": "<i>Đám súc vật.</i>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<i>\"</i>Loại mày yếu đuối thế thì bảo vệ được ai chứ\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Làm bao cát cho bọn tao là diễm phúc rồi haha\""
     },
     {
       "type": "paragraph",
@@ -86,11 +94,11 @@
     },
     {
       "type": "paragraph",
-      "html": "Trên đường đi, tôi nghĩ về việc cải thiện thể lực của bản thân.Nếu cứ nằm im chịu trận thế này có khi hết cấp ba tôi cũng mãi chỉ là thằng hèn hạ chịu trận bắt nạt mất, chi bằng bỏ chút thời gian ra tập luyện, biết đâu một lúc nào đó tôi có thể bảo vệ được bản thân."
+      "html": "Trên đường đi, tôi nghĩ về việc cải thiện thể lực của bản thân. Đám bắt nạt kia nói cũng có phần đúng, nếu cứ nằm im chịu trận thế này có khi hết cấp ba tôi cũng mãi chỉ là thằng hèn hạ chịu trận bắt nạt mất, chi bằng bỏ chút thời gian ra tập luyện, biết đâu một lúc nào đó tôi có thể bảo vệ được bản thân."
     },
     {
       "type": "paragraph",
-      "html": "Hoặc ít nhất có thể bảo vệ được ai đó quan trọng với mình"
+      "html": "Hoặc ít nhất có thể bảo vệ được ai đó quan trọng với mình."
     },
     {
       "type": "paragraph",
@@ -114,7 +122,7 @@
     },
     {
       "type": "paragraph",
-      "html": "“Tớ chứ ai, trên này thoải mái mà, hay mình làm cậu thấy khó chịu hả?”"
+      "html": "“Tớ chứ ai, trên này thoải mái mà, hay tớ làm cậu thấy khó chịu hả?”"
     },
     {
       "type": "paragraph",
@@ -122,7 +130,7 @@
     },
     {
       "type": "paragraph",
-      "html": "Tôi không ngờ Maki sẽ lên đây tới lần thứ hai.”"
+      "html": "Tôi không ngờ Maki sẽ lên đây tới lần thứ hai."
     },
     {
       "type": "paragraph",
@@ -134,7 +142,11 @@
     },
     {
       "type": "paragraph",
-      "html": "&nbsp;“Chẳng phải tớ đã nói rồi còn gì, b-í m-ậ-t.”"
+      "html": "&nbsp;“Chẳng phải tớ đã nói rồi còn gì\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\" b-í&nbsp; m-ậ-t.”"
     },
     {
       "type": "paragraph",
@@ -518,10 +530,6 @@
     },
     {
       "type": "paragraph",
-      "html": "<br>"
-    },
-    {
-      "type": "paragraph",
       "html": "Nằm chảy thây ở giường, tưởng chừng như có thể hoà lẫn vào tấm nệm bất cứ lúc nào, tôi đắm chìm vào những dòng chữ trên từng trang truyện, đọc như thể nó sẽ tự mọc cánh bay đi nếu tôi rời mắt khỏi nó."
     },
     {
@@ -782,7 +790,7 @@
     },
     {
       "type": "paragraph",
-      "html": "Cái tính nhạy cảm này của tôi đúng là con dao hai lưỡi, mặt xấu thì đang hành hạ tôi lúc này đây, còn mặt tốt... biết đâu nó thực sự giúp ích được gì đó cho Maki thì <u>sao</u>."
+      "html": "Cái tính nhạy cảm này của tôi đúng là con dao hai lưỡi, mặt xấu thì đang hành hạ tôi lúc này đây, còn mặt tốt... biết đâu nó thực sự giúp ích được gì đó cho Maki thì sao."
     },
     {
       "type": "paragraph",
