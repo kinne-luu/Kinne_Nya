@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-08-31T09:01:23.767Z",
+  "updatedAt": "2026-08-31T09:05:04.451Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -78,7 +78,19 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Ngạc nhiên thật,\ncậu ấy vẫn quay lại đây</span>"
+      "html": "Vừa leo tới bậc cuối cùng của cái thang, tôi ngạc nhiên:"
+    },
+    {
+      "type": "paragraph",
+      "html": "Cậu ấy vẫn quay đây!"
+    },
+    {
+      "type": "paragraph",
+      "html": "Ủa mà, đáng lí ra tôi phải cảm thấy vui mừng và may mắn chứ nhỉ, nếu Maki không quay lại đây, tôi không biết phải đối diện với đống cảm xúc trong lòng ra sao nữa."
+    },
+    {
+      "type": "paragraph",
+      "html": "<br>"
     },
     {
       "type": "paragraph",
