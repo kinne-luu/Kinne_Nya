@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-08-31T08:50:04.447Z",
+  "updatedAt": "2026-08-31T08:55:04.445Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -54,15 +54,23 @@
     },
     {
       "type": "paragraph",
-      "html": "Tôi nên làm gì, à không, chính xác là tôi không biết nên cảm thấy ra sao, nếu vui sướng, mừng rỡ&nbsp;"
+      "html": "Tôi nên làm gì, à không, chính xác là tôi không biết nên cảm thấy ra sao, nếu vui sướng, mừng rỡ thì tôi cũng không khác gì đám kia là bao. Nhưng nếu tôi làm bất cứ hành động gì theo cảm tính mà không suy nghĩ, mọi thứ có thể sẽ tồi tệ hơn bao giờ hết."
     },
     {
       "type": "paragraph",
-      "html": "<span>Tiếng chuông báo\nhiệu giờ nghỉ trưa đã tới,nhưng lần này tôi quyết định mua thêm một cái bánh ở\ncăn tin trường.</span>"
+      "html": "Có khi tôi không nên can thiệp vào nhân quả của người khác. Điều đó là không tốt, nhưng tôi cần suy nghĩ chín chắn hơn để bảo vệ chính bản thân mình thay vì cứ làm theo cảm tính để rồi chính bản thân phải hứng chịu thay cho người khác mà không được lợi lộc gì."
     },
     {
       "type": "paragraph",
-      "html": "<span>Để làm gì ư, tôi\nmuốn có gì đó để có thể bắt chuyện với Maki, với cả muốn hỏi liệu hôm vừa rồi\ntôi có lỡ mồm làm gì khiến cậu ấy khó chịu hay không</span>"
+      "html": "<br>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Tiếng chuông báo\nhiệu giờ nghỉ trưa đã tới,như thường lệ, tôi bắt đầu dọn dẹp và lên trên sân thượng, nhưng lần này tôi quyết định mua thêm một cái bánh ở\ncăn tin trường.&nbsp;</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "Để làm gì ư, tôi\nmuốn có lí do gì đó để có thể bắt chuyện với Maki,thêm nữa,&nbsp; tôi muốn hỏi liệu hôm vừa rồi\ntôi có lỡ mồm làm gì khiến cậu ấy khó chịu hay không"
     },
     {
       "type": "paragraph",
