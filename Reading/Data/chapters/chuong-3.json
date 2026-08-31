@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-08-31T08:45:05.264Z",
+  "updatedAt": "2026-08-31T08:50:04.447Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -43,6 +43,18 @@
     {
       "type": "paragraph",
       "html": "<br>"
+    },
+    {
+      "type": "paragraph",
+      "html": "Sao hôm nay lạ vậy nhỉ."
+    },
+    {
+      "type": "paragraph",
+      "html": "Đám bắt nạt tôi tự dưng hôm nay khác lạ tới đáng sợ, chúng không còn tìm cớ gây sự nữa, mới vào lớp thì vẫn chỉ là mấy tên lính thường vây quanh thằng đầu sỏ khịa tôi vài câu nhạt nhẽo, sau đó chẳng có gì xảy ra nữa. Có lẽ nào cậu bạn tôi gặp hôm về nhà đã bị đám chúng nó để mắt tới và bắt đầu chuyển mục tiêu sao?."
+    },
+    {
+      "type": "paragraph",
+      "html": "Tôi nên làm gì, à không, chính xác là tôi không biết nên cảm thấy ra sao, nếu vui sướng, mừng rỡ&nbsp;"
     },
     {
       "type": "paragraph",
