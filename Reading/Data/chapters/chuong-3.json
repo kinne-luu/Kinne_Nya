@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-08-31T09:05:04.451Z",
+  "updatedAt": "2026-08-31T09:10:04.447Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -90,27 +90,15 @@
     },
     {
       "type": "paragraph",
-      "html": "<br>"
+      "html": "<span>Vừa leo tới bậc\ncuối cùng ,phủi bụi ống quần,tôi hỏi luôn:</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>Tôi phải cảm thấy\nmay mắn mới phải chứ nhỉ?</span>"
+      "html": "<span>Hôm nay Maki-san cũng bay lên sân thượng nhỉ?”</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>Maki đây rồi, cậu\nấy lên sớm thật, và như cũ, cậu ấy bay lên đây à???</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Vừa leo tới bậc\ncuối cùng ,phủi bụi ống quần,tôi hỏi luôn</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>“Quý cô hôm nay\ncũng bay lên sân thượng nhỉ”</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>“Xin chào\nBocchi-san, cậu hôm nay lên muộn hơn lần trước nhỉ”</span>"
+      "html": "<span>“Xin chào\nBocchi-san, cậu hôm nay lên muộn hơn lần trước nhỉ?”</span>"
     },
     {
       "type": "paragraph",
@@ -118,7 +106,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Tôi tệ thật.</span>"
+      "html": "<span>Tôi tệ thật, mới vậy mà đã si mê người khác rồi.</span>"
     },
     {
       "type": "paragraph",
@@ -126,7 +114,11 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>“Quý cô ăn gì\nchưa?”</span>"
+      "html": "<span>Nhân cơ hội, tôi mở lời hỏi luôn:</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>“Cậu đã ăn gì\nchưa?”</span>"
     },
     {
       "type": "paragraph",
@@ -134,11 +126,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Làm gì có ai chỉ\nđớp mỗi bữa sáng mà vẫn no tới tối được chứ, cô gái này xinh mà xạo.</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Đưa cho Maki chiếc\nbánh, cậu ấy mở to đôi mắt xanh ngọc với vẻ ngạc nhiên</span>"
+      "html": "<span>Làm gì có ai chỉ\nđớp mỗi bữa sáng mà tới trưa vẫn không đói được chứ.&nbsp;</span>Đưa cho Maki chiếc\nbánh, cậu ấy mở to đôi mắt xanh ngọc với vẻ ngạc nhiên"
     },
     {
       "type": "paragraph",
@@ -154,7 +142,11 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>“Thì ra là có ý đồ\ncả,mấy bạn con trai cũng nhiều ý đồ ,mưu mô không kém nhỉ?”</span>"
+      "html": "<span>Maki cười nhẹ</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>“Thì ra là có ý đồ\ncả, mấy bạn con trai cũng nhiều ý đồ ,mưu mô không kém nhỉ?”</span>"
     },
     {
       "type": "paragraph",
