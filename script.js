@@ -183,8 +183,6 @@ const I18N_CACHE = {};
             };
             doCopy();
         }
-
-        /* ---- Mobile swipe carousel for game columns ---- */
         function initGameSwipeCarousel() {
             const wrap = document.getElementById('gameColumns');
             const dots = document.querySelectorAll('#gameDots .game-dot');
@@ -1425,9 +1423,6 @@ function renderLyrics() {
         }
 
         function handleNavClick(element, index) {
-            // Nút "⋯" (mục cuối, index 5): phần này chưa hoàn thiện, không cho
-            // chuyển section / không thu gọn drawer như các nút khác — chỉ báo toast,
-            // để tránh bấm lạc vào và cũng tránh va chạm với cơ chế bí mật mở reading mode.
             if (element && element.id === 'navMoreItem') {
                 showToast('Phần này đang hoàn thiện');
                 return;
@@ -1879,7 +1874,6 @@ function renderLyrics() {
             await loadPublicBootstrap(globalLang);
         }
 
-        /* ================= GAME SETTINGS (admin) ================= */
         let settingsGameItems = [];
         let editingGameItemId = { 0: null, 1: null, 2: null };
         let pendingGameIconKey = { 0: null, 1: null, 2: null };
@@ -2300,10 +2294,6 @@ function renderLyrics() {
                  }
             });
         });
-/* ================== BÍ MẬT: MỞ GIAO DIỆN ĐỌC TRUYỆN ================== */
-// Bấm liên tiếp 5 lần vào nút "⋯" (nav-item cuối) trong vòng 0.8s/lần để mở
-// toàn bộ giao diện đọc truyện (Reading/index.html) trồi lên từ dưới, hash "#reading".
-// Reading/ nằm cùng cấp thư mục với index.html, script.js, style.css của trang chính.
 
 const SECRET_DOTS_TARGET_CLICKS = 5;
 const SECRET_DOTS_MAX_GAP_MS = 800;
