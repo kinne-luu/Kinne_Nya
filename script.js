@@ -61,9 +61,77 @@ const I18N_CACHE = {};
                                 </div>
                             `;}).join('')}
                         </div>
+                        <div class="album-scroll-hint"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
                 </div>
             `).join('');
+
+            initGallerySwipeCarousel();
+            initAlbumScrollHints();
+        }
+
+        function initAlbumScrollHints() {
+            document.querySelectorAll('.album-card').forEach(card => {
+                const scrollEl = card.querySelector('.album-image-scroll');
+                const hint = card.querySelector('.album-scroll-hint');
+                if (!scrollEl || !hint) return;
+
+                const updateHint = () => {
+                    const canScroll = scrollEl.scrollHeight - scrollEl.clientHeight > 10;
+                    const nearBottom = scrollEl.scrollHeight - scrollEl.scrollTop - scrollEl.clientHeight <= 10;
+                    hint.classList.toggle('show', canScroll && !nearBottom);
+                };
+
+                scrollEl.addEventListener('scroll', updateHint, { passive: true });
+                scrollEl.querySelectorAll('img').forEach(img => {
+                    if (img.complete) updateHint();
+                    else img.addEventListener('load', updateHint, { once: true });
+                });
+                requestAnimationFrame(updateHint);
+                setTimeout(updateHint, 400);
+            });
+        }
+
+        function initGallerySwipeCarousel() {
+            const wrap = document.getElementById('albumGrid');
+            const dotsContainer = document.getElementById('galleryDots');
+            const swipeHint = document.getElementById('gallerySwipeHint');
+            if (!wrap || !dotsContainer) return;
+
+            const count = wrap.children.length;
+            dotsContainer.innerHTML = count > 1
+                ? Array.from({ length: count }, (_, i) => `<span class="gallery-dot${i === 0 ? ' active' : ''}" data-dot="${i}"></span>`).join('')
+                : '';
+
+            dotsContainer.querySelectorAll('.gallery-dot').forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    wrap.scrollTo({ left: wrap.clientWidth * i, behavior: 'smooth' });
+                });
+            });
+
+            if (!wrap.dataset.swipeBound) {
+                wrap.dataset.swipeBound = '1';
+                let scrollTimer = null;
+                wrap.addEventListener('scroll', () => {
+                    if (window.innerWidth > 768) return;
+                    if (swipeHint && !swipeHint.classList.contains('faded')) {
+                        swipeHint.classList.add('faded');
+                        swipeHint.style.transition = 'opacity 0.4s ease';
+                        swipeHint.style.opacity = '0';
+                        try { localStorage.setItem('gallerySwipeHintSeen', '1'); } catch (e) {}
+                    }
+                    clearTimeout(scrollTimer);
+                    scrollTimer = setTimeout(() => {
+                        const dotsNow = dotsContainer.querySelectorAll('.gallery-dot');
+                        const index = Math.round(wrap.scrollLeft / wrap.clientWidth);
+                        dotsNow.forEach((d, i) => d.classList.toggle('active', i === index));
+                    }, 80);
+                }, { passive: true });
+            }
+
+            let seen = false;
+            try { seen = !!localStorage.getItem('gallerySwipeHintSeen'); } catch (e) {}
+            if (seen && swipeHint) { swipeHint.style.opacity = '0'; swipeHint.classList.add('faded'); }
         }
 
         function gameImageUrl(iconKey) {
@@ -442,12 +510,37 @@ async function setLanguage(langCode) {
             currentTabId = targetTabId;
 
             const hashName = targetTabId.replace('section-', '');
+            const newHash = '#' + hashName;
             if (history.replaceState) {
-                history.replaceState(null, '', '#' + hashName);
+                history.replaceState(null, '', newHash);
             } else {
                 window.location.hash = hashName;
             }
+            syncHashToParent(newHash);
         }
+
+        function syncHashToParent(hash) {
+            if (window.parent && window.parent !== window) {
+                window.parent.postMessage({ type: 'SYNC_HASH_OUT', hash: hash }, '*');
+            }
+        }
+
+        function goToTabByHash(hash) {
+            const tabs = ['section-home', 'section-gallery', 'section-music', 'section-film', 'section-game', 'section-more'];
+            const name = (hash || '').replace('#', '').toLowerCase();
+            if (!name) return;
+            const index = tabs.indexOf('section-' + name);
+            if (index === -1) return;
+            const navItems = document.querySelectorAll('.nav-item');
+            const targetEl = navItems[index];
+            if (targetEl) handleNavClick(targetEl, index);
+        }
+
+        window.addEventListener('message', (e) => {
+            if (e.data && e.data.type === 'SYNC_HASH_IN') {
+                goToTabByHash(e.data.hash);
+            }
+        });
 
         const FLY_CLIP_SELECTOR = '.phim-scroll-wrap, .phim-scroll-inner';
 
@@ -845,6 +938,7 @@ async function setLanguage(langCode) {
         let musicLyricTimer;
         let musicIsPlaying = false;
         let musicTrackDuration = 100;
+        let musicDurationConfirmed = false;
         let musicIsShuffle = false;
 
         const lyricsScrollContainer = document.getElementById('lyricsScroll');
@@ -966,7 +1060,13 @@ function renderLyrics() {
                 if (typeof ytMusicReady !== 'undefined' && ytMusicReady && ytMusicPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
                     musicLyricTime = ytMusicPlayer.getCurrentTime();
                     const dur = ytMusicPlayer.getDuration();
-                    if (dur) musicTrackDuration = dur;
+                    if (dur) {
+                        musicTrackDuration = dur;
+                        if (!musicDurationConfirmed) {
+                            musicDurationConfirmed = true;
+                            document.getElementById('durationTxt').innerText = formatTimeGlobal(dur);
+                        }
+                    }
                 }
 
                 if (!isDraggingTimeline) {
@@ -1090,7 +1190,10 @@ function renderLyrics() {
 
                 musicLyricsData = parseLRC(rawLrc);
                 musicTrackDuration = musicLyricsData.length ? musicLyricsData[musicLyricsData.length - 1].time + 5 : 20;
-                document.getElementById('durationTxt').innerText = formatTimeGlobal(musicTrackDuration);
+                musicDurationConfirmed = false;
+                document.getElementById('durationTxt').innerText = '--:--';
+                currentTimeTxt.innerText = '--:--';
+                progressBar.style.width = '0%';
 
                 renderLyrics();
                 lyricsBox.style.opacity = 1;
@@ -2231,6 +2334,7 @@ function renderLyrics() {
             syncAvatarVisibility();
             showMobileDrawerHintOnLoad();
             initGameSwipeCarousel();
+            goToTabByHash(window.location.hash);
 
             await initLanguage();
 
