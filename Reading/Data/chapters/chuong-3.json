@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-06T09:09:56.917Z",
+  "updatedAt": "2026-09-06T09:14:57.248Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -402,7 +402,15 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Khổ nỗi, tôi chẳng\nrõ khẩu vị của Maki ra sao, mà cũng không tìm được cái cớ nào để hỏi mà không\ngây nghi ngờ.</span>"
+      "html": "Ngặt một nỗi, tôi hoàn toàn mù tịt về khẩu vị của Maki, cậu ấy thích ăn mặn hay ngọt? có ghét hành tây hay kiêng món gì không?&nbsp;"
+    },
+    {
+      "type": "paragraph",
+      "html": "Chịu chết"
+    },
+    {
+      "type": "paragraph",
+      "html": "Mà nếu giờ tự dưng xáp lại gần hỏi thẳng mấy câu như <i>\"</i>Cậu thích ăn gì<i>\"</i> thì lộ liễu và kỳ quặc chẳng khác nào một kẻ theo dõi."
     },
     {
       "type": "paragraph",
