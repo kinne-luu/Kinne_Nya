@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-06T09:49:56.918Z",
+  "updatedAt": "2026-09-06T09:54:56.912Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -474,7 +474,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Một buổi trưa nữa\nlại đến rồi</span>"
+      "html": "Tiếng chuông vừa reng báo hiệu giờ nghỉ trưa, tôi liền thong thả nhét hộp bento vào túi rồi rời khỏi lớp."
     },
     {
       "type": "paragraph",
@@ -482,19 +482,31 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​Nhưng tự dưng sự\ntò mò lại nảy sinh: </span>"
+      "html": "<span>Trong lúc đi tới cuối hành lang,</span>&nbsp;tự dưng sự\ntò mò của tôi lại xuất hiện"
     },
     {
       "type": "paragraph",
-      "html": "<span>Nếu Maki đi bằng\ncửa chính, có lẽ tôi cũng nên thử xem sao. Biết đâu nó không khóa, vì cậu ấy đã\nlên trước tôi rồi mà. </span>"
+      "html": "Nếu Maki ngày nào cũng có mặt ở trên đó trước tôi, vậy sao tôi không thử đi bằng cửa chính một lần cho biết nhỉ. Theo lý, nếu cậu ấy đã đi qua một lần, thì cánh cửa sẽ mở khóa."
     },
     {
       "type": "paragraph",
-      "html": "<span>Đúng như dự đoán,\ncánh cửa sân thượng mở ra dễ dàng.</span>"
+      "html": "Trừ khi cậu ấy khóa để đề phòng ai đó đi lên."
     },
     {
       "type": "paragraph",
-      "html": "<span>​Ngay khi bước\nvào, vẫn là dáng hình quen thuộc ấy, nhưng một hình ảnh bất thường đập vào mắt\nkhiến tôi sững sờ. </span>"
+      "html": "\n"
+    },
+    {
+      "type": "paragraph",
+      "html": "​Nghĩ bụng thế, tôi tiện tay đưa nắm đấm cửa xoay thử một phát cho biết. Đúng như dự đoán,\ncánh cửa sân thượng mở ra dễ dàng."
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>​Ngay khi cánh cửa mở ra, ánh nắng chiếu vào phần kim loại , hắt vào mắt tôi cùng cơn gió nóng thổi thẳng vào.</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "Trong lúc vẫn đang nheo mắt vì bị chói, tôi vẫn là dáng hình quen thuộc ấy, nhưng một hình ảnh bất thường đập vào mắt\nkhiến tôi sững sờ.<span><br></span>"
     },
     {
       "type": "paragraph",
