@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-06T09:14:57.248Z",
+  "updatedAt": "2026-09-06T09:19:56.912Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -419,6 +419,10 @@
     {
       "type": "paragraph",
       "html": "<span>&nbsp;</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span><br></span>"
     },
     {
       "type": "paragraph",
