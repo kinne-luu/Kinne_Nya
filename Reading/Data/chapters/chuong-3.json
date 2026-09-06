@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-06T10:29:56.911Z",
+  "updatedAt": "2026-09-06T10:34:56.913Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -666,23 +666,27 @@
     },
     {
       "type": "paragraph",
-      "html": "Maki ngẩng đầu lên, ánh mắt của cậu ấy như vừa nhận được&nbsp;"
+      "html": "Maki ngẩng đầu lên, ánh mắt của cậu ấy như vừa nhận được một thông tin nằm ngoài suy nghĩ của bản thân:"
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Sao lại như vậy,\ntớ tưởng vị trí của người không quan trọng sẽ khác so với ng quan trọng chứ.”</span>"
+      "html": "<span>​“Sao lại như vậy,\ntớ tưởng vị trí của người dưng sẽ khác so với người quan trọng chứ.”</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Thường là thế,\nnhưng định nghĩa quan trọng tới mức nào còn phụ thuộc vào suy nghĩ của bản\nthân. </span>"
+      "html": "<span>​“Thường là thế,\nnhưng định nghĩa quan trọng tới mức nào còn phụ thuộc vào suy nghĩ của bản\nthân.\"</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>“Nói chuyện một\nthời gian đồng nghĩa với việc tớ đã quen với sự hiện diện của người đó, nghĩa\nlà họ đã chiếm một phần trong quỹ thời gian của tớ. </span>"
+      "html": "<span>“Nói chuyện một\nthời gian đồng nghĩa với việc tớ đã quen với sự hiện diện của người đó, nghĩa\nlà họ đã chiếm một phần trong quỹ thời gian của tớ.\"</span>"
     },
     {
       "type": "paragraph",
       "html": "<span>“Việc mất đi họ\ncũng giống như ta mất đi một người quan trọng, để lại khoảng trống trong quỹ thời\ngian đó. Tớ rất sợ nhìn thấy người mà mình đã quen thấy họ trong cuộc sống của\nmình đột ngột rời đi và không thể gặp lại.”</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Maki nở một nụ cười nhẹ, giống như cậu ấy vừa trút bỏ được một nỗi lo trong lòng.</span>"
     },
     {
       "type": "paragraph",
@@ -694,11 +698,19 @@
     },
     {
       "type": "paragraph",
+      "html": "<span>\"Hả?\"</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Tôi nói tiếp, không để sự bất ngờ của cậu ấy làm ngắt quãng cuộc trò chuyện.</span>"
+    },
+    {
+      "type": "paragraph",
       "html": "<span>“Nói thật thì tớ\nkhá vui vì nói chuyện với cậu”</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>“ Nếu để nói cậu\nra sao với tớ, thì tớ nghĩ cậu là người bạn của tớ rồi, tớ cũng không muốn cô\nđơn như trước đâu”</span>"
+      "html": "<span>“Nếu để nói cậu\nra sao với tớ, thì tớ nghĩ cậu là người bạn của tớ rồi, tớ cũng không muốn cô\nđơn như trước đâu”</span>"
     },
     {
       "type": "paragraph",
@@ -706,11 +718,19 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Tớ có những người\nquan trọng như vậy, nhưng họ đã rời đi trước rồi. “</span>"
+      "html": "<span>​“Chấc là có, nhưng có lẽ chỉ có tớ thấy quan trọng thôi“</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>“Những lúc ở một\nmình, tớ hay nghĩ .... giá mà hôm đó tớ đi cùng họ.”</span>"
+      "html": "<span>Tôi không nói dối, với tôi hiện tại chỉ có gia đình là quan trọng nhất thôi, dù ba mẹ bận bịu cả ngày, nhưng họ vẫn là người sinh ra và nuôi tôi lớn, tình cảm thì vẫn là thật.</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>“Tớ vẫn nghĩ nếu lúc đó, tớ đi cùng họ thì có lẽ những người quan trọng của tớ đã không đi mất”</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Cảm thấy vấn đề đang nằm ngoài tầm, tôi nhanh chóng nghĩ một câu nói để an ủi cậu ấy.</span>"
     },
     {
       "type": "paragraph",
@@ -726,7 +746,11 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Nhận thấy tình\nhình đang theo hướng tồi tệ đi, tôi liền nhanh chóng kiếm một chủ đề khác.</span>"
+      "html": "<span><br></span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Cảm thấy tình hình ngày càng tệ đi, tôi tìm một chủ đề khác để Maki không nghĩ về nó nữa:</span>"
     },
     {
       "type": "paragraph",
