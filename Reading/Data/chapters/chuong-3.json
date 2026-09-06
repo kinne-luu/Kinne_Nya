@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-06T10:19:56.916Z",
+  "updatedAt": "2026-09-06T10:24:56.914Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -562,11 +562,23 @@
     },
     {
       "type": "paragraph",
-      "html": "\"Bậy nào, người ta gọi đấy là lộc trời ban! Bác bảo vệ đánh rơi ngay chân tớ, tớ chỉ nhặt lên bảo quản hộ thôi, trộm cắp gì ở đây.\""
+      "html": "\"Bậy nào, người ta gọi đấy là lộc trời ban! bác bảo vệ đánh rơi ngay chân tớ, tớ chỉ nhặt lên bảo quản hộ thôi, trộm cắp gì ở đây.\""
     },
     {
       "type": "paragraph",
-      "html": "<span>​Cả hai ngồi cạnh\ngóc tường, tôi bắt đầu lấy hộp bento từ trong túi ra. </span>"
+      "html": "\"Hả, bảo quản hộ cơ đấy\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Khuôn mặt Maki lúc này thoải mái hơn, cậu ấy mỉm cười nhẹ nhàng."
+    },
+    {
+      "type": "paragraph",
+      "html": "<br>"
+    },
+    {
+      "type": "paragraph",
+      "html": "Cả hai ngồi xuống dưới chân tường. Tôi cởi bọc khăn, lôi hộp bento ra rồi tách đôi đũa phụ đã chuẩn bị sẵn chìa về phía Maki."
     },
     {
       "type": "paragraph",
@@ -578,11 +590,11 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​Do dự một hồi,\nMaki cũng nhận lấy đôi đũa bằng cả hai tay.</span>"
+      "html": "Ngón tay Maki khẽ siết chặt lấy gấu váy, sự ngần ngại hiện rõ trong mắt, nhưng rồi cậu ấy vẫn chậm rãi đưa hai tay ra nhận lấy:"
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Tớ không còn bí\nmật nào để kể với cậu đâu đấy.”</span>"
+      "html": "​\"Nói trước là tớ cạn sạch bí mật để đem ra đổi lấy đồ ăn rồi đấy.\""
     },
     {
       "type": "paragraph",
@@ -598,7 +610,11 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Cái đói là gia\nvị nhất mà.”</span>"
+      "html": "\"Đói ăn muối cũng ngon\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Trông Maki ăn ngon lành, tôi lại cảm thấy nhẹ nhõm"
     },
     {
       "type": "paragraph",
