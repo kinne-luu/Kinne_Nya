@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-06T10:24:56.914Z",
+  "updatedAt": "2026-09-06T10:29:56.911Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -614,15 +614,27 @@
     },
     {
       "type": "paragraph",
-      "html": "Trông Maki ăn ngon lành, tôi lại cảm thấy nhẹ nhõm"
+      "html": "Trông Maki ăn ngon lành, tôi lại cảm thấy nhẹ nhõm. Thật ra trông cậu ấy cảm giác hơi gầy so với những bạn con gái khác, có lẽ Maki đã không ăn uống đầy đủ suốt một thời gian cũng khá dài rồi.<br>Tôi vẫn không rõ vì sao cậu ấy lại nhịn ăn rồi tự nói dối bản thân đã ăn rồi, chuyện buồn của cậu ấy lớn tới mức khôgn cả buồn ăn uống hay sao?"
     },
     {
       "type": "paragraph",
-      "html": "<span>​Sau khi đánh\nchén sạch sẽ hộp bento và cùng nhau nhâm nhi chút hồng trà, trông Maki đã có sức\nsống hơn hẳn.</span>"
+      "html": "\"Cái này cũng ngon nữa, cậu định sau này mở quán ăn à?\""
     },
     {
       "type": "paragraph",
-      "html": "<span>&nbsp;Đúng như tôi nghĩ, chẳng ai có thể không đói\nkhi phải nhịn từ trưa cho đến tận tối mịt.</span>"
+      "html": "\"Đâu có, tớ chỉ là muốn ăn ngon miệng nên mới tập nấu ăn thô- Ê để lại cho tớ nữa chứ!\""
+    },
+    {
+      "type": "paragraph",
+      "html": "<br>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>​Sau khi đánh\nchén sạch sẽ hộp bento và cùng nhau nhâm nhi chút hồng trà, trông Maki đã có sức\nsống hơn hẳn.</span>&nbsp;Đúng như tôi nghĩ, chẳng ai có thể không đói\nkhi phải nhịn ăn từ sáng tới trưa cả."
+    },
+    {
+      "type": "paragraph",
+      "html": "Maki thu người lại, vòng tay ôm lấy hai đầu gối, nhẹ nhàng hỏi tôi:"
     },
     {
       "type": "paragraph",
@@ -634,19 +646,27 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“ Kuze-kun, cậu\ncảm thấy thế nào nếu một người quan trọng với cậu tự dưng biến mất đi?”</span>"
+      "html": "Maki khẽ vân vê ngón tay, giọng chùng xuống, lọt thỏm giữa tiếng gió rì rào trên sân thượng:"
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Tớ sẽ đau buồn\nvà cả ngày nằm ở nhà.”</span>"
+      "html": "<span>​“ Kuze-kun, cậu\ncảm thấy thế nào nếu một người quan trọng với cậu tự dưng biến mất?”</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Vậy nếu một người\nkhông quan trọng nhưng đã nói chuyện cùng một thời gian thì sao?”</span>"
+      "html": "​\"Chắc là sụp đổ lắm. Tớ sẽ chỉ muốn khóa trái cửa rồi nằm lì trong phòng cả ngày thôi.\""
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Tớ cũng sẽ đau\nbuồn và nằm ở nhà cả ngày.”</span>"
+      "html": "​\"Thế còn... một người chẳng có gì quan trọng, nhưng đã nói chuyện với cậu suốt một khoảng thời gian thì sao?\""
+    },
+    {
+      "type": "paragraph",
+      "html": "​\"Tớ vẫn sẽ buồn, và vẫn sẽ nằm bẹp ở nhà như thế thôi.\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Maki ngẩng đầu lên, ánh mắt của cậu ấy như vừa nhận được&nbsp;"
     },
     {
       "type": "paragraph",
