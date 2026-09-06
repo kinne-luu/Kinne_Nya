@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-06T10:34:56.913Z",
+  "updatedAt": "2026-09-06T10:39:56.911Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -778,7 +778,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Có ổn không nếu\ntên Bocchi này xin phương thức liên lạc của thiên thần không có cánh đi lên sân\nthượng bằng chìa khóa đánh rơi của bảo vệ nhỉ?”</span>"
+      "html": "<span>​“Có ổn không nếu\ntên Bocchi này xin phương thức liên lạc của một nữ sinh đi lên sân\nthượng bằng chìa khóa đánh rơi của bảo vệ với lí do bảo quản hộ nhỉ?”</span>"
     },
     {
       "type": "paragraph",
@@ -786,19 +786,27 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Sẽ khó khăn lắm\nnếu tớ đây phải tự đoán mò vị trí để gặp được cậu lắm.”</span>"
+      "html": "<span>​“Sẽ khó khăn lắm\nnếu tớ đây phải tự đoán mò vị trí để gặp được cậu lắm.” Tôi gãi đầu</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>​Sau khi trao đổi\nLine với nhau, chúng tôi tạm biệt nhau khi giờ nghỉ trưa kết thúc. </span>"
+      "html": "<span><br></span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>Mọi chuyện hôm\nnay coi như tạm ổn, ít nhất là Maki vẫn chưa thực hiện ý định của mình ngay lập\ntức. </span>"
+      "html": "Chúng tôi trao đổi tài khoản Line ngay trước khi tiếng chuông vào tiết réo rắt vang lên, rồi vội vã tạm biệt nhau ở khúc quanh cầu thang."
     },
     {
       "type": "paragraph",
-      "html": "<span>Nhưng qua cuộc\ntrò chuyện vừa rồi, tôi biết mình cần phải hành động càng sớm càng tốt.</span>"
+      "html": "<span>Mọi chuyện hôm\nnay coi như tạm ổn, ít nhất là Maki vẫn chưa thực hiện bất kì ý định nào gây tổn thương bản thân mình.&nbsp;</span>Nhưng qua cuộc\ntrò chuyện vừa rồi, tôi hiểu rõ mình không còn nhiều thời gian.&nbsp;"
+    },
+    {
+      "type": "paragraph",
+      "html": "​Tới nước này, tôi không thể tiếp tục đứng nhìn nữa. Tôi biết rất rõ những vết xe đổ trong quá khứ, biết bản thân từng phải trả giá đắt thế nào khi cố can thiệp vào chuyện của người khác, và hậu quả của nó dã biến tôi thành một người như hiện tại."
+    },
+    {
+      "type": "paragraph",
+      "html": "<br>"
     },
     {
       "type": "paragraph",
