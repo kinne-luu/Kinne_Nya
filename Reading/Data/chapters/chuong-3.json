@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-11T02:29:15.127Z",
+  "updatedAt": "2026-09-11T02:34:44.671Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -558,7 +558,7 @@
     },
     {
       "type": "paragraph",
-      "html": "\"Tối hôm đó, bọn mình đã biết được đám bắt nạt của lớp mình cùng các lớp"
+      "html": "\"Tối hôm đó, bọn mình đã biết được đám bắt nạt của lớp mình cùng các lớp khác đã bị đình chỉ học, mình thực sự xin lỗi cậu\""
     },
     {
       "type": "paragraph",
@@ -566,7 +566,19 @@
     },
     {
       "type": "paragraph",
-      "html": "Câu chuyen"
+      "html": "Câu chuyện cũng đã kết thúc, tôi cũng chẳng biết nói gì với đống thông tin vừa rồi nữa."
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Bọn tớ cũng thế, xin lỗi Maki nhiều\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Tao cũng thế, tan học tao đãi mày gì đó nhé\""
+    },
+    {
+      "type": "paragraph",
+      "html": "<br>"
     },
     {
       "type": "paragraph",
