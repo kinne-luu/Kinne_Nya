@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-11T03:42:07.055Z",
+  "updatedAt": "2026-09-11T04:06:46.020Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -574,6 +574,10 @@
     },
     {
       "type": "paragraph",
+      "html": "Dù vẫn còn một số người không tin, có lẽ họ vẫn nghi ngờ tôi"
+    },
+    {
+      "type": "paragraph",
       "html": "\"Bọn tớ cũng thế, xin lỗi cậu nhiều lắm nhé Maki...\""
     },
     {
@@ -722,7 +726,7 @@
     },
     {
       "type": "paragraph",
-      "html": "\"Hả, bảo quản hộ cơ đấy\""
+      "html": "\"Hửm, bảo quản hộ cơ đấy\""
     },
     {
       "type": "paragraph",
