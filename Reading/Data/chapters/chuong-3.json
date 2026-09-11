@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-11T02:19:07.546Z",
+  "updatedAt": "2026-09-11T02:24:15.130Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -503,6 +503,26 @@
     {
       "type": "paragraph",
       "html": "<br>"
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Yo Maki, hôm nay giúp đỡ nhau nhé!\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Chiều nay tao không sinh hoạt câu lạc bộ, làm tí karaoke không?\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Buổi sáng hôm nay thật kì lạ."
+    },
+    {
+      "type": "paragraph",
+      "html": "Kể từ lúc tôi bước chân vào phòng học, khuôn mặt mọi người như tươi hẳn, ai đấy cũng đổ dồn sự chú ý tới tôi, lúc đó tôi còn nghĩ mặt mình vẫn dính vụn bánh trong lúc ăn sáng."
+    },
+    {
+      "type": "paragraph",
+      "html": "Lần lượt từng người tới bắt chuyện,&nbsp;"
     },
     {
       "type": "paragraph",
