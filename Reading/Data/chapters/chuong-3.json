@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-27T17:50:28.472Z",
+  "updatedAt": "2026-09-27T17:58:49.835Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -526,6 +526,10 @@
     },
     {
       "type": "paragraph",
+      "html": "Dù vẫn còn một số người trông như có vẻ lảng tránh, số thì cố tình chú ý vào điện thoại hoặc cuốn sách như thể họ vừa làm sai gì đó nhưng không đủ can đảm để nhận lỗi và trốn tránh vậy."
+    },
+    {
+      "type": "paragraph",
       "html": "\"À...có chuyện gì vậy?\" tôi cất lời trong tâm trạng lo lắng."
     },
     {
@@ -734,10 +738,6 @@
     },
     {
       "type": "paragraph",
-      "html": "<br>"
-    },
-    {
-      "type": "paragraph",
       "html": "Cả hai ngồi xuống dưới chân tường. Tôi cởi bọc khăn, lôi hộp bento ra rồi tách đôi đũa phụ đã chuẩn bị sẵn chìa về phía Maki."
     },
     {
@@ -790,7 +790,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​Sau khi đánh\nchén sạch sẽ hộp bento và cùng nhau nhâm nhi chút hồng trà, trông Maki đã có sức\nsống hơn hẳn.</span>&nbsp;Đúng như tôi nghĩ, chẳng ai có thể không đói\nkhi phải nhịn ăn từ sáng tới trưa cả."
+      "html": "<span>&nbsp; &nbsp; &nbsp; ​Sau khi đánh\nchén sạch sẽ hộp bento và cùng nhau nhâm nhi chút hồng trà, trông Maki đã có sức\nsống hơn hẳn.</span>&nbsp;Đúng như tôi nghĩ, chẳng ai có thể không đói\nkhi phải nhịn ăn từ sáng tới trưa cả."
     },
     {
       "type": "paragraph",
@@ -910,7 +910,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Cảm thấy tình hình ngày càng tệ đi, tôi tìm một chủ đề khác để Maki không nghĩ về nó nữa:</span>"
+      "html": "<span>Cảm thấy tình hình ngày càng tệ đi, tôi cố gắng tìm một chủ đề khác để Maki không nghĩ về nó nữa:</span>"
     },
     {
       "type": "paragraph",
