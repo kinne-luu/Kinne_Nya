@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-27T17:58:49.835Z",
+  "updatedAt": "2026-09-27T18:03:49.827Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -938,6 +938,18 @@
     },
     {
       "type": "paragraph",
+      "html": "<span>\"Đồng ý nhanh vậy sao?\"</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>\"Rủ xong nói vậy là ý gì, cậu chọc tức tớ à??\"</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Phồng má giận dỗi, nét mặt Maki trông dễ thương hơn hẳn những gì tôi vẫn hay thấy thường ngày, có lẽ tôi là một trong số ít những người may mắn nhất thế giới được chiêm ngưỡng vẻ mặt này thì phải.</span>"
+    },
+    {
+      "type": "paragraph",
       "html": "<span>​“Có ổn không nếu\ntên Bocchi này xin phương thức liên lạc của một nữ sinh đi lên sân\nthượng bằng chìa khóa đánh rơi của bảo vệ với lí do bảo quản hộ nhỉ?”</span>"
     },
     {
@@ -954,7 +966,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Mọi chuyện hôm\nnay coi như tạm ổn, ít nhất là Maki vẫn chưa thực hiện bất kì ý định nào gây tổn thương bản thân mình.&nbsp;</span>Nhưng qua cuộc\ntrò chuyện vừa rồi, tôi hiểu rõ mình không còn nhiều thời gian.&nbsp;"
+      "html": "<span>Mọi chuyện hôm\nnay coi như tạm ổn, ít nhất là Maki vẫn chưa thực hiện bất kì ý định nào gây tổn thương cho chính bản thân mình.&nbsp;</span>Nhưng qua cuộc\ntrò chuyện vừa rồi, tôi hiểu rõ mình không còn nhiều thời gian.&nbsp;"
     },
     {
       "type": "paragraph",
@@ -962,11 +974,15 @@
     },
     {
       "type": "paragraph",
-      "html": "<br>"
+      "html": "Nhưng nếu cứ lảng tránh, tôi sợ rằng bản thân sẽ mắc phải sai lầm không thể sửa chữa."
     },
     {
       "type": "paragraph",
-      "html": "<span>Thói quen ấy cứ\nthế duy trì, mỗi khi tiếng chuông nghỉ trưa vang lên, hai chúng tôi lại cùng\nnhau lên sân thượng để trò chuyện và tâm sự.</span>"
+      "html": "Tôi không chắc chắn liệu bản thân đang suy nghĩ đúng hướng hay không, nhưng tôi sẽ đi theo con tim một lần nữa thay vì lí trí."
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Thói quen ấy cứ\nthế duy trì, mỗi khi tới giờ nghỉ trưa, hai chúng tôi lại cùng\nnhau lên sân thượng để trò chuyện và tâm sự, những câu chuyện trên trời dưới biển, tất cả đều được cả hai lôi ra làm chuyện để làm không khí trên đó thoải mái hơn.</span>"
     },
     {
       "type": "paragraph",
