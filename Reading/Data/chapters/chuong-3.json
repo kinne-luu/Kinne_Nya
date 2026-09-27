@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-09-27T18:03:49.827Z",
+  "updatedAt": "2026-09-27T18:07:01.442Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -1014,11 +1014,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Tôi cũng chẳng rõ\ncảm giác ấy thực chất là gì, nhưng sự hiện diện của Maki đã dần trở thành một\nđiều không thể thiếu</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>thứ mà nếu bỗng\ndưng biến mất, sẽ để lại một khoảng trống trải trong lòng tôi.</span>"
+      "html": "<span>Tôi cũng chẳng rõ\ncảm giác ấy thực chất là gì, nhưng sự hiện diện của Maki đã dần trở thành một\nđiều không thể thiếu,&nbsp;</span>thứ mà nếu bỗng\ndưng biến mất, sẽ để lại một khoảng trống trải trong lòng tôi."
     },
     {
       "type": "paragraph",
@@ -1027,6 +1023,14 @@
     {
       "type": "paragraph",
       "html": "<span>Thay vì giúp đỡ\nchỉ vì một sự thôi thúc nhất thời, có lẽ giờ đây tôi giúp cậu ấy vì khát khao\nđược ở bên và trò chuyện cùng cậu nhiều hơn nữa.</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span><br></span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span><br></span>"
     },
     {
       "type": "paragraph",
@@ -1058,11 +1062,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Tôi quyết định sẽ\ndẫn cậu ấy quay lại quán bánh ngọt hôm trước, thử thêm vài loại bánh và đồ uống\nmới. </span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Dù sao cũng là cuối\ntuần, ghé qua khu vui chơi sau đó cũng chẳng phải lựa chọn tồi. </span>"
+      "html": "<span>Tôi quyết định sẽ\ndẫn cậu ấy quay lại quán bánh ngọt hôm trước, thử thêm vài loại bánh và đồ uống\nmới.&nbsp;</span>Dù sao cũng là cuối\ntuần, ghé qua khu vui chơi sau đó cũng chẳng phải lựa chọn tồi."
     },
     {
       "type": "paragraph",
@@ -1110,15 +1110,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Tôi chưa có tư\ncách gì để can thiệp vào vấn đề của cậu ấy,nhug dưới cương vị là một người bạn\n(chắc vậy)</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Tôi sẽ cố gắng\nlàm hết khả năng</span>"
+      "html": "<span>Tôi chưa có tư\ncách gì để can thiệp vào vấn đề riêng của cậu ấy, nhưng dưới cương vị là một người bạn đã cùng trò chuyện kha khá thời gian, có lẽ tôi sẽ cố gắng hết sức trong sự cho phép của Maki, hỗ trợ cậu ấy bằng tất cả khả năng của bản thân.</span>"
     },
     {
       "type": "paragraph",
