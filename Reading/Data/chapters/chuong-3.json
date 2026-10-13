@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-08-31T09:34:55.225Z",
+  "updatedAt": "2026-09-27T18:07:01.442Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -82,7 +82,7 @@
     },
     {
       "type": "paragraph",
-      "html": "Cậu ấy vẫn quay đây!"
+      "html": "Cậu ấy vẫn quay lại đây!"
     },
     {
       "type": "paragraph",
@@ -94,11 +94,11 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Hôm nay Maki-san cũng bay lên sân thượng nhỉ?”</span>"
+      "html": "<span>\"Hôm nay Maki-san cũng bay lên sân thượng nhỉ?”</span>"
     },
     {
       "type": "paragraph",
-      "html": "Nghe tiếng động, cô ấy quay đầu lại. Nắng trưa chiếu xiên qua mái tóc, làm nổi bật nụ cười nhẹ bẫng quen thuộc.<span></span>"
+      "html": "Nghe tiếng động, cô ấy quay đầu lại. Nắng trưa chiếu xiên qua mái tóc, làm nổi bật nụ cười quen thuộc.<span></span>"
     },
     {
       "type": "paragraph",
@@ -370,27 +370,15 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>“ Đương nhiên,chỗ\nđó là thiên đường đối với tôi mà”</span>"
+      "html": "<span>“ Đương nhiên,chỗ\nđó là thiên đường đối với tớ mà”</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>Khoong biết nữa,nhưng\nhình như Maki có cái nhìn khác về tôi thì phải </span>"
+      "html": "<span>Không biết nữa,nhưng\nhình như Maki có cái nhìn khác về tôi thì phải.&nbsp;</span>Vậy là tôi đã\nthành công trong việc làm quen với cậu ấy rồi sao?"
     },
     {
       "type": "paragraph",
-      "html": "<span>Vậy là tôi đã\nthành công trong việc làm quen với cậu ấy rồi nhỉ</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Cũng là một tín\nhiệu tốt, tôi chưa làm gì sai với kế hoạch cả.</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>&nbsp;</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Trong lúc nghĩ ngợi\nvẩn vơ, tôi chợt nhớ ra việc Maki nói rằng muốn tôi tới sân thượng vào ngày mai</span>"
+      "html": "Trong lúc đang quay về lớp và nghĩ ngợi\nvẩn vơ, tôi chợt nhớ ra việc Maki nói rằng muốn tôi tới sân thượng vào ngày mai"
     },
     {
       "type": "paragraph",
@@ -414,7 +402,15 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Khổ nỗi, tôi chẳng\nrõ khẩu vị của Maki ra sao, mà cũng không tìm được cái cớ nào để hỏi mà không\ngây nghi ngờ.</span>"
+      "html": "Ngặt một nỗi, tôi hoàn toàn mù tịt về khẩu vị của Maki, cậu ấy thích ăn mặn hay ngọt? có ghét hành tây hay kiêng món gì không?&nbsp;"
+    },
+    {
+      "type": "paragraph",
+      "html": "Chịu chết."
+    },
+    {
+      "type": "paragraph",
+      "html": "Mà nếu giờ tự dưng xáp lại gần hỏi thẳng mấy câu như <i>\"</i>Cậu thích ăn gì<i>\"</i> thì lộ liễu và kỳ quặc chẳng khác nào một kẻ theo dõi."
     },
     {
       "type": "paragraph",
@@ -426,27 +422,255 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Một buổi trưa nữa\nlại đến rồi</span>"
+      "html": "Vậy là kết thúc một buổi học đầu tuần.<br>Không khí kết thúc buổi học náo nhiệt thật đấy, dù là đầu tuần nhưng ai nấy đều nở nụ cười trên mặt.&nbsp;<br><br>Trong lúc đang cất gọn sách vở vào balo, bỗng nhiên tôi thấy mọi người xì xào ngày càng to, quay mặt về phía cửa lớp, tôi thấy hai giáo viên nam bước vào.&nbsp;"
     },
     {
       "type": "paragraph",
-      "html": "<span>Như thường lệ,\ntôi lên sân thượng để thưởng thức bữa ăn của mình.</span>"
+      "html": "Một người có vẻ là thầy hiệu phó, người kia là ai tôi cũng không rõ, vì dù đã học ở đây một thời gian nhưng tôi lại không mấy chú ý về các thầy cô có chức vụ cao trong trường mấy.&nbsp;"
     },
     {
       "type": "paragraph",
-      "html": "<span>​Nhưng tự dưng sự\ntò mò lại nảy sinh: </span>"
+      "html": "Khác với vẻ mệt mỏi thường ngày, gương mặt của cả hai lúc này căng cứng, nghiêm trọng và lạnh lẽo đến mức bầu không khí náo nhiệt trong lớp như bị đóng băng ngay tức khắc. Mọi ánh mắt đều đổ dồn về phía bục giảng, sự tò mò và e ngại hiện rõ trên từng khuôn mặt."
     },
     {
       "type": "paragraph",
-      "html": "<span>Nếu Maki đi bằng\ncửa chính, có lẽ tôi cũng nên thử xem sao. Biết đâu nó không khóa, vì cậu ấy đã\nlên trước tôi rồi mà. </span>"
+      "html": "Ánh mắt của thầy hiệu phó sắc lẹm, quét khắp phòng học, rồi dừng lại ở một góc lớp."
     },
     {
       "type": "paragraph",
-      "html": "<span>Đúng như dự đoán,\ncánh cửa sân thượng mở ra dễ dàng.</span>"
+      "html": "\"Takahashi Satoshi, Nakamura Itsuki và Kato Isamu là ai, yêu cầu ba anh trước khi về lên phòng hiệu trưởng gặp tôi ngay lập tức!\""
     },
     {
       "type": "paragraph",
-      "html": "<span>​Ngay khi bước\nvào, vẫn là dáng hình quen thuộc ấy, nhưng một hình ảnh bất thường đập vào mắt\nkhiến tôi sững sờ. </span>"
+      "html": "​Hai giáo viên không nán lại lâu, họ quay lưng bước ra khỏi lớp sau khi nhắc nhở. Ngay khi bóng họ vừa khuất sau cánh cửa, cả lớp lẫn tiếng cười và tiếng xì xào của mấy bạn con gái."
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Trời ơi, phòng hiệu trưởng luôn kìa... chuyện gì lớn lắm đây.\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Chắc chắn là vụ bắt nạt bữa trước bị khui ra rồi! tớ đã bảo rồi mà...\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\n\n"
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Đáng đời bọn nó. Tưởng mình là vua một cõi chắc.\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Sao lần này thầy cô lại để ý nhỉ? - Ai mà biết...\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Dù lý do là gì đi nữa, nhìn sự suy sụp của ba tên đó, một cảm giác nhẹ nhõm kì lạ len lỏi trong tâm trí tôi."
+    },
+    {
+      "type": "paragraph",
+      "html": "Có lẽ ngày tháng đau khổ này sắp kết thúc rồi. Tôi nắm chặt quai balo, bước nhanh xuống cầu thang, mang theo một chút hy vọng mỏng manh rằng có thể từ ngày mai, bầu không khí ngột ngạt của lớp học này sẽ thực sự thay đổi, và tôi có thể cảm nhận được không khí của một ngày bình thường."
+    },
+    {
+      "type": "paragraph",
+      "html": "Ánh chiều muộn của một ngày hè rải xuống mặt sông một lớp váng vàng óng ả, từng gợn nước lăn tăn phản chiếu ánh sáng lấp lánh. Hôm nay có vẻ gió mát&nbsp; hơn hẳn thường lệ thì phải, gió mang theo hơi nước mát rượi xua đi cái oi nồng sót lại sau một ngày dài, cuốn theo đám lá rụng xào xạc lăn dưới chân."
+    },
+    {
+      "type": "paragraph",
+      "html": "Nếu một ngày nào đó vụ bắt nạt này thật sự kết thúc, lý do để mình tiếp tục bước lên sân thượng sẽ là gì?"
+    },
+    {
+      "type": "paragraph",
+      "html": "Ngay từ đầu, nơi ấy chỉ là một cái cớ để mình trốn chạy khỏi ánh mắt của mọi người, hành động gây sự của đám bắt nạt kia. Nhưng nếu bọn chúng không còn gây sự nữa, chẳng phải cái cớ duy nhất ấy cũng sẽ biến mất hay sao?"
+    },
+    {
+      "type": "paragraph",
+      "html": "<i>Mình không muốn như vậy.</i>"
+    },
+    {
+      "type": "paragraph",
+      "html": "Chẳng biết từ bao giờ, việc lên trên đó vào mỗi giờ nghỉ trưa ấy đã trở thành một thói quen."
+    },
+    {
+      "type": "paragraph",
+      "html": "Và quan trọng hơn cả, ở đó có một người mà ngày nào mình cũng muốn được gặp lại."
+    },
+    {
+      "type": "paragraph",
+      "html": "Chắc cũng không sao đâu. Cứ nói rằng đã lỡ quen chân nên khó bỏ, thế là đủ lý do rồi mà nhỉ?"
+    },
+    {
+      "type": "paragraph",
+      "html": "<br>"
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Yo Maki, hôm nay giúp đỡ nhau nhé!\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Chiều nay tao không sinh hoạt câu lạc bộ, làm tí karaoke không?\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Buổi sáng hôm nay thật kì lạ."
+    },
+    {
+      "type": "paragraph",
+      "html": "Kể từ lúc tôi bước chân vào phòng học, khuôn mặt mọi người như tươi hẳn, ai đấy cũng đổ dồn sự chú ý tới tôi, lúc đó tôi còn nghĩ mặt mình vẫn dính vụn bánh trong lúc ăn sáng."
+    },
+    {
+      "type": "paragraph",
+      "html": "Lần lượt từng người tới bắt chuyện, tôi bị vây quanh trong lúc vẫn chưa hiểu mô tê gì cả."
+    },
+    {
+      "type": "paragraph",
+      "html": "Dù vẫn còn một số người trông như có vẻ lảng tránh, số thì cố tình chú ý vào điện thoại hoặc cuốn sách như thể họ vừa làm sai gì đó nhưng không đủ can đảm để nhận lỗi và trốn tránh vậy."
+    },
+    {
+      "type": "paragraph",
+      "html": "\"À...có chuyện gì vậy?\" tôi cất lời trong tâm trạng lo lắng."
+    },
+    {
+      "type": "paragraph",
+      "html": "Shiina, cô bạn lớp trưởng tiến tới, nét căng thẳng hiện rõ trên khuôn mặt cậu ấy."
+    },
+    {
+      "type": "paragraph",
+      "html": "Ngay sau đó, cậu ấy cúi người trước mặt tôi. Vẫn còn ngơ ngác, cậu ấy cất lời:"
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Mình xin lỗi cậu nhiều\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Ơ....vì chuyện gì?\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Mình đã không tìm hiểu rõ đầu đuôi và cho rằng cậu là người đã gây ra chuyện\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Chuyện gì á...?\""
+    },
+    {
+      "type": "paragraph",
+      "html": "​\"Chuyện của cậu bạn chuyển trường đợt trước... Có tin đồn ác ý nói rằng cậu chỉ giả vờ làm người tốt để tiếp cận, rồi sau lưng lại bắt nạt ép bạn ấy phải chuyển đi. Tớ đã quá hồ đồ khi không chịu tìm hiểu đầu đuôi mà vội tin ngay. Tệ hơn cả, chính miệng tớ đã đi kể lại với cả lớp, biến lời đồn đó thành lý do để mọi người quay lưng và cô lập cậu suốt thời gian qua...\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Rồi tối hôm đó, bọn mình đã biết được đám bắt nạt của lớp mình cùng các lớp khác đã bị đình chỉ học, nhưng bọn mình lại không có Line của cậu, nên đợi tới sáng nay để gặp cậu.\""
+    },
+    {
+      "type": "paragraph",
+      "html": "À, thì ra là thế."
+    },
+    {
+      "type": "paragraph",
+      "html": "​Bảo không ấm ức chút nào thì là nói dối, nhưng tự nhiên nghe xong tôi lại thấy nhẹ cả người."
+    },
+    {
+      "type": "paragraph",
+      "html": "&nbsp;Hiểu lầm rốt cuộc cũng được gỡ, sự thật cũng đã rõ ràng, thế là tốt rồi. Cảm giác không còn phải cảm thấy căng thẳng, nặng nề mỗi lần tới lớp, tự dưng tôi thấy không khí trong lớp dễ thở hơn hẳn."
+    },
+    {
+      "type": "paragraph",
+      "html": "Dù vẫn còn một số người tỏ ra dè dặt, có lẽ họ vẫn chưa thể tin ngay được, nhưng thái độ thì khác hẳn những lần trước, không còn né tránh tiêu cực như trước nữa."
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Bọn tớ cũng thế, xin lỗi cậu nhiều lắm nhé Maki...\""
+    },
+    {
+      "type": "paragraph",
+      "html": "​\"Đúng đấy, bọn tao hồ đồ quá. Chiều nay để tao đãi mày một chầu chuộc lỗi!\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Để tránh mọi người lo lắng, tôi cố gắng trấn an:"
+    },
+    {
+      "type": "paragraph",
+      "html": "\"À....không sao đâu, cảm ơn mọi người nhiều nhé. Nếu các cậu cũng biết đươc sự thật rồi thì tớ vui lắm, nhưng không cần xin lỗi nhiều vậy đâu. Có gì từ giờ chúng ta cũng giúp đỡ nhau nhé\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Mọi người cùng ở lại nói chuyện,hỏi han với tôi trước khi giáo viên bước vào lớp"
+    },
+    {
+      "type": "paragraph",
+      "html": "<br>"
+    },
+    {
+      "type": "paragraph",
+      "html": "Tiếng chuông vừa reng báo hiệu giờ nghỉ trưa, mọi người vội vã thu dọn đồ đạc và rủ nhanh xuống căn tin hoặc ăn trưa."
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Maki, xuống ăn với bọn tớ không?\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Phắn, Maki của bọn này rồi\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Hả!?\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Mấy đứa bạn túm tụm lại quanh bàn tôi. Có vẻ ai cũng đang cố gắng bù đắp lại vụ hiểu lầm vừa rồi.&nbsp;"
+    },
+    {
+      "type": "paragraph",
+      "html": "Được đối xử bình thường trở lại thì vui thật đấy, nhưng tự nhiên có quá nhiều người niềm nở vây quanh thế này làm tôi thấy hơi ngợp, chưa quen nổi."
+    },
+    {
+      "type": "paragraph",
+      "html": "​\"Cảm ơn các cậu nhé, nhưng chắc để dịp khác nha. Trưa nay tớ có chút việc bận rồi.\""
+    },
+    {
+      "type": "paragraph",
+      "html": "​Thấy tôi từ chối, mấy gương mặt xung quanh thoáng xìu xuống, nhưng rồi cũng gật đầu thông cảm chứ không nài ép thêm."
+    },
+    {
+      "type": "paragraph",
+      "html": "​Thú thật thì tôi muốn lên sân thượng quen thuộc của tôi hơn là đi ăn cùng mấy người bạn tôi chưa quen lắm, cảm giác ngượng ngạo sao ấy."
+    },
+    {
+      "type": "paragraph",
+      "html": "​Dọn vội mấy cuốn sách trên bàn, tôi xách theo hộp bento rồi bước nhanh ra khỏi lớp."
+    },
+    {
+      "type": "paragraph",
+      "html": "Trong lúc đi tới cuối hành lang,&nbsp;tự dưng sự\ntò mò của tôi lại xuất hiện."
+    },
+    {
+      "type": "paragraph",
+      "html": "Nếu Maki ngày nào cũng có mặt ở trên đó trước tôi, vậy sao tôi không thử đi bằng cửa chính một lần cho biết nhỉ. Theo lý, nếu cậu ấy đã đi qua một lần, thì cánh cửa sẽ mở khóa."
+    },
+    {
+      "type": "paragraph",
+      "html": "Trừ khi cậu ấy khóa để đề phòng ai đó đi lên."
+    },
+    {
+      "type": "paragraph",
+      "html": "\n"
+    },
+    {
+      "type": "paragraph",
+      "html": "​Nghĩ bụng thế, tôi tiện tay đưa nắm đấm cửa xoay thử một phát cho biết. Đúng như dự đoán,\ncánh cửa sân thượng mở ra dễ dàng."
+    },
+    {
+      "type": "paragraph",
+      "html": "Vừa đẩy cánh cửa sắt hé ra, mảng kim loại ở mặt ngoài bắt trúng góc nắng trưa gay gắt, phản chiếu thẳng vào mắt tôi một vệt sáng trắng lóa. Luồng gió hầm hập từ mặt sân bê tông thốc thẳng vào mặt, mang theo hơi nóng khiến tôi phải vô thức nheo mắt lại, đưa tay lên che trán để làm quen với sự chênh lệch ánh sáng đột ngột sau khi bước ra từ bên trong."
+    },
+    {
+      "type": "paragraph",
+      "html": "Thế nhưng, ngay khi thị giác vừa kịp định hình lại giữa luồng sáng chói chang ấy,bóng dáng quen thuộc phía trước bỗng biến thành một hình ảnh giáng mạnh vào tâm trí tôi."
     },
     {
       "type": "paragraph",
@@ -454,35 +678,39 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Dù chỉ vỏn vẹn một\ngiây kể từ khi tiếng cửa mở phát ra, nhưng chừng đó là quá đủ để tôi thu trọn\ntoàn bộ sự việc vào tầm mắt.</span>"
+      "html": "Dù chỉ khoảng một giây kể từ khoảnh khắc tôi chớp mắt để xua đi cơn lóa sáng, nhưng từng ấy thời gian là quá đủ để hình ảnh đó in vào sâu trong trí nhớ."
     },
     {
       "type": "paragraph",
-      "html": "<span>​Tại sao Maki lại\nlàm thế? Chắc chắn cậu ấy biết hành động đó nguy hiểm đến mức nào.</span>"
+      "html": "<span>​Tại sao Maki lại\nlàm thế? Cậu ấy thừa biết hành động đó nguy hiểm đến mức nào cơ mà.</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>&nbsp;Nghĩ lại lần đầu gặp gỡ, khung cảnh cũng tương\ntự, nhưng lúc đó tôi còn mải bất ngờ vì sự hiện diện của người khác trên sân\nthượng nên không mấy bận tâm. </span>"
+      "html": "<span>&nbsp;Nghĩ lại lần đầu gặp gỡ, khung cảnh cũng tương\ntự,&nbsp;</span>chỉ là lúc đó tôi còn mải bối rối vì bất ngờ thấy có người khác xuất hiện trên sân thượng mà tôi vẫn cho rằng nó là của riêng mình, nên đã tự thuyết phục bản thân rằng cậu ấy chỉ đang hóng gió."
     },
     {
       "type": "paragraph",
-      "html": "<span>Có lẽ tình hình của\nMaki bất ổn hơn tôi tưởng, dù mọi suy luận vẫn chưa có gì chắc chắn.</span>"
+      "html": "Có lẽ tôi đã lầm."
     },
     {
       "type": "paragraph",
-      "html": "<span>&nbsp;Nhưng sau lần bắt gặp cậu ấy trên đường phố cộng\nvới hành động lần này, tôi khẳng định Maki đang đối mặt với một vấn đề lớn hơn\nrất nhiều.</span>"
+      "html": "Tôi cứ nghĩ rằng vấn đề của cậu ấy khá đơn giản, nhưng sau lần bắt gặp cậu ấy trên đường phố cộng\nvới hành động lần này, tôi khẳng định Maki đang đối mặt với một vấn đề lớn hơn\nrất nhiều."
     },
     {
       "type": "paragraph",
-      "html": "<span>​Trong lúc tôi\ncòn đang thẫn thờ, Maki quay lại, nhanh chóng lùi về vị trí an toàn rồi tiến về\nphía tôi. </span>"
+      "html": "<span>​Trong lúc tôi\ncòn đang thẫn thờ, Maki giật mình quay lại, có lẽ vì tiếng mở cửa . Cậu ấy vội vã bước xa ra khỏi lan can và lập tức tiếp về phía tôi</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>Cậu ấy lập tức đặt\ncâu hỏi, có lẽ là để đánh trống lảng về việc tôi vừa chứng kiến.</span>"
+      "html": "<span>Cậu ấy hỏi han tôi một cách lắp bắp, có lẽ là để đánh trống lảng về việc tôi vừa chứng kiến.</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Sao tự dưng hôm\nnay cậu lại đi bằng đường chính vậy?, bộ chán việc phải leo trèo như khỉ rồi\nà?”</span>"
+      "html": "<span>​“Kuze.... À, sao tự dưng hôm\nnay cậu lại đi bằng đường chính vậy?, bộ chán việc phải leo trèo như khỉ rồi\nà?” Maki vừa hỏi, vừa cười ngượng.</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "Cảm thấy cậu ấy đang che giấu gì đó nên tôi nghĩ nên tạm thời vờ như không biết thì hơn."
     },
     {
       "type": "paragraph",
@@ -498,11 +726,19 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Đó là sự may mắn\ncủa tớ vì bác bảo vệ làm rơi, tớ có ăn trộm gì đâu.”</span>"
+      "html": "\"Bậy nào, người ta gọi đấy là lộc trời ban! bác bảo vệ đánh rơi ngay chân tớ, tớ chỉ nhặt lên bảo quản hộ thôi, trộm cắp gì ở đây.\""
     },
     {
       "type": "paragraph",
-      "html": "<span>​Cả hai ngồi cạnh\ngóc tường, tôi bắt đầu lấy hộp bento từ trong túi ra. </span>"
+      "html": "\"Hửm, bảo quản hộ cơ đấy\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Khuôn mặt Maki lúc này thoải mái hơn, cậu ấy mỉm cười nhẹ nhàng."
+    },
+    {
+      "type": "paragraph",
+      "html": "Cả hai ngồi xuống dưới chân tường. Tôi cởi bọc khăn, lôi hộp bento ra rồi tách đôi đũa phụ đã chuẩn bị sẵn chìa về phía Maki."
     },
     {
       "type": "paragraph",
@@ -514,11 +750,11 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​Do dự một hồi,\nMaki cũng nhận lấy đôi đũa bằng cả hai tay.</span>"
+      "html": "Ngón tay Maki khẽ siết chặt lấy gấu váy, sự ngần ngại hiện rõ trong mắt, nhưng rồi cậu ấy vẫn chậm rãi đưa hai tay ra nhận lấy:"
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Tớ không còn bí\nmật nào để kể với cậu đâu đấy.”</span>"
+      "html": "​\"Nói trước là tớ cạn sạch bí mật để đem ra đổi lấy đồ ăn rồi đấy.\""
     },
     {
       "type": "paragraph",
@@ -534,15 +770,31 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Cái đói là gia\nvị nhất mà.”</span>"
+      "html": "\"Đói ăn muối cũng ngon\""
     },
     {
       "type": "paragraph",
-      "html": "<span>​Sau khi đánh\nchén sạch sẽ hộp bento và cùng nhau nhâm nhi chút hồng trà, trông Maki đã có sức\nsống hơn hẳn.</span>"
+      "html": "Trông Maki ăn ngon lành, tôi lại cảm thấy nhẹ nhõm. Thật ra trông cậu ấy cảm giác hơi gầy so với những bạn con gái khác, có lẽ Maki đã không ăn uống đầy đủ suốt một thời gian cũng khá dài rồi.<br>Tôi vẫn không rõ vì sao cậu ấy lại nhịn ăn rồi tự nói dối bản thân đã ăn rồi, chuyện buồn của cậu ấy lớn tới mức khôgn cả buồn ăn uống hay sao?"
     },
     {
       "type": "paragraph",
-      "html": "<span>&nbsp;Đúng như tôi nghĩ, chẳng ai có thể không đói\nkhi phải nhịn từ trưa cho đến tận tối mịt.</span>"
+      "html": "\"Cái này cũng ngon nữa, cậu định sau này mở quán ăn à?\""
+    },
+    {
+      "type": "paragraph",
+      "html": "\"Đâu có, tớ chỉ là muốn ăn ngon miệng nên mới tập nấu ăn thô- Ê để lại cho tớ nữa chứ!\""
+    },
+    {
+      "type": "paragraph",
+      "html": "<br>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>&nbsp; &nbsp; &nbsp; ​Sau khi đánh\nchén sạch sẽ hộp bento và cùng nhau nhâm nhi chút hồng trà, trông Maki đã có sức\nsống hơn hẳn.</span>&nbsp;Đúng như tôi nghĩ, chẳng ai có thể không đói\nkhi phải nhịn ăn từ sáng tới trưa cả."
+    },
+    {
+      "type": "paragraph",
+      "html": "Maki thu người lại, vòng tay ôm lấy hai đầu gối, nhẹ nhàng hỏi tôi:"
     },
     {
       "type": "paragraph",
@@ -554,35 +806,47 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“ Kuze-kun, cậu\ncảm thấy thế nào nếu một người quan trọng với cậu tự dưng biến mất đi?”</span>"
+      "html": "Maki khẽ vân vê ngón tay, giọng chùng xuống, lọt thỏm giữa tiếng gió rì rào trên sân thượng:"
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Tớ sẽ đau buồn\nvà cả ngày nằm ở nhà.”</span>"
+      "html": "<span>​“ Kuze-kun, cậu\ncảm thấy thế nào nếu một người quan trọng với cậu tự dưng biến mất?”</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Vậy nếu một người\nkhông quan trọng nhưng đã nói chuyện cùng một thời gian thì sao?”</span>"
+      "html": "​\"Chắc là sụp đổ lắm. Tớ sẽ chỉ muốn khóa trái cửa rồi nằm lì trong phòng cả ngày thôi.\""
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Tớ cũng sẽ đau\nbuồn và nằm ở nhà cả ngày.”</span>"
+      "html": "​\"Thế còn... một người chẳng có gì quan trọng, nhưng đã nói chuyện với cậu suốt một khoảng thời gian thì sao?\""
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Sao lại như vậy,\ntớ tưởng vị trí của người không quan trọng sẽ khác so với ng quan trọng chứ.”</span>"
+      "html": "​\"Tớ vẫn sẽ buồn, và vẫn sẽ nằm bẹp ở nhà như thế thôi.\""
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Thường là thế,\nnhưng định nghĩa quan trọng tới mức nào còn phụ thuộc vào suy nghĩ của bản\nthân. </span>"
+      "html": "Maki ngẩng đầu lên, ánh mắt của cậu ấy như vừa nhận được một thông tin nằm ngoài suy nghĩ của bản thân:"
     },
     {
       "type": "paragraph",
-      "html": "<span>“Nói chuyện một\nthời gian đồng nghĩa với việc tớ đã quen với sự hiện diện của người đó, nghĩa\nlà họ đã chiếm một phần trong quỹ thời gian của tớ. </span>"
+      "html": "<span>​“Sao lại như vậy,\ntớ tưởng vị trí của người dưng sẽ khác so với người quan trọng chứ.”</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>​“Thường là thế,\nnhưng định nghĩa quan trọng tới mức nào còn phụ thuộc vào suy nghĩ của bản\nthân.\"</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>“Nói chuyện một\nthời gian đồng nghĩa với việc tớ đã quen với sự hiện diện của người đó, nghĩa\nlà họ đã chiếm một phần trong quỹ thời gian của tớ.\"</span>"
     },
     {
       "type": "paragraph",
       "html": "<span>“Việc mất đi họ\ncũng giống như ta mất đi một người quan trọng, để lại khoảng trống trong quỹ thời\ngian đó. Tớ rất sợ nhìn thấy người mà mình đã quen thấy họ trong cuộc sống của\nmình đột ngột rời đi và không thể gặp lại.”</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Maki nở một nụ cười nhẹ, giống như cậu ấy vừa trút bỏ được một nỗi lo trong lòng.</span>"
     },
     {
       "type": "paragraph",
@@ -594,11 +858,19 @@
     },
     {
       "type": "paragraph",
+      "html": "<span>\"Hả?\"</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Tôi nói tiếp, không để sự bất ngờ của cậu ấy làm ngắt quãng cuộc trò chuyện.</span>"
+    },
+    {
+      "type": "paragraph",
       "html": "<span>“Nói thật thì tớ\nkhá vui vì nói chuyện với cậu”</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>“ Nếu để nói cậu\nra sao với tớ, thì tớ nghĩ cậu là người bạn của tớ rồi, tớ cũng không muốn cô\nđơn như trước đâu”</span>"
+      "html": "<span>“Nếu để nói cậu\nra sao với tớ, thì tớ nghĩ cậu là người bạn của tớ rồi, tớ cũng không muốn cô\nđơn như trước đâu”</span>"
     },
     {
       "type": "paragraph",
@@ -606,11 +878,19 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Tớ có những người\nquan trọng như vậy, nhưng họ đã rời đi trước rồi. “</span>"
+      "html": "<span>​“Chấc là có, nhưng có lẽ chỉ có tớ thấy quan trọng thôi“</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>“Những lúc ở một\nmình, tớ hay nghĩ .... giá mà hôm đó tớ đi cùng họ.”</span>"
+      "html": "<span>Tôi không nói dối, với tôi hiện tại chỉ có gia đình là quan trọng nhất thôi, dù ba mẹ bận bịu cả ngày, nhưng họ vẫn là người sinh ra và nuôi tôi lớn, tình cảm thì vẫn là thật.</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>“Tớ vẫn nghĩ nếu lúc đó, tớ đi cùng họ thì có lẽ những người quan trọng của tớ đã không đi mất”</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Cảm thấy vấn đề đang nằm ngoài tầm, tôi nhanh chóng nghĩ một câu nói để an ủi cậu ấy.</span>"
     },
     {
       "type": "paragraph",
@@ -626,7 +906,11 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Nhận thấy tình\nhình đang theo hướng tồi tệ đi, tôi liền nhanh chóng kiếm một chủ đề khác.</span>"
+      "html": "<span><br></span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Cảm thấy tình hình ngày càng tệ đi, tôi cố gắng tìm một chủ đề khác để Maki không nghĩ về nó nữa:</span>"
     },
     {
       "type": "paragraph",
@@ -654,7 +938,19 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Có ổn không nếu\ntên Bocchi này xin phương thức liên lạc của thiên thần không có cánh đi lên sân\nthượng bằng chìa khóa đánh rơi của bảo vệ nhỉ?”</span>"
+      "html": "<span>\"Đồng ý nhanh vậy sao?\"</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>\"Rủ xong nói vậy là ý gì, cậu chọc tức tớ à??\"</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Phồng má giận dỗi, nét mặt Maki trông dễ thương hơn hẳn những gì tôi vẫn hay thấy thường ngày, có lẽ tôi là một trong số ít những người may mắn nhất thế giới được chiêm ngưỡng vẻ mặt này thì phải.</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>​“Có ổn không nếu\ntên Bocchi này xin phương thức liên lạc của một nữ sinh đi lên sân\nthượng bằng chìa khóa đánh rơi của bảo vệ với lí do bảo quản hộ nhỉ?”</span>"
     },
     {
       "type": "paragraph",
@@ -662,23 +958,31 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Sẽ khó khăn lắm\nnếu tớ đây phải tự đoán mò vị trí để gặp được cậu lắm.”</span>"
+      "html": "<span>​“Sẽ khó khăn lắm\nnếu tớ đây phải tự đoán mò vị trí để gặp được cậu lắm.” Tôi gãi đầu</span>"
     },
     {
       "type": "paragraph",
-      "html": "<span>​Sau khi trao đổi\nLine với nhau, chúng tôi tạm biệt nhau khi giờ nghỉ trưa kết thúc. </span>"
+      "html": "Chúng tôi trao đổi tài khoản Line ngay trước khi tiếng chuông vào tiết réo rắt vang lên, rồi vội vã tạm biệt nhau ở khúc quanh cầu thang."
     },
     {
       "type": "paragraph",
-      "html": "<span>Mọi chuyện hôm\nnay coi như tạm ổn, ít nhất là Maki vẫn chưa thực hiện ý định của mình ngay lập\ntức. </span>"
+      "html": "<span>Mọi chuyện hôm\nnay coi như tạm ổn, ít nhất là Maki vẫn chưa thực hiện bất kì ý định nào gây tổn thương cho chính bản thân mình.&nbsp;</span>Nhưng qua cuộc\ntrò chuyện vừa rồi, tôi hiểu rõ mình không còn nhiều thời gian.&nbsp;"
     },
     {
       "type": "paragraph",
-      "html": "<span>Nhưng qua cuộc\ntrò chuyện vừa rồi, tôi biết mình cần phải hành động càng sớm càng tốt.</span>"
+      "html": "​Tới nước này, tôi không thể tiếp tục đứng nhìn nữa. Tôi biết rất rõ những vết xe đổ trong quá khứ, biết bản thân từng phải trả giá đắt thế nào khi cố can thiệp vào chuyện của người khác, và hậu quả của nó dã biến tôi thành một người như hiện tại."
     },
     {
       "type": "paragraph",
-      "html": "<span>Thói quen ấy cứ\nthế duy trì, mỗi khi tiếng chuông nghỉ trưa vang lên, hai chúng tôi lại cùng\nnhau lên sân thượng để trò chuyện và tâm sự.</span>"
+      "html": "Nhưng nếu cứ lảng tránh, tôi sợ rằng bản thân sẽ mắc phải sai lầm không thể sửa chữa."
+    },
+    {
+      "type": "paragraph",
+      "html": "Tôi không chắc chắn liệu bản thân đang suy nghĩ đúng hướng hay không, nhưng tôi sẽ đi theo con tim một lần nữa thay vì lí trí."
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>Thói quen ấy cứ\nthế duy trì, mỗi khi tới giờ nghỉ trưa, hai chúng tôi lại cùng\nnhau lên sân thượng để trò chuyện và tâm sự, những câu chuyện trên trời dưới biển, tất cả đều được cả hai lôi ra làm chuyện để làm không khí trên đó thoải mái hơn.</span>"
     },
     {
       "type": "paragraph",
@@ -710,11 +1014,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Tôi cũng chẳng rõ\ncảm giác ấy thực chất là gì, nhưng sự hiện diện của Maki đã dần trở thành một\nđiều không thể thiếu</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>thứ mà nếu bỗng\ndưng biến mất, sẽ để lại một khoảng trống trải trong lòng tôi.</span>"
+      "html": "<span>Tôi cũng chẳng rõ\ncảm giác ấy thực chất là gì, nhưng sự hiện diện của Maki đã dần trở thành một\nđiều không thể thiếu,&nbsp;</span>thứ mà nếu bỗng\ndưng biến mất, sẽ để lại một khoảng trống trải trong lòng tôi."
     },
     {
       "type": "paragraph",
@@ -723,6 +1023,14 @@
     {
       "type": "paragraph",
       "html": "<span>Thay vì giúp đỡ\nchỉ vì một sự thôi thúc nhất thời, có lẽ giờ đây tôi giúp cậu ấy vì khát khao\nđược ở bên và trò chuyện cùng cậu nhiều hơn nữa.</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span><br></span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span><br></span>"
     },
     {
       "type": "paragraph",
@@ -754,11 +1062,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Tôi quyết định sẽ\ndẫn cậu ấy quay lại quán bánh ngọt hôm trước, thử thêm vài loại bánh và đồ uống\nmới. </span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Dù sao cũng là cuối\ntuần, ghé qua khu vui chơi sau đó cũng chẳng phải lựa chọn tồi. </span>"
+      "html": "<span>Tôi quyết định sẽ\ndẫn cậu ấy quay lại quán bánh ngọt hôm trước, thử thêm vài loại bánh và đồ uống\nmới.&nbsp;</span>Dù sao cũng là cuối\ntuần, ghé qua khu vui chơi sau đó cũng chẳng phải lựa chọn tồi."
     },
     {
       "type": "paragraph",
@@ -806,15 +1110,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Tôi chưa có tư\ncách gì để can thiệp vào vấn đề của cậu ấy,nhug dưới cương vị là một người bạn\n(chắc vậy)</span>"
-    },
-    {
-      "type": "paragraph",
-      "html": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-    },
-    {
-      "type": "paragraph",
-      "html": "<span>Tôi sẽ cố gắng\nlàm hết khả năng</span>"
+      "html": "<span>Tôi chưa có tư\ncách gì để can thiệp vào vấn đề riêng của cậu ấy, nhưng dưới cương vị là một người bạn đã cùng trò chuyện kha khá thời gian, có lẽ tôi sẽ cố gắng hết sức trong sự cho phép của Maki, hỗ trợ cậu ấy bằng tất cả khả năng của bản thân.</span>"
     },
     {
       "type": "paragraph",
