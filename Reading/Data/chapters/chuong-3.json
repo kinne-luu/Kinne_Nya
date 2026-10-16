@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-10-16T05:15:46.242Z",
+  "updatedAt": "2026-10-16T05:20:49.952Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -614,15 +614,19 @@
     },
     {
       "type": "paragraph",
-      "html": "Mọi người cùng ở lại nói chuyện, hỏi han với tôi trước khi giáo viên bước vào lớp. Cũng nhờ màn hỏi thăm rôm rả ấy, tôi mới vỡ lẽ ra lý do vì sao đám bắt nạt vốn đang nhởn nhơ lại bị nhà trường thẳng tay \"trảm\" chỉ sau một buổi chiều."
+      "html": "Mọi người cùng ở lại nói chuyện, hỏi han với tôi trước khi giáo viên bước vào lớp. Cũng nhờ màn hỏi thăm rôm rả ấy, tôi mới vỡ lẽ ra lý do vì sao đám bắt nạt vốn đang nhởn nhơ lại bị nhà trường thẳng tay trảm chỉ sau một buổi chiều."
     },
     {
       "type": "paragraph",
-      "html": "\"Mà công nhận quả báo đến nhanh thật đấy,\" một cậu bạn bàn bên vừa nói vừa vỗ vai tôi. \"Mày biết thằng nhóc lớp bên cạnh bị tụi Takahashi chặn đường chiều thứ Sáu tuần trước không?\""
+      "html": "\"Mà công nhận quả báo đến nhanh thật đấy\" Một cậu bạn bàn bên vừa nói vừa vỗ vai tôi.&nbsp;"
     },
     {
       "type": "paragraph",
-      "html": "Tôi khựng lại một nhịp. Chẳng phải đó chính là cậu nam sinh mà tôi đã bắt gặp và cố tình lướt qua lúc tan học hôm ấy sao?"
+      "html": "\"Mày biết thằng nhóc lớp bên cạnh bị tụi Takahashi chặn đường chiều thứ Sáu tuần trước không?\""
+    },
+    {
+      "type": "paragraph",
+      "html": "Tôi lục lại suy nghĩ, chẳng phải đó chính là cậu nam sinh mà tôi đã bắt gặp và cố tình lướt qua lúc tan học hôm ấy sao?"
     },
     {
       "type": "paragraph",
@@ -638,23 +642,27 @@
     },
     {
       "type": "paragraph",
+      "html": "Tiếng xì xào của mọi người đang vây quanh bàn tôi, trò chuyện về vụ bắt nạt bị tóm đó."
+    },
+    {
+      "type": "paragraph",
       "html": "À, ra là vậy."
     },
     {
       "type": "paragraph",
-      "html": "Mọi mảnh ghép rời rạc trong đầu tôi lập tức khớp lại với nhau. Thảo nào người đàn ông mặc vest đi cùng thầy hiệu phó chiều qua lại có gương mặt sắc lạnh và uy quyền đến thế. Hóa ra ông ta không phải giáo viên trong trường như tôi tưởng, mà chính là vị phụ huynh kiêm luật sư kia trực tiếp xuống tận lớp để nhận diện từng đứa một."
+      "html": "Hóa ra cái người đi cùng thầy hiệu phó chiều qua không phải giáo viên trong trường như tôi tưởng, mà chính là bố của cậu bạn đó. Thảo nào lúc bước vào lớp, trông mặt ông ấy lại căng thẳng và đáng sợ tới mức làm cả phòng im bặt như vậy."
     },
     {
       "type": "paragraph",
-      "html": "Nghĩ lại cũng thấy nực cười. Khi một học sinh bình thường không có chỗ dựa như tôi lên tiếng, nhà trường chọn cách nhắm mắt làm ngơ để giữ bảng thành tích sạch đẹp. Nhưng chỉ cần có nguy cơ bị lôi ra tòa và phanh phui lên mặt báo, những người vốn luôn miệng rao giảng đạo lý ấy lại lập tức hành động nhanh như chớp để tự cứu lấy cái ghế của mình."
+      "html": "Nghĩ lại cũng thấy hơi buồn cười. Hồi tôi bị đám đó làm phiền, nhà trường cứ làm ngơ như chẳng có chuyện gì xảy ra. Vậy mà giờ đụng trúng người có thế lực, lại có nguy cơ bị kiện cáo đưa lên báo cái là các thầy cô xử lý nhanh gọn lẹ ngay lập tức."
     },
     {
       "type": "paragraph",
-      "html": "Thú thật, việc mình được giải thoát không phải nhờ sự công tâm của nhà trường mà lại nhờ cái bóng quyền lực từ phụ huynh của một người khác nghe có vẻ hơi châm biếm. Cơ mà, nghĩ nhiều làm gì cho mệt đầu. Dù quá trình có ra sao thì kết quả cuối cùng vẫn là lũ bắt nạt đã phải trả giá, và chuỗi ngày địa ngục của tôi ở lớp học này cũng chính thức khép lại. Với một kẻ chỉ mong cầu sự yên bình như tôi, chừng đó thôi đã là quá đủ rồi."
+      "html": "Dù việc tôi thoát khỏi cảnh này chỉ là nhờ ăn may từ chuyện của người khác, nghĩ thì cũng hơi chạnh lòng chút, nhưng thôi kệ. Ít ra cậu bạn lớp bên cạnh cũng không phải chịu cảnh giống tôi, mà đám bắt nạt cũng đã bị phạt thích đáng rồi."
     },
     {
       "type": "paragraph",
-      "html": "Mọi người cùng ở lại nói chuyện,hỏi han với tôi trước khi giáo viên bước vào lớp"
+      "html": "Mọi người cùng ở lại nói chuyện, hỏi han với tôi thêm một lúc trước khi giáo viên bước vào lớp."
     },
     {
       "type": "paragraph",
