@@ -2,7 +2,7 @@
   "id": "chap_mtaz9b9q69bqq",
   "title": "Chương 3",
   "order": 3,
-  "updatedAt": "2026-10-16T05:35:53.258Z",
+  "updatedAt": "2026-10-16T05:40:46.243Z",
   "blocks": [
     {
       "type": "paragraph",
@@ -874,7 +874,7 @@
     },
     {
       "type": "paragraph",
-      "html": "Maki khẽ vân vê ngón tay, giọng chùng xuống, lọt thỏm giữa tiếng gió rì rào trên sân thượng:"
+      "html": "Maki khẽ vân vê ngón tay, giọng chùng xuống, tiếng gió rì rào trên sân thượng làm bầu không khí có cảm giác nhẹ nhàng và dễ chịu hơn bao giờ hết."
     },
     {
       "type": "paragraph",
@@ -962,7 +962,11 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>​“Có những quyết\nđịnh không hẳn là thông suốt mà chỉ là nhất thời thôi. Những vấn đề xảy ra cũng\nlà vô tình, chúng ta không thể kiểm soát được tất cả, nếu thế ai cũng là tỉ phú\nrồi.”</span>"
+      "html": "<span>Vờ như đang nghĩ câu chuyện đó là của bản thân, hướng mắt ra phía xa, tôi đăm chiêu suy nghĩ rồi đáp:</span>"
+    },
+    {
+      "type": "paragraph",
+      "html": "<span>​“Có những quyết\nđịnh không hẳn là thông suốt mà chỉ là nhất thời thôi. Những vấn đề xảy ra cũng\nlà vô tình, chúng ta không thể kiểm soát được tất cả,&nbsp;</span>con người chứ đâu phải nhà tiên tri biết trước tương lai đâu.<span>”</span>"
     },
     {
       "type": "paragraph",
@@ -978,7 +982,7 @@
     },
     {
       "type": "paragraph",
-      "html": "<span>Cảm thấy tình hình ngày càng tệ đi, tôi cố gắng tìm một chủ đề khác để Maki không nghĩ về nó nữa:</span>"
+      "html": "<span>Cảm thấy tình hình có thể sẽ ngày càng tệ đi, tôi cố gắng tìm một chủ đề khác để Maki không nghĩ về nó nữa:</span>"
     },
     {
       "type": "paragraph",
