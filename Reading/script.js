@@ -1,48 +1,31 @@
-/* ================== CẤU HÌNH ================== */
-// Toàn bộ file được bọc trong 1 hàm riêng (IIFE) để cô lập scope —
-// tránh xung đột biến nếu lỡ bị nạp/dán trùng nội dung 2 lần trên trang.
+
 (function () {
 'use strict';
-
 const API_BASE_URL = 'https://kinnebackend.luumanhkien08092006.workers.dev';
-const AUTOSAVE_INTERVAL_MS = 5 * 60 * 1000; // 5 phút
+const AUTOSAVE_INTERVAL_MS = 5 * 60 * 1000;
 const GITHUB_DIR = 'Reading/Data';
 const GITHUB_CHAPTERS_DIR = 'Reading/Data/chapters';
 const GITHUB_MANIFEST_PATH = 'Reading/Data/manifest.json';
-
-/* ================== STATE ================== */
-// Chỉ 1 truyện duy nhất, không có khái niệm "tập"
 let story = { title: '', updatedAt: null, chapters: [] };
 let currentChapterId = null;
-let mode = 'read'; // 'read' | 'edit'
+let mode = 'read';
 let isDirty = false;
 let isSaving = false;
 let autosaveTimer = null;
-// Theo dõi chương nào thực sự có thay đổi (nội dung / tiêu đề) kể từ lần lưu gần nhất
 let dirtyChapterIds = new Set();
-// Manifest (mục lục) chỉ cần lưu lại khi: đổi tên truyện, đổi tên chương,
-// hoặc thêm/xoá chương (làm lệch thứ tự file chuong-x.json)
 let manifestDirty = false;
-
-/* ================== TIỆN ÍCH ================== */
 function uid(prefix) {
   return prefix + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 }
-
 function getChapter(id) {
   let chap = story.chapters.find(c => c.id === id);
-  // Tự phục hồi: nếu id hiện tại không khớp chương nào nhưng vẫn còn chương
-  // (VD sau khi xoá chương, dữ liệu cũ lệch...), tự động chọn lại chương đầu tiên
-  // thay vì hiển thị "chưa có chương nào" trong khi sidebar vẫn có chương.
   if (!chap && story.chapters.length) {
     chap = story.chapters[0];
     currentChapterId = chap.id;
   }
   return chap;
 }
-
 function saveLocal() {}
-
 async function loadStoryFromGithub() {
   try {
     const payload = await apiFetch('/api/story/load', { method: 'GET' });
@@ -56,7 +39,6 @@ async function loadStoryFromGithub() {
     isDirty = false;
     dirtyChapterIds.clear();
     manifestDirty = false;
-
     renderTitles();
     renderChapterList();
     if (mode === 'edit') renderEditor(); else renderReadView();
@@ -66,10 +48,6 @@ async function loadStoryFromGithub() {
     return false;
   }
 }
-
-// chapterId: nếu có, đánh dấu riêng chương đó là "cần lưu lại"
-// affectsManifest: true nếu thay đổi này cũng làm mục lục (manifest.json) lỗi thời
-//   (đổi tên truyện, đổi tên chương, thêm/xoá/sắp xếp lại chương)
 function markDirty(chapterId, affectsManifest) {
   isDirty = true;
   if (chapterId) dirtyChapterIds.add(chapterId);
@@ -77,9 +55,6 @@ function markDirty(chapterId, affectsManifest) {
   saveLocal();
   updateSaveStatus();
 }
-
-// Dùng khi thêm/xoá chương: vị trí (index) của các chương phía sau đều bị lệch
-// -> tên file chuong-x.json của chúng cũng đổi theo -> phải lưu lại toàn bộ.
 function markAllChaptersDirty() {
   story.chapters.forEach(c => dirtyChapterIds.add(c.id));
   isDirty = true;
@@ -87,7 +62,6 @@ function markAllChaptersDirty() {
   saveLocal();
   updateSaveStatus();
 }
-
 function updateSaveStatus() {
   const el = document.getElementById('saveStatus');
   if (!el) return;
@@ -102,8 +76,6 @@ function updateSaveStatus() {
     el.className = 'save-status';
   }
 }
-
-/* ================== GỌI BACKEND ================== */
 async function apiFetch(path, options = {}) {
   const response = await fetch(`${API_BASE_URL}${path}`, {
     ...options,
@@ -127,15 +99,11 @@ async function apiFetch(path, options = {}) {
   }
   return payload;
 }
-
-/* ================== TITLE (dùng chung) ================== */
 function renderTitles() {
   const name = story.title || 'Chưa đặt tên';
   document.getElementById('brandTitle').textContent = name;
   document.getElementById('readStoryTitle').textContent = name;
 }
-
-/* ================== RENDER SIDEBAR (CHƯƠNG) ================== */
 function renderChapterList() {
   const list = document.getElementById('chapterList');
   list.innerHTML = '';
@@ -179,14 +147,11 @@ function renderChapterList() {
     list.appendChild(item);
   });
 }
-
 function escapeHtml(str) {
   const div = document.createElement('div');
   div.textContent = str || '';
   return div.innerHTML;
 }
-
-/* ================== RENDER EDITOR ================== */
 function blocksToHtml(blocks) {
   if (!blocks || !blocks.length) return '';
   return blocks.map(b => {
@@ -194,7 +159,6 @@ function blocksToHtml(blocks) {
     return `<${tag}>${sanitizeInline(b.html || '')}</${tag}>`;
   }).join('');
 }
-
 function htmlToBlocks(container) {
   const blocks = [];
   container.childNodes.forEach(node => {
@@ -208,7 +172,6 @@ function htmlToBlocks(container) {
   });
   return blocks;
 }
-
 function sanitizeInline(html) {
   const allowed = ['B', 'STRONG', 'I', 'EM', 'U', 'BR', 'SPAN'];
   const tmp = document.createElement('div');
@@ -229,15 +192,12 @@ function sanitizeInline(html) {
   })(tmp);
   return tmp.innerHTML;
 }
-
 function renderEditor() {
   const chap = getChapter(currentChapterId);
   const area = document.getElementById('editorArea');
   const chapTitleInput = document.getElementById('chapterTitleInput');
   const storyTitleInput = document.getElementById('storyTitleInput');
-
   storyTitleInput.value = story.title || '';
-
   if (!chap) {
     area.innerHTML = '';
     area.setAttribute('data-placeholder', 'Tạo 1 chương ở thanh bên trái để bắt đầu viết...');
@@ -252,21 +212,17 @@ function renderEditor() {
   area.innerHTML = blocksToHtml(chap.blocks) || '<p><br></p>';
   area.setAttribute('data-placeholder', 'Bắt đầu viết ở đây...');
 }
-
 function commitEditorToState() {
   const chap = getChapter(currentChapterId);
   if (!chap) return;
   const area = document.getElementById('editorArea');
   chap.blocks = htmlToBlocks(area);
 }
-
-/* ================== RENDER GIAO DIỆN ĐỌC ================== */
 function renderReadView() {
   const chap = getChapter(currentChapterId);
   const empty = document.getElementById('readEmpty');
   const content = document.getElementById('readContent');
   const titleTop = document.getElementById('readChapterTitleTop');
-
   if (!chap) {
     empty.hidden = false;
     content.hidden = true;
@@ -275,32 +231,26 @@ function renderReadView() {
   }
   empty.hidden = true;
   content.hidden = false;
-  // trigger lại animation khi đổi chương
   content.classList.remove('read-content');
   void content.offsetWidth;
   content.classList.add('read-content');
-
   const title = chap.title || 'Chương chưa đặt tên';
   document.getElementById('readChapterTitle').textContent = title;
   titleTop.textContent = title;
   document.getElementById('readChapterBody').innerHTML = blocksToHtml(chap.blocks) || '<p><br></p>';
-  try { document.getElementById('readArea').scrollTop = 0; } catch (e) { /* bỏ qua */ }
+  try { document.getElementById('readArea').scrollTop = 0; } catch (e) {  }
 }
-
 function selectReadChapter(id) {
   currentChapterId = id;
   renderChapterList();
   renderReadView();
 }
-
-/* ================== HÀNH ĐỘNG CHÍNH (VIẾT) ================== */
 function selectChapter(id) {
   commitEditorToState();
   currentChapterId = id;
   renderChapterList();
   renderEditor();
 }
-
 function createChapter() {
   commitEditorToState();
   const chap = { id: uid('chap'), title: `Chương ${story.chapters.length + 1}`, blocks: [{ type: 'paragraph', html: '' }] };
@@ -311,8 +261,6 @@ function createChapter() {
   renderEditor();
   document.getElementById('editorArea').focus();
 }
-
-/* ================== CHUYỂN CHẾ ĐỘ ĐỌC / VIẾT ================== */
 function setMode(newMode) {
   if (mode === 'edit' && newMode === 'read') {
     commitEditorToState();
@@ -321,7 +269,6 @@ function setMode(newMode) {
   const app = document.getElementById('app');
   app.classList.toggle('mode-read', mode === 'read');
   app.classList.toggle('mode-edit', mode === 'edit');
-
   const toggleIcon = document.querySelector('#modeToggleBtn .mode-toggle-icon i');
   const toggleLabel = document.querySelector('#modeToggleBtn .mode-toggle-label');
   if (mode === 'edit') {
@@ -337,14 +284,11 @@ function setMode(newMode) {
     renderChapterList();
     renderReadView();
   }
-
   const activeWrap = mode === 'edit' ? document.getElementById('editorWrap') : document.getElementById('readWrap');
   activeWrap.classList.remove('view-fade');
   void activeWrap.offsetWidth;
   activeWrap.classList.add('view-fade');
 }
-
-/* ================== SIDEBAR MOBILE ================== */
 function openMobileSidebar() {
   document.getElementById('sidebar').classList.add('open');
   document.getElementById('sidebarBackdrop').classList.add('open');
@@ -357,8 +301,6 @@ function toggleMobileSidebar() {
   const open = document.getElementById('sidebar').classList.contains('open');
   if (open) closeMobileSidebar(); else openMobileSidebar();
 }
-
-/* ================== TOOLBAR ================== */
 function initToolbar() {
   document.querySelectorAll('.toolbar button[data-cmd]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -375,45 +317,33 @@ function initToolbar() {
     });
   });
 }
-
-/* ================== LƯU LÊN GITHUB (qua Worker) ================== */
-// Tên file theo thứ tự hiện tại của chương: chuong-1.json, chuong-2.json, ...
 function chapterFileName(index) {
   return `chuong-${index + 1}.json`;
 }
-
 function setSaveStatusText(text, cls) {
   const el = document.getElementById('saveStatus');
   if (!el) return;
   el.textContent = text;
   el.className = 'save-status' + (cls ? ' ' + cls : '');
 }
-
 async function pushStoryToGithub({ silent = false } = {}) {
-  // Không có gì thay đổi -> khỏi gọi API
   if (!isDirty && !dirtyChapterIds.size && !manifestDirty) {
     if (!silent) setSaveStatusText('Không có gì để lưu', '');
     return;
   }
-
   isSaving = true;
   updateSaveStatus();
   try {
     const total = story.chapters.length;
-    // manifest luôn cần danh sách đầy đủ (để trỏ đúng file cho mọi chương),
-    // nhưng việc XÂY danh sách này chỉ diễn ra ở phía trình duyệt — không tốn API call.
     const manifestChapters = [];
-    // Chỉ những chương nằm trong dirtyChapterIds mới thực sự được ghi lên GitHub
     const chaptersToSave = story.chapters
       .map((chap, i) => ({ chap, index: i }))
       .filter(({ chap }) => dirtyChapterIds.has(chap.id));
-
     for (let n = 0; n < chaptersToSave.length; n++) {
       const { chap, index } = chaptersToSave[n];
       const fileName = chapterFileName(index);
       const filePath = `${GITHUB_CHAPTERS_DIR}/${fileName}`;
       setSaveStatusText(`Đang lưu chương ${n + 1}/${chaptersToSave.length}...`, 'saving');
-
       const chapPayload = {
         path: filePath,
         message: `Cập nhật ${fileName} — ${chap.title || '(chưa đặt tên)'}`,
@@ -428,17 +358,11 @@ async function pushStoryToGithub({ silent = false } = {}) {
       console.log('[Lưu truyện] Gửi chương lên Worker:', filePath);
       await apiFetch('/api/story/save', { method: 'POST', body: JSON.stringify(chapPayload) });
     }
-
-    // Danh sách chương cho manifest luôn tính trên toàn bộ story (không tốn API),
-    // để trỏ đúng "file" ngay cả với những chương không đổi.
     for (let i = 0; i < total; i++) {
       const chap = story.chapters[i];
       const fileName = chapterFileName(i);
       manifestChapters.push({ id: chap.id, title: chap.title || '', order: i + 1, file: `chapters/${fileName}` });
     }
-
-    // 2) Chỉ lưu file mục lục khi có gì đó ảnh hưởng tới nó
-    //    (đổi tên truyện/chương, thêm/xoá/sắp xếp lại chương)
     if (manifestDirty) {
       setSaveStatusText('Đang lưu mục lục...', 'saving');
       const manifestPayload = {
@@ -454,7 +378,6 @@ async function pushStoryToGithub({ silent = false } = {}) {
       const result = await apiFetch('/api/story/save', { method: 'POST', body: JSON.stringify(manifestPayload) });
       console.log('[Lưu truyện] Thành công:', result);
     }
-
     isDirty = false;
     dirtyChapterIds.clear();
     manifestDirty = false;
@@ -470,20 +393,16 @@ async function pushStoryToGithub({ silent = false } = {}) {
   isSaving = false;
   updateSaveStatus();
 }
-
 async function saveNow(opts) {
   commitEditorToState();
   await pushStoryToGithub(opts);
 }
-
 function startAutosave() {
   if (autosaveTimer) clearInterval(autosaveTimer);
   autosaveTimer = setInterval(() => {
     if (isDirty && !isSaving) saveNow({ silent: true });
   }, AUTOSAVE_INTERVAL_MS);
 }
-
-/* ================== KHỞI ĐỘNG ================== */
 function showBootError() {
   const empty = document.getElementById('readEmpty');
   if (empty) {
@@ -493,31 +412,24 @@ function showBootError() {
   const content = document.getElementById('readContent');
   if (content) content.hidden = true;
 }
-
 async function boot() {
   currentChapterId = null;
   renderTitles();
   renderChapterList();
-
   const empty = document.getElementById('readEmpty');
   if (empty) {
     empty.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="opacity:.6"></i><p>Đang tải truyện...</p>';
     empty.hidden = false;
   }
-
   initToolbar();
-
   document.getElementById('newChapterBtn').addEventListener('click', createChapter);
-
   document.getElementById('modeToggleBtn').addEventListener('click', () => {
     setMode(mode === 'edit' ? 'read' : 'edit');
     closeMobileSidebar();
   });
-
   document.getElementById('hamburgerRead').addEventListener('click', toggleMobileSidebar);
   document.getElementById('hamburgerEdit').addEventListener('click', toggleMobileSidebar);
   document.getElementById('sidebarBackdrop').addEventListener('click', closeMobileSidebar);
-
   const closeBtn = document.getElementById('closeReadingBtn');
   if (closeBtn) {
     if (window.self !== window.top) {
@@ -529,18 +441,15 @@ async function boot() {
       closeBtn.remove();
     }
   }
-
   document.getElementById('saveNowBtn').addEventListener('click', () => {
     console.log('[Lưu truyện] Bấm nút Lưu ngay');
     saveNow({ silent: false });
   });
-
   document.getElementById('storyTitleInput').addEventListener('input', (e) => {
     story.title = e.target.value;
     markDirty(null, true);
     renderTitles();
   });
-
   document.getElementById('chapterTitleInput').addEventListener('input', (e) => {
     const chap = getChapter(currentChapterId);
     if (!chap) return;
@@ -548,18 +457,15 @@ async function boot() {
     markDirty(currentChapterId, true);
     renderChapterList();
   });
-
   document.getElementById('editorArea').addEventListener('input', () => {
     markDirty(currentChapterId);
   });
-
   window.addEventListener('beforeunload', (e) => {
     if (isDirty) {
       e.preventDefault();
       e.returnValue = '';
     }
   });
-
   const ok = await loadStoryFromGithub();
   if (!ok) {
     showBootError();
@@ -567,7 +473,5 @@ async function boot() {
   }
   startAutosave();
 }
-
 document.addEventListener('DOMContentLoaded', boot);
-
 })();

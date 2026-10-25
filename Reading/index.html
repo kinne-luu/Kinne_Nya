@@ -11,24 +11,17 @@
 <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
-
 <div class="app mode-read" id="app">
-
-  <!-- backdrop cho mobile khi mở sidebar -->
   <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
-
-  <!-- Sidebar: danh sách chương (dùng chung cho đọc & viết) -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-top">
       <div class="brand"><i class="fa-solid fa-book-open"></i> <span id="brandTitle">Chưa đặt tên</span></div>
       <button class="icon-btn only-edit" id="newChapterBtn" title="Thêm chương"><i class="fa-solid fa-plus"></i></button>
     </div>
-
     <div class="chapter-head">
       <span>Danh sách chương</span>
     </div>
     <div class="chapter-list" id="chapterList"></div>
-
     <div class="sidebar-bottom">
       <div class="sidebar-divider"></div>
       <div class="sidebar-bottom-row">
@@ -40,8 +33,6 @@
       </div>
     </div>
   </aside>
-
-  <!-- ================= GIAO DIỆN ĐỌC ================= -->
   <main class="read-wrap" id="readWrap">
     <div class="read-topbar">
       <button class="icon-btn hamburger" id="hamburgerRead" title="Danh sách chương"><i class="fa-solid fa-bars"></i></button>
@@ -50,7 +41,6 @@
         <span class="read-chapter-title" id="readChapterTitleTop"></span>
       </div>
     </div>
-
     <div class="read-area" id="readArea">
       <div class="read-empty" id="readEmpty"></div>
       <article class="read-content" id="readContent" hidden>
@@ -59,8 +49,6 @@
       </article>
     </div>
   </main>
-
-  <!-- ================= GIAO DIỆN CHỈNH SỬA ================= -->
   <main class="editor-wrap" id="editorWrap">
     <div class="editor-topbar">
       <button class="icon-btn hamburger" id="hamburgerEdit" title="Danh sách chương"><i class="fa-solid fa-bars"></i></button>
@@ -70,7 +58,6 @@
         <button class="btn-outline" id="saveNowBtn"><i class="fa-solid fa-cloud-arrow-up"></i> <span class="btn-label">Lưu ngay</span></button>
       </div>
     </div>
-
     <div class="toolbar" id="toolbar">
       <button data-cmd="bold" title="Đậm (Ctrl+B)"><i class="fa-solid fa-bold"></i></button>
       <button data-cmd="italic" title="Nghiêng (Ctrl+I)"><i class="fa-solid fa-italic"></i></button>
@@ -82,11 +69,9 @@
       <span class="tb-sep"></span>
       <input type="text" id="chapterTitleInput" class="chapter-title-input" placeholder="Tên chương...">
     </div>
-
     <div class="editor-area" id="editorArea" contenteditable="true" spellcheck="false"></div>
   </main>
 </div>
-
 <script src="script.js?v=6"></script>
 </body>
 </html>
