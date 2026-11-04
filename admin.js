@@ -203,6 +203,10 @@
         }
 
         function showToast(message) {
+            if (typeof window.showToast === 'function') {
+                window.showToast(message);
+                return;
+            }
             const toast = document.getElementById('toastNotification');
             if (!toast) return;
             toast.textContent = message;
@@ -743,10 +747,12 @@
 
         function initSettingsUi() {
             const passwordInput = document.getElementById('settingsPasswordInput');
-            passwordInput.addEventListener('keydown', event => {
-                if (event.key === 'Enter') confirmSettingsPassword();
-                if (event.key === 'Escape') closePasswordModal();
-            });
+            if (passwordInput) {
+                passwordInput.addEventListener('keydown', event => {
+                    if (event.key === 'Enter') confirmSettingsPassword();
+                    if (event.key === 'Escape') closePasswordModal();
+                });
+            }
 
             const dropzone = document.getElementById('lyricDropzone');
             const fileInput = document.getElementById('lyricFileInput');

@@ -2,6 +2,795 @@ const I18N_CACHE = {};
         let I18N = {};
 
         const API_BASE_URL = 'https://kinnebackend.luumanhkien08092006.workers.dev';
+        const STATIC_BACKEND_DATA = {
+  "content": {
+    "homeIntro": "Chúc mừng cậu đã tìm được nơi này <3\n\nTớ là Kinne, một thằng con trai đam mê rất nhìu thứ XD\n\nTớ có niềm đam mê rất lớn với Anime, Manga, Light Novel, Visual Novel và mấy con game gacha, game 3A và hàng chục thứ kèm theo đó là một tá sở thích:\nnào là 3D, nào là vibe code, nào là design, cả vẽ nữa, vân vân và mây mây, nhưng không cái nào master cả 🥀",
+    "homeSub": "tớ thích đi fes nữa, ngắm các bạn coser xinh lắm nhưng tớ ở nơi rất ít fes nên cũng ít cơ hội được ngắm <(\")",
+    "homeWelcome": "\"nơi này là ngôi nhà của tớ, chứa tất tần tật những gì cậu có thể biết về tớ, có thể có vài kỉ niệm?, những project tớ đã từng làm, và cả những dự án lên kế hoạch nhưng chưa biết bao giờ xong nữa =))\n\ncậu cứ từ từ tận hưởng nhé, hướng đi nằm ở bên phải cậu đó",
+    "galleryHint": "Đây là nơi tớ chia sẻ những tác phẩm của chính tớ, nó không đẹp nhưng tớ rất yêu những tác phẩm này",
+    "musicHint": "Đây là nơi chứa những bản nhạc mà tớ cực kì yêu thích, cậu có thể nghe thử xem có hợp gu hay không.",
+    "filmHint": "Đây là tất cả những bộ Anime tớ đã xem, tớ còn rất thích đọc Manga, Light Novel và cả Visual Novel nữa, tuy nhiên vì không nhiều bằng Anime nên list ở đây chỉ là phim thôi :P",
+    "gameHint": "Đây là mấy tựa game tớ đã và đang chơi, biết đâu chúng mình lại chung sở thích",
+    "gameDescLeft": "Tớ đã dành rất rất nhiều thời gian cho chúng,vài game hiện tớ không hoặc rất ít chơi",
+    "gameDescCenter": "Vài con game tớ đã chơi qua, có khi trùng mấy con game cậu thích đấy",
+    "gameDescRight": "Visual Novel, đọc truyện nhưng ở 1 trải nghiệm hoàn toàn mới xD"
+  },
+  "social": {
+    "facebook": "https://web.facebook.com/kienmanhluu/",
+    "twitter": "https://x.com/kienmanhluu",
+    "instagram": "https://www.instagram.com/kinne_luu/",
+    "discord": "kienmanhluu",
+    "lineQrUrl": "https://raw.githubusercontent.com/kinne-luu/Kinne_Nya/refs/heads/main/image/Line_QR.jpg"
+  },
+  "homeMusic": {
+    "youtubeId": "JnEfMkF_awg",
+    "name": " What Awaits Beyond the Radiance",
+    "artist": "Wuthering Waves"
+  },
+  "albums": [
+    {
+      "id": "album_1784173236652",
+      "name": "3D Background",
+      "description": "tớ thích làm background style anime bằng Blender",
+      "images": [
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOHzfc6Lg2Fzz--_5_vOcrYfvIuzPoXlP3RgsTfpA79zaXxrCdkxP9cyl4r3lH6aChXKPQyZgoGEPD5Tvl6F17KVeP_dsUfW2ebtMs=s220",
+          "fullUrl": "/api/image/1LMf9jbcym6f9ss2ppa8zw_uqnsaniwzO",
+          "name": "Untitled149_20261017161712.png"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBN5tjv2n76UOZGXhSYkyM03r1tb6BYnZVsJlnreY1eZtLMr6uGvI29cnkxgCejzHq3RddUDxUNGR9sOeJPuITGqVbbHZVubgB0tUHQ=s220",
+          "fullUrl": "/api/image/1U7ojfdm8ZMNtY1ra7WuKbQSPRA8uZ8FS",
+          "name": "1000087992.jpeg"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPpof7MDy_juNHFpiab3-t3oXl2ybzyVYukZi6DDQmJ0ou4FN4UD7EUi6FzpPzVOKyFldgdYnFcwLLX82MtN1MvDFGBSTCrP1wwj38=s220",
+          "fullUrl": "/api/image/1iJ2o4o-k1B0LVPfHc9sBXuzbeL1MBrtN",
+          "name": "New Project 202 [077604F].png"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBP42R-p1LwBNhuRB_qQ6fgVJskIRg9P--cOVxZAXI33tw00qiHgjHREbVzz3BDIopy6JpHwy5EWU0ekfv4GJ7FGFZEMIBn7YOu_N00=s220",
+          "fullUrl": "/api/image/1D7TOtmmzD27OH2yxC4faJE9PD48R-SCh",
+          "name": "final_00000.jpg"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBN_x2ANssn9pdGADCGlpynmUTDN-zx_T4rikYifrXCvp2HDLZCJWCWQPRKfc0WM_KC0EHWFJDyAYJwTxhLqsdyP8ekiKa6klN0zuVU=s220",
+          "fullUrl": "/api/image/1HwIlstNFsuQHzWVOW1J7psjNb5QcdbPY",
+          "name": "Untitled48_20260202164344.jpg"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOgXhBtUcalYFOHPvpKf7Medqj3Q-MCV9Hc3U3F6th9so8pDCaEMQLI9-rhitrY3M594d2uQyVRvUL_3GymB0Lgoi_N37ESb7R5KgU=s220",
+          "fullUrl": "/api/image/1hD4KgFz4XB9rW7OOpO5zcx6y90BbLqm0",
+          "name": "kaltis scene (1).png"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBO0KFmp5pmmrUEtY1foRkBYV3eE3kN2fmZdHaapHebyIQURuumbl7EwH_gynwPfhJXMbJZdM8F42SX_gCjEKa9ugAwcRqIoujV5aOo=s220",
+          "fullUrl": "/api/image/1D8v61tyXlKfVuV6hbtwHATbHH8L9TByg",
+          "name": "20250709_004547.jpg"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPepbVump8B51_zH0CaSG2hYSls_obpaUYO8PrbW00RNG-9o_Lq5EwQZij9ck5OwymqrXTk9LJiLcXN65Z5KFTt4lb76opUm_9xcSE=s220",
+          "fullUrl": "/api/image/1D8uMd6F3nWe1kTPMqlaquqBeZ2oKdXtL",
+          "name": "20250709_004559.jpg"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMCR4yvZAsahxTFxDf82G_eCyv1H9kI1YUEtQ09YJ1OPdagCZ_ZVxY1xg2CMALRjHTcRqqXKo06-ry_Accr-IP3GJP26ie0CG-bd98=s220",
+          "fullUrl": "/api/image/1ACauXQpozK7cBOvfu-zMIecALSzCbHC2",
+          "name": "IMG_20250617_190900.jpg"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBN8CHqg-NnBqrV5X5PjCw_WGZVgg3M1Zj-NUZlo0awwBwBUgdk4INkmdeJEZPuiTiHip_z55coaippQp3sOH7zDBjjb9Z8CPUzHT7I=s220",
+          "fullUrl": "/api/image/1ACagyhd1g3edjxeGQZOlPml9ZUxpkYvt",
+          "name": "New Project 43 [4C9E502].png"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOwm3He0BvXhqnyFOwxi-pbAg29qs43DpFIDsiCOQmhdzfEFn1gR3EYzi_73ZsjvWUSgI-cRSfjbrzOzXYLsOZXiKAcQTj_1lj9_SE=s220",
+          "fullUrl": "/api/image/1GDgWWx6UGUfDM_g0mrJpP_tI66_Fi47I",
+          "name": "Untitled118_20250206171053.jpg"
+        }
+      ]
+    },
+    {
+      "id": "album_1784167639544",
+      "name": "Drawing",
+      "description": "mấy bức vẽ của tớ, dở ẹc vì tớ đang học vẽ",
+      "images": [
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOnFq2FvJlUJWNflsZq7v0Rg0dO9nqk6Ly1iDXZ_dyxA2yJqqS9FAdFu9KTPIuv4e1XL16U2sNfXpXT1Tjk7XHsUlTHng744NGDeT9B=s220",
+          "fullUrl": "/api/image/1OhnqWXw6IA0vveQKBNxRecK0tyP4E5mO",
+          "name": "New Project 207 [E7484AE].png"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOJHIY4Ia2At17Gl5WjW08q1YDnnznZHPiyB4ZErxK_Hta09x_Hzczor1TVO6eH5DLc0zj2tZ92r0MVd6ZegHbO0bRRv0JhYnq2xqHP=s220",
+          "fullUrl": "/api/image/1JWbtIEvvL2p-TYcVSE1dfEHDl-KQtnkj",
+          "name": "Untitled115_20260519102644.jpg"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBM4R2aGqavLf0Hbj5JeH98Q3W1l0WoXWAiOEwIkWTya1x0MOqo7slZEacIs_TrTbI7Gtj5Hh3CJM8AIAl6v08RhxGVHnTzxBuYce5Q0=s220",
+          "fullUrl": "/api/image/1QHAARFWi0VeoaWk7DaedhMu8P1U7qD0u",
+          "name": "IMG_20260516_210119.jpg"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMjjG6mjQbtBU8qQXQt9-PazPW-zbsfWlg_EE2HmCsFErutYp6CJ_lOEKWV9Iuo0nubRfqH8Un_PoRWHBmsb9IPOKr_DF0ljGEdwFk1=s220",
+          "fullUrl": "/api/image/11Ub9BV3qDq5rD9d5fVbfeJP_vLog7sgU",
+          "name": "IMG_20260422_162731.jpg"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNEhapLN5NxuLaLPiFh8kbVMQYHL-ALeDexri1HAgtsaooFMvSUN3bUBVWLA0XZ4cgB5ESdbBDBCiGA6q3MH7k1OHX5GQsGAb5iN2OB=s220",
+          "fullUrl": "/api/image/1J7lCJ7OLJK2sSpw3nuAfhlHiRF_m81fH",
+          "name": "Untitled68_0002-46-51_20260302173559.jpg"
+        },
+        {
+          "url": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMc1ft0WWq37arHyKar3FVMuqRh0E6gufTFZnJSLCLL6qwzUMbUCJkppF6iNihKqXQXnpeA1-fAOxsAMm_3_zAZFccUTyPruCsmXGuI=s220",
+          "fullUrl": "/api/image/1RIhNtS9Rk1eL2oCyqwBv7mKV_DwVx0O-",
+          "name": "Untitled71_0009-26-14_20260307145623.png"
+        }
+      ]
+    }
+  ],
+  "tracks": [
+    {
+      "id": "track_1784184164014",
+      "name": "魔法の絵日記",
+      "artist": "Visual Art / Key",
+      "youtubeId": "kUdjS5J4Qv4",
+      "coverUrl": "https://img.youtube.com/vi/kUdjS5J4Qv4/hqdefault.jpg",
+      "lrc": "{\"lrc_romaji\":\"[00:00.00] ♪\\n[00:12.07] Semi to niwatori no ohayou\\n[00:18.01] Omoide ga hajimaru\\n[00:23.89] Tegaki no mirai nagamete\\n[00:29.80] Tokuige ni waratta\\n[00:35.74] Kore wa mahou no enikki\\n[00:47.64] Tezukuri ehon (otoosan saku)\\n[00:53.56] Damashibune no origami (fushigi doushite)\\n[00:59.52] Ketsarukoatoru (kukee kee kukee)\\n[01:05.39] Issho ni taberu chaahan\\n[01:11.38] Mata ichi peeji (tanoshii)\\n[01:17.21] Natsu wo kasaneteku (ashita mo)\\n[01:23.16] Ashiato mutsu (issho)\\n[01:29.53] ♪\\n[01:59.38] Genkan aketara sugu ni\\n[02:05.36] Koboreru you na egao\\n[02:11.34] Kyou wa nani wo shiou ka\\n[02:20.71] Aoi sora narande tobu\\n[02:26.64] Kamihikoouki mittsu\\n[02:32.54] Minna ichiban datta\\n[02:44.37] Puuru ni outa (minna nakayoku)\\n[02:50.35] Kakurenbo de ohirune (ohiza no ue de)\\n[02:56.26] Takusan asobi (ofuro haitte)\\n[03:02.11] Onaji futon oyasumi\\n[03:08.32] Omoide nokosu (shashin mo)\\n[03:14.32] Natsumatsuri no yoru (hanabi mo)\\n[03:20.29] Sannin zutto (issho)\",\"lrc_jp\":\"[00:00.00] ♪\\n[00:12.07] セミとニワトリのおはよう\\n[00:18.01] 思い出が始まる\\n[00:23.89] 手書きの未来眺めて\\n[00:29.80] 得意げに笑った\\n[00:35.74] これは魔法の絵日記\\n[00:47.64] 手作り絵本（おとーさんさく）\\n[00:53.56] だましぶねのおりがみ（ふしぎどうして）\\n[00:59.52] ケツァルコアトル（くけーけぇーくけー）\\n[01:05.39] ��緒に食べる チャーハン\\n[01:11.38] また１ページ（たのしい）\\n[01:17.21] 夏を重ねてく（あしたも）\\n[01:23.16] あしあと六つ（いっしょ）\\n[01:29.53] ♪\\n[01:59.38] 玄関開けたらすぐに\\n[02:05.36] 零れるような笑顔\\n[02:11.34] 今日は何をしようか\\n[02:20.71] 青い空並んで飛ぶ\\n[02:26.64] 紙飛行機みっつ\\n[02:32.54] みんな一番だった\\n[02:44.37] プールにおうた（みんな仲良く）\\n[02:50.35] かくれんぼでおひるね（お膝の上で）\\n[02:56.26] たくさんあそび（お風呂入って）\\n[03:02.11] おなじふとん おやすみ\\n[03:08.32] 思い出残す（しゃしんも）\\n[03:14.32] 夏祭りの夜（はなびも）\\n[03:20.29] 三人ずっと（いっしょ）\"}"
+    },
+    {
+      "id": "track_1784261119529",
+      "name": "midsummer carol",
+      "artist": "Visual Art / Key",
+      "youtubeId": "Wy08SXQiNkQ",
+      "coverUrl": "https://img.youtube.com/vi/Wy08SXQiNkQ/hqdefault.jpg",
+      "lrc": "{\"lrc_romaji\":\"[00:00.000] ♪\\n[00:12.608] Mizutamari tobikoetara natsuyasumi wo sagashite\\n[00:22.777] Sagashimono mitsukaranai kedo anata wo mitsuketa\\n[00:32.377] Kotori no uta wo kuchizusande\\n[00:37.522] Wasurerareteru umibe wo aruiteku\\n[00:45.824] Wataame gumo fuwafuwa\\n[00:51.010] Tokete ochite kirakira\\n[00:56.045] Kyou to ashita wo nuttara\\n[01:00.963] Natsuyasumi mitsuketa\\n[01:06.346] ♪\\n[01:16.491] Kin'iro no usuakari wa\\n[01:21.379] Watashi wo mite hoshikute\\n[01:24.717] Koko ni iru kara ne\\n[01:27.289] Wasurenai kara ne\\n[01:29.874] Natsu ga owattemo\\n[01:32.453] Anata to itai yo\\n[01:36.207] Wagamama bakari\\n[01:38.772] Ukande kuru\\n[01:41.381] Yaritai koto ga\\n[01:43.923] Watashi wa osugite\\n[01:49.727] Rousoku no hi ga yurayura\\n[01:54.804] Ribbon yurete hirahira\\n[01:59.874] Natsuyasumi ga hodokete\\n[02:04.784] Sagashimono mitsuketa\\n[02:09.175] Kimi to sugoshita yume no you na kono natsu\\n[02:14.530] Nando mo omoidashi gyutto dakishime\\n[02:19.606] Uta wo utau\\n[02:29.808] Futari ima wa\\n[02:34.943] Yume no hanashi\\n[02:44.551] Natsuyasumi wa pikapika\\n[02:49.657] Kimi no tonari howahowa\\n[02:54.679] Tsunaida te wa sono mama\\n[02:59.667] Nakanaide waratte\\n[03:04.328] Natsu wa owari\\n[03:14.510] Natsu wa meguru\",\"lrc_jp\":\"[00:00.000] ♪\\n[00:12.608] 水溜まり跳び越えたら 夏休みを探して\\n[00:22.777] 探し物見つからないけど あなたを見つけた\\n[00:32.377] 小鳥の歌を口ずさんde\\n[00:37.522] 忘れられてる海辺を歩いてく\\n[00:45.824] わたあめ雲 ふわふわ\\n[00:51.010] 溶けて落ちて キラキラ\\n[00:56.045] 今日と明日を縫ったら\\n[01:00.963] 夏休み見つけた\\n[01:06.346] ♪\\n[01:16.491] 金色の薄明りは\\n[01:21.379] 私を見てほしくて\\n[01:24.717] ここにいるからね\\n[01:27.289] 忘れないからね\\n[01:29.874] 夏が終わっても\\n[01:32.453] あなたといたいよ\\n[01:36.207] わがままばかり\\n[01:38.772] 浮かんでくる\\n[01:41.381] やりたいことが\\n[01:43.923] 私は多すぎて\\n[01:49.727] ろうそくの火が ゆらゆら\\n[01:54.804] リボン揺れて ヒラヒラ\\n[01:59.874] 夏休みがほどけて\\n[02:04.784] 探し物見つけた\\n[02:09.175] キミと過ごした夢のようなこの夏\\n[02:14.530] 何度 mo 思い出しぎゅっと抱きしめ\\n[02:19.606] 歌を歌う\\n[02:29.808] 二人今は\\n[02:34.943] 夢のはなし\\n[02:44.551] 夏休みは ぴかぴか\\n[02:49.657] キミの隣 ほわほわ\\n[02:54.679] 繋いだ手はそのまま\\n[02:59.667] 泣かないで笑って\\n[03:04.328] 夏は終わり\\n[03:14.510] 夏は巡る\"}"
+    },
+    {
+      "id": "track_1784269167218",
+      "name": "紬の夏休み",
+      "artist": "VISUAL ARTS / Key",
+      "youtubeId": "spE1MQM4hw8",
+      "coverUrl": "https://img.youtube.com/vi/spE1MQM4hw8/hqdefault.jpg",
+      "lrc": ""
+    },
+    {
+      "id": "track_1784269236937",
+      "name": "しろはの子守歌",
+      "artist": "VISUAL ARTS / Key",
+      "youtubeId": "VSNWGlEGnx0",
+      "coverUrl": "https://img.youtube.com/vi/VSNWGlEGnx0/hqdefault.jpg",
+      "lrc": ""
+    },
+    {
+      "id": "track_1786511965380",
+      "name": "Unmei no Kimi",
+      "artist": "Mega Shinnosuke",
+      "youtubeId": "LjuJgrdh5eY",
+      "coverUrl": "https://img.youtube.com/vi/LjuJgrdh5eY/hqdefault.jpg",
+      "lrc": "{\"lrc_romaji\":\"[00:00.000] ♪\\n[00:09.330] Junjou na kimi ni airabyuu\\n[00:13.860] Dare ni mo barezu ni uta wo okurimasu\\n[00:18.280] Sainou wa nai ga shingu for you (yeah)\\n[00:23.000] Kimi no tame no uta\\n[00:27.420] Kananana wo tobase baiku byunbyun\\n[00:31.850] Taikutsu na nayami wa rokkaa ni oitekita\\n[00:36.530] Seishounen pankurokkunrooru (yeah)\\n[00:40.910] Mou nido to modorenai shunkan\\n[00:45.090] Ienai himitsu mo (woah, woah, woah, woah)\\n[00:49.730] Baka na igoji mo (woah, woah, woah, woah)\\n[00:54.300] Gitaa no ana wo nozoitara sunao ni nareta\\n[01:03.260] Koi no merodi wo merodi wo tenshi-sama ni sasagu\\n[01:12.500] Boku no unmei no unmei no kimi ni tsutawaru hazu\\n[01:31.600] Gunjou na kimi ni aiwantyuu\\n[01:36.080] Messe-eji torikeshi kan juusu nomihosu\\n[01:40.480] Kiraware takunai wo meisouchuu\\n[01:42.900] Gomakashitai hodo ni koishiteru\\n[01:45.270] Itsuka aenaku naru?\\n[01:49.090] Kimi wo omou hodo (woah, woah, woah, woah)\\n[01:53.550] Kurushiku naru no wa (woah, woah, woah, woah)\\n[01:58.100] Kore ga hontou no kimochi dakara\\n[02:03.190] Ah-ah, ah-ah kimi wo dakishimetai noni\\n[02:12.710] (Woah, woah, woah, woah, woah, woah, woah, woah)\\n[02:17.040] (Woah, woah, woah, woah, woah, woah, woah, woah)\\n[02:21.610] (Woah, woah, woah, woah, woah, woah, woah, woah)\\n[02:26.200] (Woah, woah, woah, woah, woah, woah, woah, woah)\\n[02:30.890] Sen nen saki no raise no saki mo\\n[02:35.030] Kimi ni nando mo koi wo suru\\n[02:39.630] Furimuite yo shinjau yo lonely days\\n[02:46.230] Nando mo\\n[02:48.710] Koi no merodi wo merodi wo tenshi-sama ni sasagu\\n[02:57.460] Kimi ga warau tabi warau tabi boku wa ikite ikeru\\n[03:06.530] Uso wa tsukanai yo tsukenai yo kimi ni eien chikau\\n[03:15.530] Boku no unmei no unmei no kimi ni chikaimasu\\n[03:25.550] Zutto omoimasu kimi ni tsutawaru hazu\",\"lrc_jp\":\"[00:00.000] ♪\\n[00:09.330] 純情な君にあいらびゅ\\n[00:13.860] 誰にもバレずに歌を贈ります\\n[00:18.280] 才能は無いがシングフォーユー (yeah)\\n[00:23.000] 君のための歌\\n[00:27.420] 環七を飛ばせ自転車(バイク)びゅんびゅん\\n[00:31.850] 退屈な悩みはロッカーに置いてきた\\n[00:36.530] 青少年パンクロックンロール (yeah)\\n[00:40.910] もう二度と戻れない瞬間\\n[00:45.090] 言えない秘密も (woah, woah, woah, woah)\\n[00:49.730] バカな意固地も (woah, woah, woah, woah)\\n[00:54.300] ギターの穴を覗いたら素直になれた\\n[01:03.260] 恋のメロディをメロディを天使様に捧ぐ\\n[01:12.500] 僕の運命の運命の君に伝わるはず\\n[01:31.600] 群青な君にあいうぉんちゅ\\n[01:36.080] メッセージ取り消し缶ジュース飲み干す\\n[01:40.480] 嫌われたくないを迷走中\\n[01:42.900] 誤魔化したいほどに恋してる\\n[01:45.270] いつか会えなくなる?\\n[01:49.090] 君を想うほど (woah, woah, woah, woah)\\n[01:53.550] 苦しくなるのは (woah, woah, woah, woah)\\n[01:58.100] これが本当の気持ちだから\\n[02:03.190] Ah-ah, ah-ah 君を抱きしめたいのに\\n[02:12.710] (Woah, woah, woah, woah, woah, woah, woah, woah)\\n[02:17.040] (Woah, woah, woah, woah, woah, woah, woah, woah)\\n[02:21.610] (Woah, woah, woah, woah, woah, woah, woah, woah)\\n[02:26.200] (Woah, woah, woah, woah, woah, woah, woah, woah)\\n[02:30.890] 1000年先の来世の先も\\n[02:35.030] 君に何度も恋をする\\n[02:39.630] 振り向いてよ 死んじゃうよ lonely days\\n[02:46.230] 何度も\\n[02:48.710] 恋のメロディをメロディを天使様に捧ぐ\\n[02:57.460] 君が笑うたび 笑うたび 僕は生きていける\\n[03:06.530] 嘘はつかないよ つけないよ 君に永遠誓う\\n[03:15.530] 僕の運命の運命の君に誓います\\n[03:25.550] ずっと想います 君に伝わるはず\"}"
+    },
+    {
+      "id": "track_1786512684318",
+      "name": "星の鼓動",
+      "artist": "Kohana Lam",
+      "youtubeId": "nXg8zwX9A9E",
+      "coverUrl": "https://img.youtube.com/vi/nXg8zwX9A9E/hqdefault.jpg",
+      "lrc": "{\"lrc_romaji\":\"[00:00.000] ♪\\n[00:16.29] Watashi wa mada shiranai de iru\\n[00:20.28] Kono jinsei no ikikata hitotsu\\n[00:24.24] Anata wa tada nagameru dake\\n[00:28.24] Hoshi no yukue wo kako no kanata de\\n[00:32.38] Kyou no sekai ga donna ni\\n[00:36.12] Tsumetai mama de fukarete itemo\\n[00:40.11] Anata no nukui migite ga nadete kuretan da\\n[00:46.08] Ukabu nichijou\\n[00:48.78] Kakenuketa tsuugakuro\\n[00:52.24] Wasurerarenai omoi\\n[00:56.18] Ai ga nanika mo shiranai mama\\n[00:59.07] Mitoreteru Hoshi wa tada kirei deshita\\n[01:04.16] Watashi wo ikiru koto wa hazukashii koto ja nai\\n[01:09.08] Sono kotae ga ureshikute\\n[01:12.06] Kyou ga namida ni somari tsuki ga nijimu nara\\n[01:17.06] Uzai kurai dakishimete\\n[01:19.99] Yoru wo irodoru watashi no kokoro wa ima mo\\n[01:25.00] Ienai mama no aishite iru yo\\n[01:29.09] ♪\\n[01:36.36] Kotoba ga sabishii mama ja\\n[01:39.60] Watashi wa kyou mo nemurenai kara\\n[01:43.59] Anata no koe michibiite kureru\\n[01:47.58] Hoshi no yukue wo ashita no mukou de\\n[01:52.24] Watashi dake ga shitte iru\\n[01:55.75] Yasashisa ga hibiite\\n[01:59.66] Zutto sunao ni narenai mama\\n[02:03.17] Koboreru no Kono kokoro wa honto da yo\\n[02:07.64] Anata no kotoba ga watashi no namida wo fuite\\n[02:12.60] Mieta yoru wa toumei de\\n[02:15.56] Kyou mo tonari de furerarenai mama dakedo\\n[02:20.53] Uzai kurai aishiteru\\n[02:23.48] Itsuka kono ibasho ga takaramono ni natte\\n[02:28.47] Anata ga warau Daisuki da yo\\n[02:31.95] Yasashiku tokedasu kanjou wa\\n[02:35.88] Anata ga kureta no tomoshibi wo\\n[02:39.37] Nee zenbu zenbu zenbu zenbu zenbu dakishimeta mama da yo\\n[02:44.35] Kono shunkan wo wasuretaku wa nai\\n[02:48.50] ♪\\n[03:11.08] Ai ga nanika mo shiranai mama\\n[03:14.59] Mitoreteru Hoshi wa tada kirei deshita\\n[03:19.04] Watashi wo ikiru koto wa hazukashii koto ja nai\\n[03:23.96] Sono kotae ga ureshikute\\n[03:26.94] Kyou ga namida ni somari tsuki ga nijimu nara\\n[03:31.93] Uzai kurai dakishimete\\n[03:34.91] Yoru wo irodoru watashi no kokoro wa ima mo\\n[03:39.88] Ienai mama no aishite iru yo\\n[03:43.98] ♪\",\"lrc_jp\":\"[00:00.000] ♪\\n[00:16.29] 私はまだ知らないでいる\\n[00:20.28] この人生の生き方ひとつ\\n[00:24.24] あなたはただ眺めるだけ\\n[00:28.24] 星の行方を 過去の彼方で\\n[00:32.38] 今日の世界がどんなに\\n[00:36.12] 冷たいままで 吹かれていても\\n[00:40.11] あなたの温い右手が撫でてくれたんだ\\n[00:46.08] 浮かぶ日常\\n[00:48.78] 駆け抜けた通学路\\n[00:52.24] 忘れられない想い\\n[00:56.18] 愛が何かも知らないま���\\n[00:59.07] 見蕩れてる 星はただ綺麗でした\\n[01:04.16] 私を生きることは恥ずかしいことじゃない\\n[01:09.08] その答えが嬉しくて\\n[01:12.06] 今日が涙に染まり月が滲むなら\\n[01:17.06] ウザいくらい抱きしめて\\n[01:19.99] 夜を彩る私のこころは今も\\n[01:25.00] 言えないままの 愛しているよ\\n[01:29.09] ♪\\n[01:36.36] 言葉が寂しいままじゃ\\n[01:39.60] 私は今日も眠れないから\\n[01:43.59] あなたの声 導いてくれる\\n[01:47.58] 星の行方を明日の向こうで\\n[01:52.24] 私だけが知っている\\n[01:55.75] 優しさが響いて\\n[01:59.66] ずっと素直になれないまま\\n[02:03.17] 零れるの この心はホントだよ\\n[02:07.64] あなたの言葉が私の涙を拭いて\\n[02:12.60] 見えた夜は透明で\\n[02:15.56] ♪\\n[02:15.56] 今日も隣で触れられないままだけど\\n[02:20.53] ウザいくらい愛してる\\n[02:23.48] いつかこの居場所が宝物になって\\n[02:28.47] あなたが笑う 大好きだよ\\n[02:31.95] 優しく溶けだす感情は\\n[02:35.88] あなたがくれたの灯火を\\n[02:39.37] ねぇ全部全部全部全部全部抱きしめたままだよ\\n[02:44.35] この瞬間を 忘れたくはない\\n[02:48.50] ♪\\n[03:11.08] 愛が何かも知らないま���\\n[03:14.59] 見蕩れてる 星はただ綺麗でした\\n[03:19.04] 私を生きることは恥ずかしいことじゃない\\n[03:23.96] その答えが嬉しくて\\n[03:26.94] 今日が涙に染まり月が滲むなら\\n[03:31.93] ウザいくらい抱きしめて\\n[03:34.91] 夜を彩る私のこころは今も\\n[03:39.88] 言えないままの 愛しているよ\\n[03:43.98] ♪\"}"
+    },
+    {
+      "id": "track_1786513952903",
+      "name": "far away song",
+      "artist": "VISUAL ARTS / Key",
+      "youtubeId": "I_issMHmC7s",
+      "coverUrl": "https://img.youtube.com/vi/I_issMHmC7s/hqdefault.jpg",
+      "lrc": ""
+    },
+    {
+      "id": "track_1788156924047",
+      "name": "Ortus",
+      "artist": "Visual Art / Key",
+      "youtubeId": "mhGquw9xCIY",
+      "coverUrl": "https://img.youtube.com/vi/mhGquw9xCIY/hqdefault.jpg",
+      "lrc": ""
+    },
+    {
+      "id": "track_1789271390137",
+      "name": "【青春ソングカバー】青と夏 / covered by TVアニメ『千歳くんはラムネ瓶のなか』",
+      "artist": "KADOKAWAanime",
+      "youtubeId": "It75QWud-fM",
+      "coverUrl": "https://img.youtube.com/vi/It75QWud-fM/hqdefault.jpg",
+      "lrc": "{\"lrc_romaji\":\"[00:00.00] ♪\\n[00:22.33] Suzushii kaze fuku\\n[00:25.05] Aozora no nioi\\n[00:27.60] Kyou wa daratto sugoshite miyou ka\\n[00:32.71] Fuurin ga chirin\\n[00:35.51] Himawari no kiiro\\n[00:38.16] Watashi ni wa kankei nai to\\n[00:42.59] Omotte ita nda\\n[00:46.18] Natsu ga hajimatta\\n[00:48.81] Aizu ga shita\\n[00:51.42] ��Kizutsuki tsukareru」 kedomo iinda\\n[00:56.56] Tsugi no koi no yukue wa doko da\\n[01:01.42] Eiga janai\\n[01:03.91] Shuyaku wa dare da\\n[01:06.66] Eiga janai\\n[01:09.25] Bokura no ban da\\n[01:11.98] ♪\\n[01:22.79] Yasashii kaze fuku\\n[01:25.34] Yuuyake no 「mata ne」\\n[01:28.02] Wakatte iru kedo itsuka owaru\\n[01:33.09] Fuurin ga chirin\\n[01:35.65] Suika no tane tobashi\\n[01:38.42] Watashi ni mo kankei aru kamo ne\\n[01:42.95] Tomodachi no uso mo\\n[01:45.88] Korogasareru ai mo\\n[01:48.50] Nani kara shinjite ii n deshou ne\\n[01:53.72] Otona ni natte mo kitto\\n[01:56.28] Takaramono wa asenai yo\\n[01:58.85] Daijoubu dakara\\n[02:01.46] Ima wa sa\\n[02:03.83] Ao ni tobikonde iyō\\n[02:07.92] Natsu ga hajimatta\\n[02:10.54] Koi ni ochita\\n[02:12.97] Mou machi tsukareta n da kedo, dou desu ka??\\n[02:18.23] Honki ni nareba naru hodo tsurai\\n[02:23.18] Heiwa janai\\n[02:25.76] Watashi no koi da\\n[02:31.18] Watashi no koi da\\n[02:37.97] Sabishii na\\n[02:39.98] Yappa sabishii na\\n[02:42.99] Itsuka wasurerarete shimau n darou ka\\n[02:48.36] Soredemo ne\\n[02:50.25] 「Tsunagari」 motomeru\\n[02:53.46] Hito no subarashisa wo shinjiteru\\n[02:58.87] Unmei ga tsukiugokasarete yuku\\n[03:03.92] Akai ito ga oto wo tateru\\n[03:08.67] Shuyaku wa anata da\\n[03:11.41] Natsu ga hajimatta\\n[03:14.00] Kimi wa dou da\\n[03:16.61] Sunao ni nareru yuuki wa aru ka\\n[03:22.18] Kono koi no yukue wa doko da\\n[03:26.78] Eiga janai\\n[03:29.39] Itoshii hibi da\\n[03:32.25] Koi ga hajimatta\\n[03:34.85] Aizu ga shita\\n[03:37.36] Kyou wo machiwabita nante ii hi da\\n[03:42.50] Mada mada owarenai kono natsu wa\\n[03:47.48] Eiga janai\\n[03:50.06] Kimira no ban da\\n[03:52.66] Eiga janai\\n[03:55.22] Bokura no ao da\\n[03:57.90] Eiga janai\\n[04:00.47] Bokura no natsu da\",\"lrc_jp\":\"[00:00.00] ♪\\n[00:22.33] 涼しい風吹く\\n[00:25.05] 青空の匂い\\n[00:27.60] 今日はダラッと過ごしてみようか\\n[00:32.71] 風鈴がチリン\\n[00:35.51] ひまわりの黄色\\n[00:38.16] 私には関係ないと\\n[00:42.59] 思って居たんだ\\n[00:46.18] 夏が始まった\\n[00:48.81] 合図がした\\n[00:51.42] 「傷つき疲れる」けどもいいんだ\\n[00:56.56] 次の恋の行方はどこだ\\n[01:01.42] 映画じゃない\\n[01:03.90] 主役は誰だ\\n[01:06.66] 映画じゃない\\n[01:09.25] 僕らの番だ\\n[01:11.98] ♪\\n[01:22.78] 優しい風吹く\\n[01:25.34] 夕焼けの「またね」\\n[01:28.02] わかっているけどいつか終わる\\n[01:33.09] 風鈴がチリン\\n[01:35.65] スイカの種飛ばし\\n[01:38.42] 私にも関係あるかもね\\n[01:42.95] 友達の嘘も\\n[01:45.88] 転がされる愛も\\n[01:48.50] 何から信じていいんでしょうね\\n[01:53.72] 大人になってもきっと\\n[01:56.28] 宝物は褪せないよ\\n[01:58.85] 大丈夫だから\\n[02:01.46] 今はさ\\n[02:03.82] 青に飛び込んで居よう\\n[02:07.92] 夏が始まった\\n[02:10.54] 恋に落ちた\\n[02:12.97] もう待ち疲れたんだけど、 どうですか??\\n[02:18.23] 本気になればなるほど辛い\\n[02:23.18] 平和じゃない\\n[02:25.76] 私の恋だ\\n[02:31.18] 私の恋だ\\n[02:37.97] 寂しいな\\n[02:39.98] やっぱ寂しいな\\n[02:42.99] いつか忘れられてしまうんだろうか\\n[02:48.36] それでもね\\n[02:50.24] 「繋がり」求める\\n[02:53.46] 人の素晴らしさ��信じてる\\n[02:58.87] 運命が突き動かされてゆく\\n[03:03.92] 赤い糸が音を立てる\\n[03:08.67] 主役は貴方だ\\n[03:11.41] 夏が始まった\\n[03:14.00] 君はどうだ\\n[03:16.61] 素直になれる勇気はあるか\\n[03:22.18] この恋の行方はどこだ\\n[03:26.78] 映画じゃない\\n[03:29.39] 愛しい日々だ\\n[03:32.25] 恋が始まった\\n[03:34.85] 合図がした\\n[03:37.36] 今日を待ちわびた なんて良い日だ\\n[03:42.50] まだまだ終われないこの夏は\\n[03:47.48] 映画じゃない\\n[03:50.06] 君らの番だ\\n[03:52.66] 映画じゃない\\n[03:55.22] 僕らの青だ\\n[03:57.90] 映画じゃない\\n[04:00.47] 僕らの夏だ\"}"
+    }
+  ],
+  "gameItems": [
+    {
+      "id": "game_1786677163863_9",
+      "column": 0,
+      "name": "Wuthering Waves",
+      "username": "Kinne~Nya",
+      "uid": "900577083",
+      "link": "",
+      "icon_key": "Game/f9c03d77-1386-4123-be49-325fa25e0cae-mssdb5zy-xzg0nqoa.png",
+      "cover_key": "",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1786677941997_535",
+      "column": 0,
+      "name": "Arknights",
+      "username": "kienmanhluu",
+      "uid": "33312645",
+      "link": "",
+      "icon_key": "Game/67acd175-4dd7-4709-9bdd-2e93dc7cadef-mssdjlzy-7gs2l3sj.png",
+      "cover_key": "",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787477188956_359",
+      "column": 0,
+      "name": "Strinova",
+      "username": "キンネ",
+      "uid": "3159454",
+      "link": "",
+      "icon_key": "Game/fc0a6fd6-30d2-482d-a147-d09d3b81b1ed-mt5lqj4p-eko5f9el.webp",
+      "cover_key": "",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787535114520_826",
+      "column": 0,
+      "name": "Roblox",
+      "username": "kienmanhluu",
+      "uid": "510517808",
+      "link": "",
+      "icon_key": "Game/24bfff7e-5778-416f-90f6-d9f36a221639-mt6k7fn1-0vn7gt9v.webp",
+      "cover_key": "",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787535278445_686",
+      "column": 0,
+      "name": "Genshin Impact",
+      "username": "Kinne~Nya",
+      "uid": "886166761",
+      "link": "",
+      "icon_key": "Game/9e96199b-7f8a-4eb3-bd62-fdcf4986ad77-mt6k6rsm-joxv1af6.webp",
+      "cover_key": "",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787535348338_459",
+      "column": 0,
+      "name": "Honkai: Star Rail",
+      "username": "kinne~nya",
+      "uid": "833825187",
+      "link": "",
+      "icon_key": "Game/0634fed5-d549-4af8-b7e6-25d19278f57b-mt6k7856-fb3ec57e.webp",
+      "cover_key": "",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787535521990_17",
+      "column": 0,
+      "name": "Arknight EndField",
+      "username": "kienmanhluu",
+      "uid": "4294596844",
+      "link": "",
+      "icon_key": "Game/cab06d7d-923f-47e3-9a7c-2d595b911759-mt6kfmzv-b42xp5rh.webp",
+      "cover_key": "",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787793709598_885",
+      "column": 0,
+      "name": "Umamusume: Pretty Derby",
+      "username": "kinne_luu",
+      "uid": "",
+      "link": "",
+      "icon_key": "Game/da231a63-40de-475a-9775-8808e4e5c79e-mtau6beg-z55cbbzf.webp",
+      "cover_key": "",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787478827626_441",
+      "column": 1,
+      "name": "Nier: Automata",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/524220/NieRAutomata/",
+      "icon_key": "Game/56e5d8a5-ef81-4bef-9750-4375a1f1dd28-mt5mneat-q828ka4w.webp",
+      "cover_key": "Game/e52fe2ee-6992-4d52-bcd8-03b7ea334f17-mt5mq4qy-38xa3g8o.webp",
+      "description": "Con game về humanoid của nhà Square Enix, để lại cực kì nhiều cảm xúc cho mình",
+      "sort_order": 0,
+      "description_vi": "Con game về humanoid của nhà Square Enix, để lại cực kì nhiều cảm xúc cho mình",
+      "description_en": "A Square Enix game about humanoids that left such a deep, lasting emotional mark on me.",
+      "description_jp": "スクエニのヒューマノイドを題材にした作品。本当にたくさんの感情を揺さぶられて、心に残ってるんだよね。"
+    },
+    {
+      "id": "game_1787478603458_124",
+      "column": 1,
+      "name": "Pragmata",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/3357650/PRAGMATA/",
+      "icon_key": "Game/e99e3d52-efe5-4cb2-b042-25eb978cb545-mt5mk0as-z2bv896p.webp",
+      "cover_key": "Game/648feaee-22ae-4d97-a8b8-a758f53c6996-mt5mqzvc-w3nxiaog.webp",
+      "description": "Game này là game giả lập làm cha chứ gì nữa =))))))",
+      "sort_order": 0,
+      "description_vi": "Game này là game giả lập làm cha chứ gì nữa =))))))",
+      "description_en": "it's basically just a fatherhood simulator lmao",
+      "description_jp": "実質もう「父親シミュレーター」以外の何物でもないでしょ www"
+    },
+    {
+      "id": "game_1787479053615_440",
+      "column": 1,
+      "name": "Machine Party",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/4108000/Machine_Party/",
+      "icon_key": "Game/586771ef-7ac0-4273-ba54-c9631a7c510d-mt5mv476-6qpbqncv.webp",
+      "cover_key": "Game/4bef19c2-5d8b-4323-abc5-8f7f7526f1a5-mt5mv977-j1xlhb20.webp",
+      "description": "Bựa thì vl, chơi con game này khéo mất tình bạn bè mất",
+      "sort_order": 0,
+      "description_vi": "Bựa thì vl, chơi con game này khéo mất tình bạn bè mất",
+      "description_en": "Shit's beyond cursed, this game is an absolute friendship ruiner lol",
+      "description_jp": "マジでカオスすぎてヤバい。遊んでたら普通に友情壊れる説ある笑"
+    },
+    {
+      "id": "game_1787479195027_344",
+      "column": 1,
+      "name": "Subnautica",
+      "username": "",
+      "uid": "",
+      "link": "",
+      "icon_key": "Game/a95d3066-6792-475b-8b9c-6abbad124047-mt5mx7vk-fk42qpy2.webp",
+      "cover_key": "Game/4b0127cf-6118-457f-89ef-ab51df5c38e0-mt5mxfd6-i3omn72q.webp",
+      "description": "Con game khám phá đại dương có tiếng tăm",
+      "sort_order": 0,
+      "description_vi": "Con game khám phá đại dương có tiếng tăm",
+      "description_en": "A well-known ocean exploration game.",
+      "description_jp": "有名な海洋探索ゲーム。"
+    },
+    {
+      "id": "game_1787479408237_47",
+      "column": 1,
+      "name": "Little Nightmare II",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/860510/Little_Nightmares_II/",
+      "icon_key": "Game/efad02fc-d455-4490-834d-c21b1e7634aa-mt5n17nt-4hcawfad.webp",
+      "cover_key": "Game/fcb9ed46-eca0-4445-8b02-6a8a08f85684-mt5n1pn1-pj5inzrx.webp",
+      "description": "Còn gì tuyệt hơn là chơi game này với bạn bè chứ",
+      "sort_order": 0,
+      "description_vi": "Còn gì tuyệt hơn là chơi game này với bạn bè chứ",
+      "description_en": "What could honestly be better than playing this with friends?",
+      "description_jp": "友達とこのゲームやる以上に最高なことなんてないでしょ！"
+    },
+    {
+      "id": "game_1787479516191_267",
+      "column": 1,
+      "name": "MiSide",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/2527500/MiSide/",
+      "icon_key": "Game/f5d9f159-7416-41bb-8354-7ddad642ac8b-mt5n545l-iyzwg1kt.webp",
+      "cover_key": "Game/b3dec12d-6b83-42e4-a0f9-a233bb15cf51-mt5n4uc1-kaa3750z.webp",
+      "description": "G��i alime Yandere của mấy anh Nga ngố",
+      "sort_order": 0,
+      "description_vi": "Gái alime Yandere của mấy anh Nga ngố",
+      "description_en": "A Russian indie game's take on an anime yandere girl lol",
+      "description_jp": "ロシア産インディーのアニメ風ヤンデレ美少女笑"
+    },
+    {
+      "id": "game_1787534287703_976",
+      "column": 1,
+      "name": "Ender Lilies: Quietus of the Knights",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/1369630/ENDER_LILIES_Quietus_of_the_Knights/",
+      "icon_key": "Game/88358dcc-d2cc-40f4-b195-4c40d7393eae-mt6jqszl-4e3leq2z.webp",
+      "cover_key": "Game/92341927-4ce3-4d04-8e0a-9b200ad879b9-mt6jrcau-8fwgmcy3.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787534038840_270",
+      "column": 1,
+      "name": "Lies of P",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/1627720/Lies_of_P/",
+      "icon_key": "Game/3efb5184-89d2-4b14-a2ee-729c72befef3-mt6jkilq-zu3afxfv.webp",
+      "cover_key": "Game/c4d42f77-752c-4d52-bfde-3deda7c40de4-mt6jjnij-fxxn2p17.webp",
+      "description": "là con game SoulsLike đầu tiên tớ chơi,ấn tượng về đồ hoạ và âm thanh khá tốt",
+      "sort_order": 0,
+      "description_vi": "là con game SoulsLike đầu tiên tớ chơi,ấn tượng về đồ hoạ và âm thanh khá tốt",
+      "description_en": "My very first Soulslike game. The visuals and sound design left a really solid impression on me.",
+      "description_jp": "初めてプレイしたソウルライク作品。グラフィックも音響もすごく良くて、かなり印象に残ってるんだよね。"
+    },
+    {
+      "id": "game_1787534114469_437",
+      "column": 1,
+      "name": "Lies of P: Overture",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/2848330/Lies_of_P_Overture/",
+      "icon_key": "Game/25072ab5-7197-40a3-b846-0acf3b9fa6a0-mt6jkilq-zu3afxfv.webp",
+      "cover_key": "Game/2b02f51a-2d61-42d3-aab8-f13fa00a651d-mt6jktap-3kcxg93y.webp",
+      "description": "phần 2 của LOP, tớ cũng không có gì bàn luận lắm",
+      "sort_order": 0,
+      "description_vi": "phần 2 của LOP, tớ cũng không có gì bàn luận lắm",
+      "description_en": "Lies of P sequel; not much to add on this one.",
+      "description_jp": "LoPの2作目。特にこれと言って語ることはないかも笑"
+    },
+    {
+      "id": "game_1787534742379_243",
+      "column": 1,
+      "name": "The Forest",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/242760/",
+      "icon_key": "Game/21107eae-fac2-430b-bfd2-498d3168191a-mt6k0cj7-597ar1ql.webp",
+      "cover_key": "Game/a4028fce-a8f7-4d46-a508-18336439336d-mt6k0q3g-5mgzwkq1.webp",
+      "description": "Con game sinh tồn để lại rất nhiều kỉ niệm với mình,hồi bé chưa có máy, tớ còn định tải trên điện thoại,hoài niệm lắm xD",
+      "sort_order": 0,
+      "description_vi": "Con game sinh tồn để lại rất nhiều kỉ niệm với mình,hồi bé chưa có máy, tớ còn định tải trên điện thoại,hoài niệm lắm xD",
+      "description_en": "This survival game brought back a flood of memories. Back in the day without a PC, I even thought about playing it on mobile. Good old times xD",
+      "description_jp": "思い出深いサバイバルゲー。昔PCがなかった頃、スマホで入れようとしてたくらい好きだったな。エモい www"
+    },
+    {
+      "id": "game_1787534487041_402",
+      "column": 1,
+      "name": "Shift At Midnight",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/3722330/Shift_At_Midnight/",
+      "icon_key": "Game/e419af83-4d17-4bf8-8c20-b5be1706baa8-mt6jxha6-crjoewk8.webp",
+      "cover_key": "Game/e33bb5ee-2620-471e-9091-7467edaca808-mt6jv61q-mcs90701.webp",
+      "description": "Game tấu hề với đám bạn là chính,game là phụ",
+      "sort_order": 0,
+      "description_vi": "Game tấu hề với đám bạn là chính,game là phụ",
+      "description_en": "Goofing off with the squad first, gameplay second",
+      "description_jp": "ダベりながらワチャワチャするのが本編。ゲームはおまけ"
+    },
+    {
+      "id": "game_1787791951066_913",
+      "column": 1,
+      "name": "Minecraft",
+      "username": "",
+      "uid": "",
+      "link": "https://www.minecraft.net/en-us",
+      "icon_key": "Game/c9ccbd3a-f8c4-4b84-b816-3df11dc156b8-mtat4lmp-pb2n0gdj.webp",
+      "cover_key": "Game/a7ffcab3-8905-4326-bdcc-37ab5ff86bb0-mtat59qy-rs4fkgrm.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787792122482_68",
+      "column": 1,
+      "name": "Funnel Runners",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/3712080/Funnel_Runners/",
+      "icon_key": "Game/4302618c-dac2-4eba-a049-c73530c9c2ac-mtat9gga-yjegjb7a.webp",
+      "cover_key": "Game/4f9c9e32-9e44-4552-861f-6ea09258f6bd-mtat9liu-8faq37ke.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787792225325_321",
+      "column": 1,
+      "name": "Muse Dash",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/774171/Muse_Dash/",
+      "icon_key": "Game/5482f4a9-e365-450d-9660-eb3b22aba7da-mtatbelv-os12dkxm.webp",
+      "cover_key": "Game/9caa9338-71d6-4c7e-bf0e-12430227ea0d-mtatbs8o-3ckrwp4k.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787792449842_757",
+      "column": 1,
+      "name": "How to Fish",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/4001890/How_to_Fish/",
+      "icon_key": "Game/83da2bcb-b773-4ccb-a03f-59d97ab42988-mtatghw8-2w7myhzt.webp",
+      "cover_key": "Game/00e84518-83d9-4062-ae29-320906151c70-mtateczo-yjqpozc5.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787792594610_470",
+      "column": 1,
+      "name": "Reanimal",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/2129530/REANIMAL/",
+      "icon_key": "Game/a6e2a354-c89c-4aea-9428-082b018e8fd4-mtatir2k-rb9pdndd.webp",
+      "cover_key": "Game/0d827e4e-3638-41f3-ac5d-4a35346a1183-mtatj8zg-br8pz2m4.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787792700227_332",
+      "column": 1,
+      "name": "Raft",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/648800/Raft/",
+      "icon_key": "Game/daa98c80-492c-41c3-a64e-64ee267b2b90-mtatkja9-3dsxlx0v.webp",
+      "cover_key": "Game/a0e25eca-8b07-4ded-b0dc-475bd73aedb1-mtatlr9s-755wdut3.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787792844199_778",
+      "column": 1,
+      "name": "The Last of Us™ Part I",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_I/",
+      "icon_key": "Game/f21e7524-2023-4579-8960-5d39135f85b4-mtatpyzb-wu25nxlr.webp",
+      "cover_key": "Game/3467a46e-d393-41d8-a28f-7acc3c42b5fb-mtatp3ko-8w1vpb6n.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787793068439_111",
+      "column": 1,
+      "name": "Silent Hill f",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/2947440/SILENT_HILL_f/",
+      "icon_key": "Game/00952ef6-5516-4f11-8168-4f4ea06023b9-mtattgvq-sgs5wtib.webp",
+      "cover_key": "Game/57fe5cea-740b-423c-9f29-b7fcf6e1ce28-mtatt3id-desjxdqp.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787793285045_54",
+      "column": 1,
+      "name": "World War Z",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/699130/World_War_Z/",
+      "icon_key": "Game/437744c1-54d5-479b-9962-5b8e2d9db393-mtatx6hy-qcobfcbb.webp",
+      "cover_key": "Game/9554e376-6b52-4361-8f34-8ba0432772a7-mtaty4po-ekk5p88y.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787793310232_926",
+      "column": 1,
+      "name": "Left 4 Dead 2",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/550/Left_4_Dead_2/",
+      "icon_key": "Game/c64af998-d9fb-4ff4-91e5-1cb51157d909-mtatwczf-fcne1zag.webp",
+      "cover_key": "Game/5f1684ee-f654-44a9-8aae-5070a0599f61-mtatw347-6ia4zkm9.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787793402287_862",
+      "column": 1,
+      "name": "Dying Light",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/239140/Dying_Light/",
+      "icon_key": "Game/ac69e509-db66-4dd1-8a60-a4568f4539a9-mtau0ngi-a4s49ixi.webp",
+      "cover_key": "Game/70318870-e70c-4c79-8d08-366e60c7eb47-mtau0bht-nwvaqyzx.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787793451349_582",
+      "column": 1,
+      "name": "Dying Light: The Beast",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/3008130/Dying_Light_The_Beast/",
+      "icon_key": "Game/c60c8f56-e295-425c-bd98-ac5a13b3f5d9-mtau1oe0-kuxgvh5s.webp",
+      "cover_key": "Game/27717a57-70de-4325-8635-7d66df922f3f-mtau1he4-wfqbpcxv.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787374710428_460",
+      "column": 2,
+      "name": "Atri: My Dear Moments",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/1230140/",
+      "icon_key": "Game/0999f0b9-f185-47c0-a210-4636bb587a25-mt3wnpoh-1br1w79a.webp",
+      "cover_key": "Game/be740f93-6b30-4377-8da6-f48253d3a39b-mt3wohwg-2jo21dgs.webp",
+      "description": "Đây là con game VN đầu tiên tớ chơi, và cũng là con game khiến tớ có sở thích lớn với các VN có nội dung liên quan tới humanoid. Bị con game này thu hút qua bìa game và sale phát múc luôn, xứng đáng từng xu <3",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787374877810_370",
+      "column": 2,
+      "name": "planetarian HD",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/623080/",
+      "icon_key": "Game/cae8c502-467c-4f3f-87ae-4511ab8a05cc-mt3wu9or-tyiisg45.webp",
+      "cover_key": "Game/215c4094-0fb4-4927-88b1-dce54a6ad78b-mt3wug9d-qpb3muex.webp",
+      "description": "VN kinetic cũng của nhà Key, tớ xem anime trước ròi mới chơi nên cảm xúc của anime có lẽ nhiều hơn ( vì lúc chơi con game kinetic này cũng biết hết diễn biến rùi )",
+      "sort_order": 0,
+      "description_vi": "VN kinetic cũng của nhà Key, tớ xem anime trước ròi mới chơi nên cảm xúc của anime có lẽ nhiều hơn ( vì lúc chơi con game kinetic này cũng biết hết diễn biến rùi )",
+      "description_en": "This is another kinetic novel from Key. I actually watched the anime before playing it, so I think the anime left a much deeper emotional impression on me, mostly because by the time I played the game, I already knew how the whole story would unfold.",
+      "description_jp": "これもKeyのキネティックノベル作品なんだよね。実はプレイする前にアニメを見ていたから、アニメのときのほうが感動が深かったかもしれないな。ゲームをやった時には、もう物語の展開を全部知っちゃってたからね。"
+    },
+    {
+      "id": "game_1787374822002_601",
+      "column": 2,
+      "name": "Stella of The End",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/2510770/",
+      "icon_key": "Game/cd17462d-f680-4bd6-ae5f-f88381911f4b-mt3wsncn-4zviex0s.webp",
+      "cover_key": "Game/35895339-3972-4c6d-87b1-453aae273a6f-mt3wt1wg-0jen9y67.webp",
+      "description": "Không có gì để chê, cũng là 1 kinetic có tiếng của nhà Key, để lại 1 cảm xúc mãnh liệt không chỗ nào chê.Philia my Daugherrrrrr",
+      "sort_order": 0,
+      "description_vi": "Không có gì để chê, cũng là 1 kinetic có tiếng của nhà Key, để lại 1 cảm xúc mãnh liệt không chỗ nào chê.Philia my Daugherrrrrr",
+      "description_en": "Honestly, it was truly flawless. Another acclaimed kinetic novel from Key that left such an overwhelming, deeply moving emotional mark on me. Philia is just my precious daughterrrrr!",
+      "description_jp": "本当に文句のつけようがない作品。Keyの名作キネティックノベルのひとつで、胸がいっぱいになるくらい強烈な感動と余韻を残してくれたんだよね。Philia my daugterrrrrr!!"
+    },
+    {
+      "id": "game_1786679449390_92",
+      "column": 2,
+      "name": "Summer Pocket",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/897220/Summer_Pockets/",
+      "icon_key": "Game/0abb44eb-092f-44e0-97e3-149d298ba4c1-mt5m67jc-klclct8q.webp",
+      "cover_key": "Game/10240531-ea1e-408f-b24a-f9327cf6d39d-mssds0hz-iuxbxx88.webp",
+      "description": "Tựa game VN đầu tiên của nhà Key mà tớ chơi, ké được của cậu bạn trong Steam Family, thời lượng game tầm 40 tiếng nhưng có lẽ là tựa game VN full-price đầu tiên tớ có nhiều cảm xúc khi chơi nhất",
+      "sort_order": 0,
+      "description_vi": "Tựa game VN đầu tiên của nhà Key mà tớ chơi, ké được của cậu bạn trong Steam Family, thời lượng game tầm 40 tiếng nhưng có lẽ là tựa game VN full-price đầu tiên tớ có nhiều cảm xúc khi chơi nhất",
+      "description_en": "The first Key VN I've ever played, borrowed via Steam Family. Around 40 hours of playtime, and probably the first full-price VN to leave such a huge emotional impact on me.",
+      "description_jp": "初めて遊んだKey作品。友達のSteamファミリー共有でやらせてもらったんだけど、クリアまで40時間くらいで、たぶん一番感情を揺さぶられた初めてのフルプライスノベルゲー。"
+    },
+    {
+      "id": "game_1787533802750_818",
+      "column": 2,
+      "name": "The NOexistenceN of you AND me",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/2873080/The_NOexistenceN_of_you_AND_me/",
+      "icon_key": "Game/5707ee33-dc09-4a5e-87c5-84a7b379214f-mt6jgo6a-phgsmowj.webp",
+      "cover_key": "Game/50ced115-26e7-4202-a66a-7dedc1812c51-mt6jgkhr-80fpy2qa.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787997240961_866",
+      "column": 2,
+      "name": "Katawa Shoujo",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/3068300/Katawa_Shoujo/",
+      "icon_key": "Game/87ca647c-1a4f-4484-a644-8467cfc203ad-mte7d2y2-gusda3qr.webp",
+      "cover_key": "Game/4299d5d2-274e-4133-ae8a-97c3bf578e75-mte7d9hz-bzkwa7f3.webp",
+      "description": "",
+      "sort_order": 0,
+      "description_vi": "",
+      "description_en": "",
+      "description_jp": ""
+    },
+    {
+      "id": "game_1787997736016_485",
+      "column": 2,
+      "name": "Kosaka-san -  小坂さん。 - Remaster",
+      "username": "",
+      "uid": "",
+      "link": "https://store.steampowered.com/app/2776530/__Remaster/",
+      "icon_key": "Game/2631b709-c38c-477e-a6a8-5f83c086d8ba-mte7nz63-b865bnt0.webp",
+      "cover_key": "Game/dfefb752-d787-40e3-88c7-31ecb161f24a-mte7lqgx-xif2fcgz.webp",
+      "description": "Thời lượng game tuy ngắn nhưng để lại cho mình một số cảm xúc rất đặc biệt, con game này cũng là nguồn cảm hứng cho việc mình bắt tay vào làm con game Visual Novel đầu tiên ( nhưng nó đã biến thành Light Novel vì mình không vẽ minh họa được và cũng không tìm được ai do kinh phí quá hạn hẹp )",
+      "sort_order": 0,
+      "description_vi": "Thời lượng game tuy ngắn nhưng để lại cho mình một số cảm xúc rất đặc biệt, con game này cũng là nguồn cảm hứng cho việc mình bắt tay vào làm con game Visual Novel đầu tiên ( nhưng nó đã biến thành Light Novel vì mình không vẽ minh họa được và cũng không tìm được ai do kinh phí quá hạn hẹp )",
+      "description_en": "Even though the game is short, it left a truly special impression on me. It was also the inspiration that pushed me to start making my first visual novel (though it ended up turning into a light novel because I couldn't draw the illustrations myself and lacked the budget to hire an artist).",
+      "description_jp": "プレイ時間は短いものの、とても特別な感情が心に残る作品でした。このゲームに背中を押されて初めてのビジュアルノベル制作に取り掛かったのですが、（自分でイラストが描けず、予算不足で絵師さんも見つけられなかったため）結局ライトノベルになってしまいました。"
+    },
+    {
+      "id": "game_1788256758769_381",
+      "column": 2,
+      "name": "Saya no Uta",
+      "username": "",
+      "uid": "",
+      "link": "",
+      "icon_key": "Game/5070b996-b980-4997-b6ed-f773628602fe-mtihshjs-qrgvqj0p.webp",
+      "cover_key": "Game/71739e58-8542-432e-875a-6aacfa742f22-mtihttd7-olyrzxbg.webp",
+      "description": "Con game Visual Novel kinh dị kèm các cảnh H, nhưng tớ không biết và cứ nghĩ chỉ là game kinh dị cho tới khi chơi game. Các tình tiết trong game khá là căng thẳng, tớ không có nhiều vốn từ để mô tả nhưng nó là con game đáng trải nghiệm thử đấy ( tất nhiên không phải ai cũng chơi được đâu lmao )",
+      "sort_order": 0,
+      "description_vi": "Con game Visual Novel kinh dị kèm các cảnh H, nhưng tớ không biết và cứ nghĩ chỉ là game kinh dị cho tới khi chơi game. Các tình tiết trong game khá là căng thẳng, tớ không có nhiều vốn từ để mô tả nhưng nó là con game đáng trải nghiệm thử đấy ( tất nhiên không phải ai cũng chơi được đâu lmao )",
+      "description_en": "",
+      "description_jp": ""
+    }
+  ]
+};
+
         let publicBackendData = null;
         let adminBackendData = null;
 
@@ -219,10 +1008,58 @@ const I18N_CACHE = {};
                 }
             }
 
-            document.getElementById('gameModalOverlay').classList.add('open');
+            const overlay = document.getElementById('gameModalOverlay');
+            const card = document.getElementById('gameModalCard');
+            overlay.classList.add('open');
+
+            if (window.anime) {
+                anime.remove([overlay, card]);
+                anime({
+                    targets: overlay,
+                    opacity: [0, 1],
+                    duration: 200,
+                    easing: 'easeOutQuad'
+                });
+                anime({
+                    targets: card,
+                    scale: [0.93, 1],
+                    translateY: [14, 0],
+                    opacity: [0.4, 1],
+                    duration: 300,
+                    easing: 'spring(1, 100, 16, 0)'
+                });
+            }
         }
         function closeGameModal() {
-            document.getElementById('gameModalOverlay').classList.remove('open');
+            const overlay = document.getElementById('gameModalOverlay');
+            const card = document.getElementById('gameModalCard');
+            if (!overlay) return;
+
+            if (window.anime) {
+                anime.remove([overlay, card]);
+                anime({
+                    targets: overlay,
+                    opacity: [1, 0],
+                    duration: 200,
+                    easing: 'easeInQuad'
+                });
+                anime({
+                    targets: card,
+                    scale: [1, 0.9],
+                    duration: 200,
+                    easing: 'easeInQuad',
+                    complete: () => {
+                        overlay.classList.remove('open');
+                        overlay.style.opacity = '';
+                        if (card) {
+                            card.style.transform = '';
+                            card.style.opacity = '';
+                        }
+                    }
+                });
+            } else {
+                overlay.classList.remove('open');
+            }
         }
         function handleGameModalOverlayClick(event) {
             if (event.target.id === 'gameModalOverlay') closeGameModal();
@@ -313,15 +1150,64 @@ const I18N_CACHE = {};
 
             img.dataset.lbFull = url;
             overlay.classList.add('open');
+
+            if (window.anime) {
+                anime.remove([overlay, img]);
+                anime({
+                    targets: overlay,
+                    opacity: [0, 1],
+                    duration: 200,
+                    easing: 'easeOutQuad'
+                });
+                anime({
+                    targets: img,
+                    scale: [0.92, 1],
+                    opacity: [0.4, 1],
+                    duration: 300,
+                    easing: 'spring(1, 100, 16, 0)'
+                });
+            }
         }
         function closeLightbox() {
-            document.getElementById('lightboxOverlay').classList.remove('open');
-            setTimeout(() => {
-                const img = document.getElementById('lightboxImage');
-                img.src = '';
-                img.classList.remove('is-loading');
-                delete img.dataset.lbFull;
-            }, 300);
+            const overlay = document.getElementById('lightboxOverlay');
+            const img = document.getElementById('lightboxImage');
+            if (!overlay) return;
+
+            if (window.anime) {
+                anime.remove([overlay, img]);
+                anime({
+                    targets: overlay,
+                    opacity: [1, 0],
+                    duration: 200,
+                    easing: 'easeInQuad'
+                });
+                anime({
+                    targets: img,
+                    scale: [1, 0.88],
+                    duration: 200,
+                    easing: 'easeInQuad',
+                    complete: () => {
+                        overlay.classList.remove('open');
+                        overlay.style.opacity = '';
+                        if (img) {
+                            img.src = '';
+                            img.classList.remove('is-loading');
+                            delete img.dataset.lbFull;
+                            img.style.transform = '';
+                            img.style.opacity = '';
+                        }
+                    }
+                });
+            } else {
+                overlay.classList.remove('open');
+                setTimeout(() => {
+                    if (img) {
+                        img.src = '';
+                        img.classList.remove('is-loading');
+                        delete img.dataset.lbFull;
+                    }
+                }, 300);
+            }
         }
 
         function openSocialLink(key) {
@@ -395,12 +1281,17 @@ const I18N_CACHE = {};
         async function loadLanguageFile(langCode) {
             if (I18N_CACHE[langCode]) return I18N_CACHE[langCode];
             const fileName = LANGUAGE_FILES[langCode];
-            if (!fileName) throw new Error(`Ngôn ngữ không hợp lệ: ${langCode}`);
-            const res = await fetch(`./Language/${fileName}`);
-            if (!res.ok) throw new Error(`Không tải được ./Language/${fileName}`);
-            const data = await res.json();
-            I18N_CACHE[langCode] = data;
-            return data;
+            if (!fileName) return {};
+            try {
+                const res = await fetch(`./Language/${fileName}`);
+                if (!res.ok) throw new Error(`Không tải được ./Language/${fileName}`);
+                const data = await res.json();
+                I18N_CACHE[langCode] = data;
+                return data;
+            } catch (e) {
+                console.warn(`Lỗi khi nạp ./Language/${fileName}:`, e);
+                return I18N_CACHE['vie'] || {};
+            }
         }
 
         function t(key) { return (I18N && I18N[key]) || key; }
@@ -507,7 +1398,17 @@ async function setLanguage(langCode) {
 
             document.querySelectorAll('.nav-item').forEach(opt => opt.classList.remove('active'));
             element.classList.add('active');
-            document.getElementById('navIndicator').style.transform = `translateY(${index * 42}px)`;
+
+            if (window.anime) {
+                anime({
+                    targets: '#navIndicator',
+                    translateY: index * 42,
+                    duration: 320,
+                    easing: 'spring(1, 95, 15, 0)'
+                });
+            } else {
+                document.getElementById('navIndicator').style.transform = `translateY(${index * 42}px)`;
+            }
 
             switchTab(currentTabId, targetTabId);
             currentTabId = targetTabId;
@@ -568,50 +1469,89 @@ async function setLanguage(langCode) {
         }
 
         function switchTab(fromId, toId) {
+            if (fromId === toId) return;
             const fromSection = document.getElementById(fromId);
             const toSection = document.getElementById(toId);
-            const outElements = fromSection.querySelectorAll('.fly-cluster');
-            const inElements = toSection.querySelectorAll('.fly-cluster');
+            if (!fromSection || !toSection) return;
+
+            const outElements = Array.from(fromSection.querySelectorAll('.fly-cluster'));
+            const inElements = Array.from(toSection.querySelectorAll('.fly-cluster'));
+
+            if (window.anime) {
+                anime.remove(outElements);
+                anime.remove(inElements);
+                document.querySelectorAll('.tab-section:not(#' + toId + ') .fly-cluster').forEach(el => {
+                    anime.remove(el);
+                    el.style.transform = '';
+                    el.style.opacity = '';
+                });
+            }
 
             const outClippers = releaseClipping(fromSection);
 
-            const maxDelayOut = applyRandomStagger(outElements);
-            outElements.forEach(el => {
-
-                el.classList.add(el.classList.contains('fly-reverse') ? 'fly-hidden-bottom' : 'fly-hidden-top');
-            });
-
-            setTimeout(() => {
+            if (!window.anime) {
                 fromSection.classList.remove('active');
                 toSection.classList.add('active');
-
                 restoreClipping(outClippers);
+                return;
+            }
 
-                const inClippers = releaseClipping(toSection);
+            anime({
+                targets: outElements,
+                translateY: (el) => el.classList.contains('fly-reverse') ? '45vh' : '-45vh',
+                opacity: [1, 0],
+                duration: 220,
+                delay: anime.stagger(15, { from: 'first' }),
+                easing: 'easeInQuad',
+                complete: () => {
+                    fromSection.classList.remove('active');
+                    restoreClipping(outClippers);
+                    outElements.forEach(el => {
+                        el.style.transform = '';
+                        el.style.opacity = '';
+                        el.classList.add(el.classList.contains('fly-reverse') ? 'fly-hidden-bottom' : 'fly-hidden-top');
+                    });
 
-                inElements.forEach(el => {
-                    el.style.transition = 'none';
-                    el.classList.add('fly-hidden-bottom');
-                    el.classList.remove('fly-hidden-top');
-                });
+                    toSection.classList.add('active');
+                    const inClippers = releaseClipping(toSection);
 
-                void toSection.offsetWidth;
+                    inElements.forEach(el => {
+                        el.classList.remove('fly-hidden-bottom', 'fly-hidden-top');
+                    });
 
-                inElements.forEach(el => el.style.transition = '');
-                const maxDelayIn = applyRandomStagger(inElements);
-                inElements.forEach(el => el.classList.remove('fly-hidden-bottom'));
-
-                setTimeout(() => {
-                    restoreClipping(inClippers);
-                }, (maxDelayIn + 0.55) * 1000);
-
-            }, (maxDelayOut + 0.35) * 1000);
+                    anime({
+                        targets: inElements,
+                        translateY: ['45vh', 0],
+                        opacity: [0, 1],
+                        duration: 440,
+                        delay: anime.stagger(24, { from: 'first' }),
+                        easing: 'spring(1, 100, 16, 0)',
+                        complete: () => {
+                            restoreClipping(inClippers);
+                            inElements.forEach(el => {
+                                el.style.transform = '';
+                                el.style.opacity = '';
+                            });
+                        }
+                    });
+                }
+            });
         }
 
         function changeGlobalLang(element, index, langCode) {
             document.querySelectorAll('.lang-option').forEach(opt => opt.classList.remove('active'));
             element.classList.add('active');
-            document.getElementById('indicator').style.transform = `translateY(${index * 32}px)`;
+
+            if (window.anime) {
+                anime({
+                    targets: '#indicator',
+                    translateY: index * 32,
+                    duration: 260,
+                    easing: 'spring(1, 95, 16, 0)'
+                });
+            } else {
+                document.getElementById('indicator').style.transform = `translateY(${index * 32}px)`;
+            }
 
             persistLangChoice(langCode);
 
@@ -656,25 +1596,36 @@ async function setLanguage(langCode) {
         }
 
         async function initLanguage() {
-            const hashLang = window.location.hash.replace('#', '').toLowerCase();
-            let langCode;
+            try {
+                const hashLang = window.location.hash.replace('#', '').toLowerCase();
+                let langCode;
 
-            if (LANG_ORDER.includes(hashLang)) {
-                langCode = hashLang;
-            } else {
-                let stored = null;
-                try { stored = localStorage.getItem('preferredLang'); } catch (e) {}
-                if (stored && LANG_ORDER.includes(stored)) {
-                    langCode = stored;
+                if (LANG_ORDER.includes(hashLang)) {
+                    langCode = hashLang;
                 } else {
-                    langCode = await detectLangFromGeo();
+                    let stored = null;
+                    try { stored = localStorage.getItem('preferredLang'); } catch (e) {}
+                    if (stored && LANG_ORDER.includes(stored)) {
+                        langCode = stored;
+                    } else {
+                        langCode = await detectLangFromGeo();
+                    }
                 }
-            }
 
-            persistLangChoice(langCode);
-            updateLangSwitchUI(langCode);
-            await setLanguage(langCode);
-            await loadPublicBootstrap(langCode);
+                persistLangChoice(langCode);
+                updateLangSwitchUI(langCode);
+
+                try {
+                    await setLanguage(langCode);
+                } catch (e) {
+                    console.warn('Lỗi setLanguage:', e);
+                }
+
+                await loadPublicBootstrap(langCode);
+            } catch (err) {
+                console.error('Lỗi initLanguage:', err);
+                try { await loadPublicBootstrap(globalLang || 'vie'); } catch(e) {}
+            }
         }
 
         let YT_VIDEO_ID = '';
@@ -1483,39 +2434,58 @@ function renderLyrics() {
         function applyPublicBackendData(data) {
             publicBackendData = data;
 
-            setTextById('homeIntroText', data.content?.homeIntro);
-            setTextById('homeSubText', data.content?.homeSub);
-            setTextById('homeWelcomeText', data.content?.homeWelcome, true);
-            setTextById('homeWelcomeTextMobile', data.content?.homeWelcome, true);
-            setTextById('galleryHintText', data.content?.galleryHint);
-            setTextById('filmHintText', data.content?.filmHint);
-            setTextById('musicHintText', data.content?.musicHint);
+            const content = data.content || {};
+            setTextById('homeIntroText', content.homeIntro || t('home_intro') || '');
+            setTextById('homeSubText', content.homeSub || t('home_sub') || '');
+            setTextById('homeWelcomeText', content.homeWelcome || t('home_welcome') || '', true);
+            setTextById('homeWelcomeTextMobile', content.homeWelcome || t('home_welcome') || '', true);
+            setTextById('galleryHintText', content.galleryHint || t('gallery_hint') || '');
+            setTextById('filmHintText', content.filmHint || t('film_hint') || '');
+            setTextById('musicHintText', content.musicHint || t('music_hint') || '');
 
-            setTextById('gameHintText', data.content?.gameHint);
-            setTextById('gameDescLeft', data.content?.gameDescLeft);
-            setTextById('gameDescCenter', data.content?.gameDescCenter);
-            setTextById('gameDescRight', data.content?.gameDescRight);
+            setTextById('gameHintText', content.gameHint || t('game_hint') || '');
+            setTextById('gameDescLeft', content.gameDescLeft || '');
+            setTextById('gameDescCenter', content.gameDescCenter || '');
+            setTextById('gameDescRight', content.gameDescRight || '');
             renderPublicGame(data.gameItems || []);
 
             applySocialData(data.social);
             renderPublicAlbums(data.albums || []);
 
             demoTracks = Array.isArray(data.tracks) ? data.tracks : [];
-
             initPlaylist();
+
+            if (data.homeMusic) {
+                if (data.homeMusic.name) setTextById('musicTitle', data.homeMusic.name);
+                if (data.homeMusic.artist) setTextById('musicArtist', data.homeMusic.artist);
+                if (data.homeMusic.youtubeId) {
+                    const thumb = document.getElementById('musicThumb');
+                    if (thumb) {
+                        thumb.classList.add('has-image');
+                        thumb.style.backgroundImage = `url('https://img.youtube.com/vi/${data.homeMusic.youtubeId}/hqdefault.jpg')`;
+                    }
+                }
+            }
 
             YT_VIDEO_ID = data.homeMusic?.youtubeId || '';
             createOrLoadHomePlayer();
         }
 
         async function loadPublicBootstrap(langCode = globalLang || 'vie') {
+            if (typeof STATIC_BACKEND_DATA !== 'undefined' && STATIC_BACKEND_DATA) {
+                try { applyPublicBackendData(STATIC_BACKEND_DATA); } catch(e) {}
+            }
+
             try {
                 const result = await apiFetch(`/api/public/bootstrap?lang=${encodeURIComponent(langCode)}`);
-                applyPublicBackendData(result.data || {});
+                if (result && result.data) {
+                    applyPublicBackendData(result.data);
+                }
             } catch (error) {
-                console.error('Không tải được dữ liệu backend:', error);
-
-                applyPublicBackendData({ content: {}, social: {}, homeMusic: {}, albums: [], tracks: [] });
+                console.warn('Không tải được API backend (có thể do mở trực tiếp bằng file:// hoặc CORS):', error);
+                if (typeof STATIC_BACKEND_DATA !== 'undefined' && STATIC_BACKEND_DATA) {
+                    applyPublicBackendData(STATIC_BACKEND_DATA);
+                }
             }
         }
 
@@ -1538,20 +2508,102 @@ function renderLyrics() {
             else activateNav(element, index);
         }
 
+        let toastAnimeTimer = null;
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            if (!toast) return;
+            toast.textContent = message;
+            clearTimeout(toastAnimeTimer);
+
+            if (window.anime) {
+                anime.remove(toast);
+                toast.style.pointerEvents = 'auto';
+                anime({
+                    targets: toast,
+                    translateX: '-50%',
+                    translateY: ['-50px', '0px'],
+                    opacity: [0, 1],
+                    scale: [0.92, 1],
+                    duration: 320,
+                    easing: 'spring(1, 95, 15, 0)'
+                });
+                toastAnimeTimer = setTimeout(() => {
+                    anime({
+                        targets: toast,
+                        translateX: '-50%',
+                        translateY: ['0px', '-50px'],
+                        opacity: [1, 0],
+                        scale: [1, 0.9],
+                        duration: 300,
+                        easing: 'easeInQuad',
+                        complete: () => {
+                            toast.style.pointerEvents = 'none';
+                            toast.style.transform = '';
+                            toast.style.opacity = '';
+                        }
+                    });
+                }, 2800);
+            } else {
+                toast.classList.add('show');
+                toastAnimeTimer = setTimeout(() => { toast.classList.remove('show'); }, 3000);
+            }
+        }
+        window.showToast = showToast;
+
         window.addEventListener('load', async () => {
-            initSettingsUi();
-            syncAvatarVisibility();
-            showMobileDrawerHintOnLoad();
-            initGameSwipeCarousel();
-            goToTabByHash(window.location.hash);
+            try { if (typeof initSettingsUi === 'function') initSettingsUi(); } catch(e) { console.warn(e); }
+            try { if (typeof syncAvatarVisibility === 'function') syncAvatarVisibility(); } catch(e) { console.warn(e); }
+            try { showMobileDrawerHintOnLoad(); } catch(e) {}
+            try { initGameSwipeCarousel(); } catch(e) {}
+            try { goToTabByHash(window.location.hash); } catch(e) {}
 
             await initLanguage();
 
             const preloader = document.getElementById('pagePreloader');
+            const animateHomeEntry = () => {
+                const clusters = document.querySelectorAll('#section-home .fly-cluster');
+                clusters.forEach(el => el.classList.remove('fly-hidden-bottom', 'fly-hidden-top'));
+                if (window.anime) {
+                    anime({
+                        targets: clusters,
+                        translateY: ['30vh', 0],
+                        opacity: [0, 1],
+                        duration: 440,
+                        delay: anime.stagger(25, { from: 'first' }),
+                        easing: 'spring(1, 95, 15, 0)',
+                        complete: () => {
+                            clusters.forEach(el => {
+                                el.style.transform = '';
+                                el.style.opacity = '';
+                            });
+                        }
+                    });
+                }
+            };
+
             if (preloader) {
-                preloader.style.opacity = '0';
-                preloader.style.visibility = 'hidden';
-                setTimeout(() => preloader.remove(), 600);
+                if (window.anime) {
+                    anime({
+                        targets: preloader,
+                        opacity: [1, 0],
+                        duration: 320,
+                        easing: 'easeOutQuad',
+                        complete: () => {
+                            preloader.style.visibility = 'hidden';
+                            preloader.remove();
+                            animateHomeEntry();
+                        }
+                    });
+                } else {
+                    preloader.style.opacity = '0';
+                    preloader.style.visibility = 'hidden';
+                    setTimeout(() => {
+                        preloader.remove();
+                        animateHomeEntry();
+                    }, 350);
+                }
+            } else {
+                animateHomeEntry();
             }
 
             const playBtn = document.querySelector('.play-trigger');
@@ -1571,11 +2623,6 @@ function renderLyrics() {
                 strip.addEventListener('mousemove', (e) => { if (!isDown) return; e.preventDefault(); const walk = (e.pageX - strip.offsetLeft - startX) * 1.5; strip.scrollLeft = scrollLeft - walk; });
                 strip.addEventListener('wheel', (e) => { if (e.deltaY !== 0) { e.preventDefault(); strip.scrollLeft += e.deltaY * 1.2; } }, { passive: false });
             });
-
-            const clusters = document.querySelectorAll('#section-home .fly-cluster');
-            clusters.forEach(el => { el.style.transition = 'none'; el.classList.remove('fly-hidden-bottom', 'fly-hidden-top'); });
-            void document.body.offsetHeight;
-            clusters.forEach(el => el.style.transition = '');
 
             document.body.addEventListener('mousemove', (e) => {
                 const target = e.target.closest('.photo-slot');

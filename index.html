@@ -74,16 +74,16 @@
 
                         <div class="intro-card fly-cluster fly-hidden-bottom" id="introCard" onscroll="handleScroll(this)">
                             <div class="scroll-arrow arrow-top" id="arrowTop">く</div>
-                            <div class="intro-text" id="homeIntroText"></div>
-                            <div class="sub-text" id="homeSubText"></div>
-                            <div class="welcome-msg" id="homeWelcomeTextMobile" style="display: none;"></div>
+                            <div class="intro-text" id="homeIntroText" data-i18n="home_intro"></div>
+                            <div class="sub-text" id="homeSubText" data-i18n="home_sub"></div>
+                            <div class="welcome-msg" id="homeWelcomeTextMobile" style="display: none;" data-i18n-html="home_welcome"></div>
                             <div class="scroll-arrow arrow-bottom" id="arrowBottom">く</div>
                         </div>
                     </div>
 
                     <div class="right-column">
                         <div class="right-empty-space fly-cluster fly-hidden-bottom">
-                            <div class="welcome-msg" id="homeWelcomeText">
+                            <div class="welcome-msg" id="homeWelcomeText" data-i18n-html="home_welcome">
                             </div>
                         </div>
 
@@ -675,6 +675,7 @@
         <iframe id="readingFrame" class="reading-overlay-frame" title="Đọc truyện" loading="lazy"></iframe>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
     <script src="script.js"></script>
     <script src="admin.js"></script>
     <script src="secret.js"></script>
