@@ -44,7 +44,18 @@
             min-height: 100vh;
             color: var(--ink);
             font: 14px/1.5 'Be Vietnam Pro', system-ui, 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
-            background: repeating-conic-gradient(#ecdad9 0 25%, #e6d2d2 0 50%) 0 0 / 32px 32px, var(--bg)
+            background: repeating-conic-gradient(#ecdad9 0 25%, #e6d2d2 0 50%) 0 0 / 32px 32px, var(--bg);
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none
+        }
+
+        textarea,
+        input[type=text],
+        .info {
+            -webkit-user-select: text;
+            user-select: text;
+            -webkit-touch-callout: default
         }
 
         ::-webkit-scrollbar {
