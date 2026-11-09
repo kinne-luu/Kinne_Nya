@@ -1417,10 +1417,16 @@ async function setLanguage(langCode) {
             updateAppRoute(tabName);
         }
 
-        function syncHashToParent(hash) {
+        function syncRouteToParent(routeName) {
             if (window.parent && window.parent !== window) {
-                window.parent.postMessage({ type: 'SYNC_HASH_OUT', hash: hash }, '*');
+                const path = '/' + routeName;
+                window.parent.postMessage({ type: 'SYNC_ROUTE_OUT', route: routeName, path: path, hash: '#' + routeName }, '*');
+                window.parent.postMessage({ type: 'SYNC_HASH_OUT', hash: '#' + routeName }, '*');
             }
+        }
+
+        function syncHashToParent(hash) {
+            syncRouteToParent((hash || '').replace('#', ''));
         }
 
         
@@ -1466,7 +1472,7 @@ async function setLanguage(langCode) {
                 if (window.location.pathname !== path) {
                     try { history.pushState({ route: routeName }, '', path); } catch(e) {}
                 }
-                syncHashToParent('#' + routeName);
+                syncRouteToParent(routeName);
             }
         }
 
@@ -1531,8 +1537,21 @@ function goToTabByHash(hash) {
         }
 
         window.addEventListener('message', (e) => {
-            if (e.data && e.data.type === 'SYNC_HASH_IN') {
-                goToTabByHash(e.data.hash);
+            if (!e.data) return;
+            if (e.data.type === 'SYNC_ROUTE_IN') {
+                const targetRoute = (e.data.route || e.data.path || '').replace(/^\/+|\/+$/g, '').replace('#', '');
+                if (targetRoute === 'irodoriqr' || targetRoute === 'irodori-qr') {
+                    openIrodoriOverlay();
+                } else if (targetRoute) {
+                    goToTabByHash('#' + targetRoute);
+                }
+            } else if (e.data.type === 'SYNC_HASH_IN') {
+                const target = (e.data.hash || '').replace('#', '').replace(/^\/+|\/+$/g, '');
+                if (target === 'irodoriqr' || target === 'irodori-qr') {
+                    openIrodoriOverlay();
+                } else {
+                    goToTabByHash(e.data.hash);
+                }
             }
         });
 

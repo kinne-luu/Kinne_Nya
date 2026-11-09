@@ -68,36 +68,36 @@
             i.src = url;
         }
         function readFile(f, cb) { const r = new FileReader(); r.onload = e => cb(e.target.result); r.readAsDataURL(f) }
+
         function decodeQRFile(f) {
-            readFile(f, url => {
-                const i = new Image(); i.onload = () => {
-                    const c = document.createElement('canvas'); c.width = i.width; c.height = i.height; const g = c.getContext('2d'); g.drawImage(i, 0, 0);
-                    const d = g.getImageData(0, 0, c.width, c.height), r = jsQR(d.data, d.width, d.height);
-                    if (r && r.data) setQR(r.data); else alert(T('noQR'));
-                }; i.src = url
-            });
+            if (!f) return;
+            if (window.QRScanner) {
+                QRScanner.decodeFile(f, setQR, () => alert(T('noQR')));
+            }
         }
 
         const drop = $('drop');
         drop.onclick = () => $('fQR').click();
+        $('fQR').onclick = e => { e.target.value = ''; };
         $('fQR').onchange = e => e.target.files[0] && decodeQRFile(e.target.files[0]);
         drop.ondragover = e => { e.preventDefault(); drop.classList.add('over') };
         drop.ondragleave = () => drop.classList.remove('over');
         drop.ondrop = e => { e.preventDefault(); drop.classList.remove('over'); e.dataTransfer.files[0] && decodeQRFile(e.dataTransfer.files[0]) };
         const dropArt = $('dropArt');
         dropArt.onclick = () => $('fArt').click();
+        $('fArt').onclick = e => { e.target.value = ''; };
         dropArt.ondragover = e => { e.preventDefault(); dropArt.classList.add('over') };
         dropArt.ondragleave = () => dropArt.classList.remove('over');
         dropArt.ondrop = e => { e.preventDefault(); dropArt.classList.remove('over'); e.dataTransfer.files[0] && readFile(e.dataTransfer.files[0], loadArt) };
         let zone = null;
         for (const el of document.querySelectorAll('[data-zone]')) { el.onmouseenter = () => zone = el; el.onmouseleave = () => { if (zone === el) zone = null } }
         document.addEventListener('paste', e => {
-            if (!zone) return;
+            const targetZone = zone || ($('t1').classList.contains('on') ? $('drop') : $('dropArt'));
             const it = [...(e.clipboardData ? e.clipboardData.items : [])].find(i => i.type.startsWith('image/')), f = it && it.getAsFile();
-            if (!f) return;
+            if (!f || !targetZone) return;
             e.preventDefault();
-            if (zone.dataset.zone === 'qr') decodeQRFile(f); else readFile(f, loadArt);
-            zone.classList.remove('pop'); void zone.offsetWidth; zone.classList.add('pop');
+            if (targetZone.dataset.zone === 'qr') decodeQRFile(f); else readFile(f, loadArt);
+            targetZone.classList.remove('pop'); void targetZone.offsetWidth; targetZone.classList.add('pop');
         });
         const pl = $('petals');
         for (let i = 0; i < 14; i++) {
