@@ -118,7 +118,7 @@
         </div>
 
         <div>
-            <div class="prev">
+            <div class="prev" id="prev">
                 <div class="cv"><canvas id="cv" width="10" height="10"></canvas></div>
                 <div class="stats"><span id="sSize"></span><span id="sVer"></span><span id="sLev"></span></div>
                 <div class="status" id="st"></div>
@@ -132,6 +132,62 @@
     <script src="./qr-art.js"></script>
     <script src="./qr-scanner.js"></script>
     <script src="./app.js"></script>
+    <div class="mini" id="mini">
+        <button class="grab" id="grab" type="button" aria-expanded="false" aria-label="Xem nhanh mã QR"></button>
+        <div class="cv"><canvas id="cv2" width="10" height="10"></canvas></div>
+    </div>
+
+    <script>
+        (function () {
+            var m = document.getElementById('mini'), g = document.getElementById('grab'),
+                src = document.getElementById('cv'), dst = document.getElementById('cv2'),
+                prev = document.getElementById('prev'), ctx = dst.getContext('2d');
+            var y0 = null, base = 0, closed = 0, dy = 0, moved = false, gone = false, raf = 0;
+            function isOpen() { return m.classList.contains('open') }
+            function paint() {
+                if (src.width !== dst.width || src.height !== dst.height) { dst.width = src.width; dst.height = src.height }
+                ctx.imageSmoothingEnabled = false;
+                ctx.clearRect(0, 0, dst.width, dst.height);
+                ctx.drawImage(src, 0, 0);
+            }
+            function loop() { raf = 0; if (isOpen() && !gone) { paint(); raf = requestAnimationFrame(loop) } }
+            function kick() { if (!raf) raf = requestAnimationFrame(loop) }
+            function set(o) { m.classList.toggle('open', o); g.setAttribute('aria-expanded', o); if (o) kick() }
+            g.addEventListener('click', function () { if (!moved) set(!isOpen()) });
+            g.addEventListener('touchstart', function (e) {
+                y0 = e.touches[0].clientY; dy = 0; moved = false;
+                closed = m.offsetHeight - g.offsetHeight;
+                base = isOpen() ? 0 : closed;
+                paint();
+            }, { passive: true });
+            g.addEventListener('touchmove', function (e) {
+                if (y0 === null) return;
+                dy = e.touches[0].clientY - y0;
+                if (Math.abs(dy) > 6) moved = true;
+                if (!moved) return;
+                m.style.transition = 'none';
+                m.style.transform = 'translateY(' + Math.min(closed, Math.max(0, base + dy)) + 'px)';
+                e.preventDefault();
+            }, { passive: false });
+            g.addEventListener('touchend', function () {
+                if (y0 === null) return;
+                y0 = null;
+                m.style.transition = '';
+                m.style.transform = '';
+                if (moved) {
+                    if (Math.abs(dy) > 40) set(dy < 0);
+                    setTimeout(function () { moved = false }, 0);
+                }
+            });
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(function (en) {
+                    gone = en[0].isIntersecting;
+                    m.classList.toggle('gone', gone);
+                    if (!gone) kick();
+                }, { rootMargin: '0px 0px -50px 0px' }).observe(prev);
+            }
+        })();
+    </script>
 </body>
 
 </html>
