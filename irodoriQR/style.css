@@ -111,7 +111,8 @@
         }
 
         header,
-        main {
+        main,
+        footer {
             position: relative;
             z-index: 1
         }
@@ -125,6 +126,59 @@
             justify-content: space-between;
             align-items: center;
             gap: 12px
+        }
+
+        footer {
+            border-top: 4px solid var(--ink);
+            box-shadow: 0 -4px 0 var(--acc);
+            background: var(--paper);
+            padding: 8px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        .foot-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .foot-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--ink);
+            text-decoration: none;
+            font: 500 13px 'Pixelify Sans', 'Be Vietnam Pro', monospace;
+            padding: 4px 8px;
+            border: 2px solid transparent;
+            transition: all .15s
+        }
+
+        .foot-links a:hover {
+            color: var(--paper);
+            background: var(--ink);
+            border-color: var(--ink)
+        }
+
+        .foot-links svg {
+            display: block;
+            flex-shrink: 0
+        }
+
+        .foot-by {
+            font: 13px 'Pixelify Sans', 'Be Vietnam Pro', monospace;
+            color: var(--mut);
+            margin-left: auto
+        }
+
+        .foot-by b {
+            color: var(--acc);
+            font-weight: 600
         }
 
         h1 {
@@ -564,6 +618,29 @@
             .btns button {
                 margin: 0;
                 width: 100%
+            }
+
+            footer {
+                padding: 10px 14px 44px;
+                gap: 10px;
+                justify-content: center;
+                text-align: center
+            }
+
+            .foot-links {
+                justify-content: center;
+                gap: 8px
+            }
+
+            .foot-links a {
+                padding: 4px 6px;
+                font-size: 12px
+            }
+
+            .foot-by {
+                margin-left: 0;
+                width: 100%;
+                font-size: 12px
             }
         }
 
