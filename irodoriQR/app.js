@@ -7,7 +7,7 @@
         let lang = 'vi';
         try { const sv = localStorage.getItem('lang'); if (I18N[sv]) lang = sv } catch (e) { }
         const T = (k, ...a) => { const v = I18N[lang][k]; return typeof v === 'function' ? v(...a) : v };
-        const SAMPLE = '00020101021138560010A0000007270126000697042201128608092006680208QRIBFTTA53037045802VN6304135a';
+        const SAMPLE = 'https://github.com/kinne-luu/IrodoriQR';
         const BANKS = { 970436: 'Vietcombank', 970422: 'MB Bank', 970407: 'Techcombank', 970415: 'VietinBank', 970418: 'BIDV', 970405: 'Agribank', 970423: 'TPBank', 970432: 'VPBank', 970441: 'VIB', 970403: 'Sacombank', 970416: 'ACB', 970454: 'BVBank' };
         const $ = id => document.getElementById(id);
         let qrData = SAMPLE, artImg = null, timer = 0, meta = { scale: 1, B: 4 };
