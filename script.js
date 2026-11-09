@@ -1413,14 +1413,8 @@ async function setLanguage(langCode) {
             switchTab(currentTabId, targetTabId);
             currentTabId = targetTabId;
 
-            const hashName = targetTabId.replace('section-', '');
-            const newHash = '#' + hashName;
-            if (history.replaceState) {
-                history.replaceState(null, '', newHash);
-            } else {
-                window.location.hash = hashName;
-            }
-            syncHashToParent(newHash);
+            const tabName = targetTabId.replace('section-', '');
+            updateAppRoute(tabName);
         }
 
         function syncHashToParent(hash) {
@@ -1429,7 +1423,103 @@ async function setLanguage(langCode) {
             }
         }
 
-        function goToTabByHash(hash) {
+        
+        const IRODORI_APP_PATH = 'irodoriQR/index.html';
+
+        function openIrodoriOverlay() {
+            const overlay = document.getElementById('irodoriOverlay');
+            const frame = document.getElementById('irodoriFrame');
+            if (!overlay || !frame) return;
+            if (!frame.getAttribute('src')) {
+                frame.setAttribute('src', IRODORI_APP_PATH);
+            }
+            overlay.classList.add('open');
+            overlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            updateAppRoute('irodoriQR');
+        }
+
+        function closeIrodoriOverlay(options) {
+            const skipHistory = options && options.skipHistory;
+            const overlay = document.getElementById('irodoriOverlay');
+            if (!overlay || !overlay.classList.contains('open')) return;
+            overlay.classList.remove('open');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            if (!skipHistory) {
+                const currentTabName = (currentTabId || 'section-home').replace('section-', '');
+                updateAppRoute(currentTabName);
+            }
+        }
+
+        function updateAppRoute(routeName) {
+            const path = '/' + routeName;
+            if (window.location.protocol === 'file:') {
+                // Truong hop chay truc tiep file://
+                const newHash = '#' + routeName;
+                if (window.location.hash !== newHash) {
+                    try { history.replaceState(null, '', newHash); } catch(e) { window.location.hash = routeName; }
+                }
+                syncHashToParent(newHash);
+            } else {
+                // Khi chay web server hoac GitHub Pages
+                if (window.location.pathname !== path) {
+                    try { history.pushState({ route: routeName }, '', path); } catch(e) {}
+                }
+                syncHashToParent('#' + routeName);
+            }
+        }
+
+        function routeByCurrentUrl() {
+            let routeName = '';
+            // Lay tu pathname (vi du: /irodoriQR, /home, /gallery)
+            if (window.location.pathname && window.location.pathname !== '/') {
+                const segs = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/');
+                routeName = segs[segs.length - 1].toLowerCase();
+                if (routeName.endsWith('.html')) {
+                    routeName = routeName.replace('.html', '');
+                }
+            }
+            // Hoac fallback lay tu hash neu co (#irodoriQR hoac #home)
+            if (!routeName || routeName === 'index' || routeName === 'kinne_nya') {
+                if (window.location.hash) {
+                    routeName = window.location.hash.replace('#', '').toLowerCase();
+                }
+            }
+
+            if (routeName === 'irodoriqr' || routeName === 'irodori-qr') {
+                openIrodoriOverlay();
+                return;
+            }
+
+            if (routeName === 'reading') {
+                if (typeof openReadingOverlay === 'function') openReadingOverlay();
+                return;
+            }
+
+            const tabs = ['section-home', 'section-gallery', 'section-music', 'section-film', 'section-game', 'section-more'];
+            const targetId = 'section-' + routeName;
+            const idx = tabs.indexOf(targetId);
+            if (idx !== -1) {
+                const navItems = document.querySelectorAll('.nav-item');
+                const targetEl = navItems[idx];
+                if (targetEl) handleNavClick(targetEl, idx);
+            }
+        }
+
+        window.addEventListener('popstate', (e) => {
+            const overlay = document.getElementById('irodoriOverlay');
+            if (overlay && overlay.classList.contains('open')) {
+                closeIrodoriOverlay({ skipHistory: true });
+            }
+            routeByCurrentUrl();
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeIrodoriOverlay();
+        });
+
+function goToTabByHash(hash) {
             const tabs = ['section-home', 'section-gallery', 'section-music', 'section-film', 'section-game', 'section-more'];
             const name = (hash || '').replace('#', '').toLowerCase();
             if (!name) return;
@@ -2555,7 +2645,11 @@ function renderLyrics() {
             try { if (typeof syncAvatarVisibility === 'function') syncAvatarVisibility(); } catch(e) { console.warn(e); }
             try { showMobileDrawerHintOnLoad(); } catch(e) {}
             try { initGameSwipeCarousel(); } catch(e) {}
-            try { goToTabByHash(window.location.hash); } catch(e) {}
+            try {
+                routeByCurrentUrl();
+                const irodoriCloseBtn = document.getElementById('irodoriCloseBtn');
+                if (irodoriCloseBtn) irodoriCloseBtn.addEventListener('click', () => closeIrodoriOverlay());
+            } catch(e) { console.warn(e); }
 
             await initLanguage();
 

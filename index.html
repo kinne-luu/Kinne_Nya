@@ -671,8 +671,14 @@
     </div>
     <div class="line-qr-popup-fixed" id="lineQrPopupFixed" aria-hidden="true"><img id="lineQrImage" src="" alt="Line QR" style="display:none;"></div>
 
-    <div class="reading-overlay" id="readingOverlay" aria-hidden="true">
+        <div class="reading-overlay" id="readingOverlay" aria-hidden="true">
         <iframe id="readingFrame" class="reading-overlay-frame" title="Đọc truyện" loading="lazy"></iframe>
+    </div>
+
+    <!-- Irodori QR Overlay -->
+    <div class="irodori-overlay" id="irodoriOverlay" aria-hidden="true">
+        <button class="irodori-close-btn" id="irodoriCloseBtn" type="button" aria-label="Đóng Irodori QR">&times;</button>
+        <iframe id="irodoriFrame" class="irodori-overlay-frame" title="Irodori QR" loading="lazy"></iframe>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>

@@ -873,3 +873,53 @@ html, body {
 @media (prefers-reduced-motion: reduce){
     .reading-overlay{ transition: none; }
 }
+/* Irodori QR Overlay */
+.irodori-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999998;
+    background: #ebd9d8;
+    transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    will-change: transform;
+}
+.irodori-overlay.open {
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.irodori-overlay-frame {
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    border: none;
+    display: block;
+    background: #ebd9d8;
+}
+.irodori-close-btn {
+    position: fixed;
+    top: 14px;
+    right: 18px;
+    z-index: 999999;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #2b1d22;
+    color: #fcf7f6;
+    border: 2px solid #ebd9d8;
+    font-size: 24px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+.irodori-close-btn:hover {
+    background: #c45873;
+    transform: scale(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+    .irodori-overlay { transition: none; }
+}

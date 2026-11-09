@@ -1,0 +1,486 @@
+:root {
+            --bg: #ebd9d8;
+            --paper: #fcf7f6;
+            --ink: #2b1d22;
+            --mut: #785e65;
+            --line: #d8c0c4;
+            --acc: #c45873;
+            --teal: #46685f;
+            --ok: #46685f;
+            --bad: #b23b49;
+            --px: 3px;
+            --sh: var(--line);
+            --frame: 0 calc(var(--px) * -1) 0 0 var(--ink), 0 var(--px) 0 0 var(--ink), calc(var(--px) * -1) 0 0 0 var(--ink), var(--px) 0 0 0 var(--ink);
+            --cur: url("https://raw.githubusercontent.com/kinne-luu/IrodoriQR/refs/heads/main/image/cursor-default.png") 16 16, auto;
+            --cur2: url("https://raw.githubusercontent.com/kinne-luu/IrodoriQR/refs/heads/main/image/cursor-pointer.png") 16 16, pointer
+        }
+
+        * {
+            box-sizing: border-box;
+            border-radius: 0 !important;
+            cursor: var(--cur)
+        }
+
+        button,
+        .btn,
+        select,
+        label,
+        input[type=range],
+        input[type=file],
+        .drop {
+            cursor: var(--cur2)
+        }
+
+        textarea {
+            cursor: text
+        }
+
+        html {
+            -webkit-font-smoothing: none
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--ink);
+            font: 14px/1.5 'Be Vietnam Pro', system-ui, 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: repeating-conic-gradient(#ecdad9 0 25%, #e6d2d2 0 50%) 0 0 / 32px 32px, var(--bg)
+        }
+
+        ::-webkit-scrollbar {
+            width: 14px;
+            height: 14px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--acc);
+            box-shadow: inset 0 0 0 3px var(--ink)
+        }
+
+        #petals {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0
+        }
+
+        .petal {
+            position: absolute;
+            top: -30px;
+            background: url("https://raw.githubusercontent.com/kinne-luu/IrodoriQR/refs/heads/main/image/heart.png") center / 100% 100% no-repeat;
+            image-rendering: pixelated;
+            animation: fall 20s steps(12) infinite
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translate(0, -30px)
+            }
+
+            25% {
+                transform: translate(21px, 25vh)
+            }
+
+            50% {
+                transform: translate(-15px, 50vh)
+            }
+
+            75% {
+                transform: translate(18px, 75vh)
+            }
+
+            100% {
+                transform: translate(-6px, 112vh)
+            }
+        }
+
+        header,
+        main {
+            position: relative;
+            z-index: 1
+        }
+
+        header {
+            border-bottom: 4px solid var(--ink);
+            box-shadow: 0 4px 0 var(--acc);
+            background: var(--paper);
+            padding: 10px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px
+        }
+
+        h1 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font: 600 26px 'Pixelify Sans', 'Be Vietnam Pro', monospace;
+            letter-spacing: .5px;
+            margin: 0;
+            text-shadow: 3px 3px 0 var(--line)
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            image-rendering: pixelated
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+            font: 600 15px 'Be Vietnam Pro', system-ui, sans-serif;
+            margin: 0 0 12px
+        }
+
+        h2::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            margin-right: 10px;
+            background: var(--acc);
+            box-shadow: 0 0 0 2px var(--ink)
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 24px
+        }
+
+        @media(max-width:900px) {
+            main {
+                grid-template-columns: 1fr
+            }
+        }
+
+        section,
+        .prev {
+            background: var(--paper);
+            padding: 18px;
+            margin: 6px 9px 28px 6px;
+            box-shadow: var(--frame), calc(var(--px) * 2) calc(var(--px) * 2) 0 0 var(--sh), var(--px) calc(var(--px) * 2) 0 0 var(--sh), calc(var(--px) * 2) var(--px) 0 0 var(--sh)
+        }
+
+        .prev {
+            --sh: var(--acc);
+            position: sticky;
+            top: 16px
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            color: var(--mut);
+            margin: 10px 0 4px
+        }
+
+        label b {
+            float: right;
+            color: var(--ink);
+            font: 500 13px 'Pixelify Sans', 'Be Vietnam Pro', monospace
+        }
+
+        .d {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin-right: 8px;
+            position: relative;
+            top: -1px;
+            box-shadow: 0 0 0 2px var(--ink)
+        }
+
+        .d.r {
+            background: #e0485a
+        }
+
+        .d.y {
+            background: #f2c230
+        }
+
+        .d.g {
+            background: #5fb07f
+        }
+
+        .legend {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--mut);
+            margin: 0 0 6px
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 20px;
+            margin: 4px 0;
+            background: transparent
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            height: 8px;
+            background: var(--line);
+            box-shadow: 0 0 0 2px var(--ink)
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 20px;
+            margin-top: -6px;
+            background: var(--acc);
+            box-shadow: 0 0 0 2px var(--ink)
+        }
+
+        input[type=range]::-moz-range-track {
+            height: 8px;
+            background: var(--line);
+            outline: 2px solid var(--ink)
+        }
+
+        input[type=range]::-moz-range-thumb {
+            width: 14px;
+            height: 20px;
+            border: 0;
+            background: var(--acc);
+            outline: 2px solid var(--ink)
+        }
+
+        select,
+        textarea {
+            width: calc(100% - 6px);
+            margin: 3px;
+            font: inherit;
+            font-size: 13px;
+            padding: 8px;
+            border: 0;
+            box-shadow: var(--frame);
+            background: #fff;
+            color: var(--ink)
+        }
+
+        textarea {
+            font-family: ui-monospace, Menlo, monospace;
+            font-size: 12px;
+            resize: vertical
+        }
+
+        button,
+        .btn {
+            font: 500 13px 'Be Vietnam Pro', system-ui, sans-serif;
+            margin: 3px;
+            padding: 8px 14px;
+            border: 0;
+            box-shadow: var(--frame);
+            background: var(--paper);
+            color: var(--ink)
+        }
+
+        button:hover {
+            background: var(--ink);
+            color: var(--paper)
+        }
+
+        button:active {
+            transform: translate(2px, 2px)
+        }
+
+        button.main {
+            background: var(--acc);
+            color: #fff;
+            width: calc(100% - 6px);
+            padding: 11px
+        }
+
+        button.main:hover {
+            background: var(--ink)
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .row3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px
+        }
+
+        .drop {
+            margin: 3px 3px 10px;
+            border: 3px dashed var(--ink);
+            padding: 14px 16px;
+            text-align: center;
+            background: #fff;
+            color: var(--mut);
+            transition: background .15s
+        }
+
+        .drop small {
+            display: block;
+            margin-top: 2px;
+            font-size: 11px;
+            color: var(--acc);
+            opacity: 0
+        }
+
+        .drop:hover {
+            background: #fff4f7;
+            animation: nudge .7s steps(2, end) infinite alternate
+        }
+
+        .drop:hover small {
+            opacity: 1
+        }
+
+        .drop.over {
+            background: #f7e0e5
+        }
+
+        .drop.pop {
+            animation: pop .45s steps(4)
+        }
+
+        @keyframes nudge {
+            from {
+                transform: scale(1.03)
+            }
+
+            to {
+                transform: scale(1.07)
+            }
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.14)
+            }
+
+            100% {
+                transform: scale(1.05)
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #petals {
+                display: none
+            }
+
+            .drop:hover,
+            .drop.pop {
+                animation: none;
+                transform: scale(1.05)
+            }
+        }
+
+        .info {
+            font-size: 12px;
+            margin: 10px 3px 0;
+            padding: 8px 10px;
+            box-shadow: inset 4px 0 0 var(--teal);
+            padding-left: 14px;
+            background: #eef3f1;
+            word-break: break-all
+        }
+
+        .cv {
+            margin: 3px;
+            box-shadow: var(--frame);
+            background: #fff;
+            line-height: 0
+        }
+
+        canvas {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            image-rendering: pixelated
+        }
+
+        .status {
+            margin: 14px 3px;
+            padding: 8px 10px 8px 14px;
+            box-shadow: inset 4px 0 0 var(--ok);
+            background: #eef3f1;
+            font-size: 13px
+        }
+
+        .status.bad {
+            box-shadow: inset 4px 0 0 var(--bad);
+            background: #fae9ec
+        }
+
+        .stats {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--mut);
+            margin: 8px 3px 0;
+            flex-wrap: wrap
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin: 0 3px 14px
+        }
+
+        .tabs button {
+            flex: 1;
+            margin: 3px 0
+        }
+
+        .tabs .on {
+            background: var(--ink);
+            color: var(--paper)
+        }
+
+        .hide {
+            display: none
+        }
+
+        .btns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-top: 8px
+        }
+
+        .hint {
+            font-size: 12px;
+            color: var(--mut);
+            margin: 4px 0 0;
+            line-height: 1.45
+        }
+
+        .langs {
+            display: flex;
+            gap: 6px
+        }
+
+        .langs button {
+            padding: 6px 12px
+        }
+
+        .langs .on {
+            background: var(--ink);
+            color: var(--paper)
+        }

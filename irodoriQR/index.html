@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Irodori QR </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Pixelify+Sans:wght@500;600&display=swap"
+        rel="stylesheet">
+    <script src="../jsQR.js"></script><script src="./jsQR.js"></script>
+    <script>if (typeof jsQR === 'undefined') document.write('<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"><\/script>');</script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="petals" aria-hidden="true"></div>
+    <header>
+        <h1><img class="logo" src="https://raw.githubusercontent.com/kinne-luu/IrodoriQR/refs/heads/main/image/logo.png" alt="">Irodori QR</h1>
+        <div class="langs" id="langs"><button data-l="vi">Vie</button><button data-l="en">Eng</button><button data-l="ja">Jap</button></div>
+    </header>
+    <main>
+        <div>
+            <section>
+                <h2 data-i="hQR">Mã QR</h2>
+                <div class="tabs"><button id="t1" class="on" data-i="tabImg">Tải ảnh QR</button><button id="t2" data-i="tabTxt">Dán chuỗi</button></div>
+                <div id="p1">
+                    <div class="drop" id="drop" data-zone="qr"><span data-i="dropQR">Kéo thả hoặc bấm để chọn ảnh QR</span><small data-i="paste">Ctrl + V để dán ảnh</small><input type="file" id="fQR"
+                            accept="image/*" hidden></div>
+                </div>
+                <div id="p2" class="hide"><textarea id="raw" rows="3"
+                        placeholder="Chuỗi Irodori QR hoặc đường link" data-ph="rawPh"></textarea></div>
+                <div class="info" id="info"></div>
+            </section>
+
+            <section>
+                <h2 data-i="hArt">Ảnh nền</h2>
+                <div class="legend"><span><i class="d r"></i><span data-i="lgHigh">Ảnh hưởng lớn</span></span><span><i class="d y"></i><span data-i="lgMid">Vừa</span></span><span><i class="d g"></i><span data-i="lgLow">Nhỏ</span></span></div>
+                <div class="drop" id="dropArt" data-zone="art"><span data-i="dropArt">Bấm hoặc kéo thả để chọn ảnh nền</span><small data-i="paste">Ctrl + V để dán ảnh</small></div><input type="file" id="fArt" accept="image/*" hidden>
+                <div class="row3">
+                    <div><label><span data-i="zoom">Phóng to</span> <b id="vZoom"></b></label><input type="range" id="zoom" min="50" max="250"
+                            value="100"></div>
+                    <div><label><span data-i="px">Dịch ngang</span> <b id="vPx"></b></label><input type="range" id="px" min="-100" max="100"
+                            value="0"></div>
+                    <div><label><span data-i="py">Dịch dọc</span> <b id="vPy"></b></label><input type="range" id="py" min="-100" max="100"
+                            value="0"></div>
+                </div>
+                <div class="row">
+                    <div><label><i class="d y"></i><span data-i="con">Tương phản</span> <b id="vCon"></b></label><input type="range" id="con" min="60" max="200"
+                            value="110"></div>
+                    <div><label><i class="d g"></i><span data-i="bri">Độ sáng</span> <b id="vBri"></b></label><input type="range" id="bri" min="-40" max="40"
+                            value="0"></div>
+                </div>
+                <label><i class="d y"></i><span data-i="sharp">Độ nét</span> <b id="vSharp"></b></label><input type="range" id="sharp" min="0" max="100" value="30">
+                <div class="hint" id="warnSharp" style="color:var(--bad)" data-i="warnSharp">Trên 50% dễ khó quét.</div>
+            </section>
+
+            <section>
+                <h2 data-i="hPix">Pixel và độ bám mã</h2>
+                <div class="legend"><span><i class="d r"></i><span data-i="lgHigh">Ảnh hưởng lớn</span></span><span><i class="d y"></i><span data-i="lgMid">Vừa</span></span><span><i class="d g"></i><span data-i="lgLow">Nhỏ</span></span></div>
+                <div class="row">
+                    <div><label><i class="d r"></i><span data-i="blk">Kích thước ô</span></label>
+                        <select id="blk">
+                            <option value="3">3×3</option>
+                            <option value="4" selected>4×4</option>
+                            <option value="5">5×5</option>
+                            <option value="6">6×6</option>
+                            <option value="8">8×8</option>
+                        </select>
+                    </div>
+                    <div><label><i class="d y"></i><span data-i="pal">Bảng màu</span></label>
+                        <select id="pal">
+                            <option value="" data-i="palNone">Giữ nguyên</option>
+                            <option value="pico" data-i="palPico">16 màu retro</option>
+                            <option value="cyber" data-i="palCyber">Neon tím</option>
+                            <option value="gb" data-i="palGb">Game Boy</option>
+                        </select>
+                    </div>
+                </div>
+                <label><i class="d r"></i><span data-i="lev">Độ bám mã</span> <b id="vLev"></b></label><input type="range" id="lev" min="30" max="100" value="60">
+                <label><i class="d y"></i><span data-i="dep">Độ đậm chấm</span> <b id="vDep"></b></label><input type="range" id="dep" min="0" max="100" value="50">
+                <label><i class="d y"></i><span data-i="blend">Độ hòa chấm và mắt định vị</span> <b id="vBlend"></b></label><input type="range" id="blend" min="0"
+                    max="100" value="0">
+                <label><i class="d g"></i><span data-i="halo">Vùng quanh chấm</span> <b id="vHalo"></b></label><input type="range" id="halo" min="0" max="60"
+                    value="8">
+                <div class="row">
+                    <div><label><i class="d r"></i><span data-i="ver">Mật độ mã</span></label>
+                        <select id="ver">
+                            <option value="1" selected data-i="verMin">Nhỏ nhất</option>
+                            <option value="8" data-i="ver8">Tối thiểu v8</option>
+                            <option value="12" data-i="ver12">Tối thiểu v12</option>
+                        </select>
+                    </div>
+                    <div><label><i class="d r"></i><span data-i="fnd">Ba mắt định vị</span></label>
+                        <select id="fnd">
+                            <option value="blend" selected data-i="fndBlend">Hòa theo ảnh</option>
+                            <option value="classic" data-i="fndClassic">Đen trắng</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div><label><i class="d y"></i><span data-i="qz">Viền trống</span> <b id="vQz"></b></label><input type="range" id="qz" min="0" max="4"
+                            value="1"></div>
+                    <div><label><i class="d g"></i><span data-i="tim">Đường kẻ chấm</span> <b id="vTim"></b></label><input type="range" id="tim" min="0" max="100"
+                            value="40"></div>
+                </div>
+                <div class="row">
+                    <div><label><i class="d y"></i><span data-i="ecl">Sửa lỗi</span></label><select id="ecl">
+                            <option value="1" selected>M</option>
+                            <option value="2">Q</option>
+                            <option value="3">H</option>
+                        </select></div>
+                    <div><label><i class="d y"></i><span data-i="skip">Bỏ ô xung đột</span> <b id="vSkip"></b></label><input type="range" id="skip" min="0" max="100"
+                            value="20"></div>
+                </div>
+            </section>
+        </div>
+
+        <div>
+            <div class="prev">
+                <div class="cv"><canvas id="cv" width="10" height="10"></canvas></div>
+                <div class="stats"><span id="sSize"></span><span id="sVer"></span><span id="sLev"></span></div>
+                <div class="status" id="st"></div>
+                <button class="main" id="bDl" data-i="dl">Tải PNG</button>
+                <div class="btns"><button id="bCp" data-i="cp">Sao chép ảnh</button><button id="bRs" data-i="rs">Đặt lại</button></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./qr-engine.js"></script>
+    <script src="./qr-art.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Kinne Nya Redirecting...</title>
+    <script>
+        (function() {
+            var fullPath = window.location.pathname;
+            var segments = fullPath.replace(/^\/+|\/+$/g, '').split('/');
+            var target = segments[segments.length - 1];
+            var baseUrl = window.location.origin + '/' + (segments.length > 1 ? segments.slice(0, -1).join('/') + '/' : '');
+            window.location.replace(baseUrl + '#' + target + window.location.search);
+        })();
+    </script>
+</head>
+<body>
+    <p>Đang chuyển hướng về Kinne Nya...</p>
+</body>
+</html>
