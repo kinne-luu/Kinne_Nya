@@ -6,11 +6,11 @@
         if (jsQRPromise) return jsQRPromise;
         jsQRPromise = new Promise(resolve => {
             const s = document.createElement('script');
-            s.src = './jsQR.js';
+            s.src = 'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js';
             s.onload = () => resolve(window.jsQR);
             s.onerror = () => {
                 const fallback = document.createElement('script');
-                fallback.src = 'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js';
+                fallback.src = 'https://unpkg.com/jsqr@1.4.0/dist/jsQR.js';
                 fallback.onload = () => resolve(window.jsQR);
                 fallback.onerror = () => resolve(null);
                 document.head.appendChild(fallback);
