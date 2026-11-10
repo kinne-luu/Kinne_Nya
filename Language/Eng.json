@@ -59,5 +59,6 @@
   "toast_copy_discord": "Discord username copied!",
   "music_unknown_title": "Unknown title",
   "music_now_playing_fallback": "(Now playing...)",
-  "music_no_lyric": "This song has no lyrics yet"
+  "music_no_lyric": "This song has no lyrics yet",
+  "nav_tools": "Tools (Irodori QR)"
 }

@@ -59,5 +59,6 @@
   "toast_copy_discord": "Đã copy Username Discord!",
   "music_unknown_title": "Không rõ tên bài",
   "music_now_playing_fallback": "(Đang phát nhạc...)",
-  "music_no_lyric": "Bài hát này chưa có lyric"
+  "music_no_lyric": "Bài hát này chưa có lyric",
+  "nav_tools": "Công cụ (Irodori QR)"
 }

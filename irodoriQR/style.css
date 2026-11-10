@@ -537,7 +537,9 @@
 
         .langs {
             display: flex;
-            gap: 6px
+            align-items: center;
+            gap: 6px;
+            margin-right: 50px
         }
 
         .langs button {
@@ -563,6 +565,10 @@
             .logo {
                 width: 32px;
                 height: 32px
+            }
+
+            .langs {
+                margin-right: 36px
             }
 
             .langs button {

@@ -59,5 +59,6 @@
   "toast_copy_discord": "Discordのユーザー名をコピーしました!",
   "music_unknown_title": "曲名不明",
   "music_now_playing_fallback": "(再生中...)",
-  "music_no_lyric": "この曲にはまだ歌詞がありません"
+  "music_no_lyric": "この曲にはまだ歌詞がありません",
+  "nav_tools": "ツール (Irodori QR)"
 }

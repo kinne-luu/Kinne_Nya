@@ -898,27 +898,40 @@ html, body {
 }
 .irodori-close-btn {
     position: fixed;
-    top: 14px;
-    right: 18px;
+    top: 15px;
+    right: 24px;
     z-index: 999999;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: #2b1d22;
-    color: #fcf7f6;
-    border: 2px solid #ebd9d8;
-    font-size: 24px;
-    line-height: 1;
-    display: flex;
+    height: 35px;
+    padding: 0 12px;
+    min-width: 35px;
+    border-radius: 0 !important;
+    background: #fcf7f6;
+    color: #2b1d22;
+    font: 600 15px 'Be Vietnam Pro', system-ui, sans-serif;
+    border: none;
+    box-shadow: 0 -3px 0 0 #2b1d22, 0 3px 0 0 #2b1d22, -3px 0 0 0 #2b1d22, 3px 0 0 0 #2b1d22;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    transition: transform 0.2s ease, background 0.2s ease;
+    transition: background 0.15s, color 0.15s, transform 0.1s;
 }
 .irodori-close-btn:hover {
-    background: #c45873;
-    transform: scale(1.08);
+    background: #2b1d22;
+    color: #fcf7f6;
+}
+.irodori-close-btn:active {
+    transform: translate(2px, 2px);
+}
+@media (max-width: 900px) {
+    .irodori-close-btn {
+        top: 10px;
+        right: 14px;
+        height: 28px;
+        padding: 0 8px;
+        min-width: 28px;
+        font-size: 13px;
+    }
 }
 @media (prefers-reduced-motion: reduce) {
     .irodori-overlay { transition: none; }

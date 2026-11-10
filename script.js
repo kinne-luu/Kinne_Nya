@@ -1539,14 +1539,15 @@ function goToTabByHash(hash) {
         window.addEventListener('message', (e) => {
             if (!e.data) return;
             if (e.data.type === 'SYNC_ROUTE_IN') {
-                const targetRoute = (e.data.route || e.data.path || '').replace(/^\/+|\/+$/g, '').replace('#', '');
+                const rawRoute = (e.data.route || e.data.path || '').replace(/^\/+|\/+$/g, '').replace('#', '');
+                const targetRoute = rawRoute.toLowerCase();
                 if (targetRoute === 'irodoriqr' || targetRoute === 'irodori-qr') {
                     openIrodoriOverlay();
-                } else if (targetRoute) {
-                    goToTabByHash('#' + targetRoute);
+                } else if (rawRoute) {
+                    goToTabByHash('#' + rawRoute);
                 }
             } else if (e.data.type === 'SYNC_HASH_IN') {
-                const target = (e.data.hash || '').replace('#', '').replace(/^\/+|\/+$/g, '');
+                const target = (e.data.hash || '').replace('#', '').replace(/^\/+|\/+$/g, '').toLowerCase();
                 if (target === 'irodoriqr' || target === 'irodori-qr') {
                     openIrodoriOverlay();
                 } else {
